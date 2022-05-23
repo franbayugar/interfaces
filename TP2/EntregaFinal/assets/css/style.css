@@ -1,0 +1,25 @@
+.header{
+    background-color: #32335E;
+    display: flex;
+    justify-content: space-between;
+    height: 4.5rem;
+}
+
+.menu{
+    margin-left: 1rem;
+}
+
+.user{
+    margin-right: 1rem;
+}
+.menu, .user, .logo{
+    align-self: center;
+}
+
+.logo img{
+    width: 58px;
+}
+
+.menu img, .user img{
+    width: 40px;
+}
