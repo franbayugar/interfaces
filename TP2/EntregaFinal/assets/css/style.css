@@ -22,11 +22,13 @@ body{
     width: 58px;
 }
 
-.hamburguesa img, .user img, .cerrar_menu img{
+.hamburguesa img, .user img, .cerrar_menu img {
     width: 40px;
 }
 
-
+.chevron{
+    width: 30px;
+}
 .menu {
     position: fixed;
     width: 80%;
@@ -77,6 +79,9 @@ body{
     height: 3rem;
     background-color: #32335E;
     padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
 
 }
 .subtitulo_menu{
