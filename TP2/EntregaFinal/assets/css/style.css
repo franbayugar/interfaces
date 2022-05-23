@@ -64,7 +64,21 @@ body{
 
 
 }
+.botones_menu{
+    margin: 0;
+    list-style: none;
+    padding-inline-start: 0;
+}
 
+.botones_menu li{
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    background-color: #32335E;
+    padding-left: 1rem;
+
+}
 .subtitulo_menu{
     background-color: #181940;
     color: white;
