@@ -34,11 +34,9 @@ body{
     width: 80%;
     height: 100vh;
     background-color: #181940;
-    display: none;
+    left: -80%;
     z-index: 25;
-    -webkit-animation:ease-in-out;
-    -webkit-animation-name: run;
-    -webkit-animation-duration: 0.4s;
+
 }
 
 
@@ -97,9 +95,26 @@ body{
     margin: 0;
 }
 
-.active {
-    display: block;
+.active_menu {
+    -webkit-animation:ease-in-out;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: forwards;  
 }
+
+.out_menu {
+    -webkit-animation:ease-in-out;
+    -webkit-animation-name: out;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: forwards;  
+}
+.active {
+  display: block;
+    
+}
+
+
+
 
 @-webkit-keyframes run {
     0% {
@@ -109,3 +124,14 @@ body{
       left: 0;
     }
   }
+
+  @-webkit-keyframes out {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -80%;
+    }
+  }
+
+
