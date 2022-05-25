@@ -53,27 +53,46 @@
     <aside class="modal">
 
     </aside>
-    <form class="regLogin">
+    <container class="regLogin">
         <div class="tabsContainer">
             <div class="tabs">
-                <div class="pestaña activeTab" data-target="#ingreso">Algo</a>
+                <div class="pestaña activeTab">
+                    <p data-target="#ingreso">Iniciar sesion</p>
                 </div>
-                <div class="pestaña" data-target="#registro">Algo mas</a>
+                <div class="pestaña">
+                    <p data-target="#registro">Registrarse</p>
                 </div>
             </div>
         </div>
+
 
         <div class="content">
-            <div data-content id="ingreso" class="activeForm">
-                <h2>hola</h2>
-            </div>
+            <form class="formLogin">
+                <div data-content id="ingreso" class="userData activeForm">
+                    <div class="dataEntry">
+                        <label>Ingrese nombre de usuario:</label>
+                        <input type="text">
+                    </div>
+                    <div class="dataEntry">
+                        <label>Ingrese contraseña:</label>
+                        <input type="text">
+                    </div>
 
-            <div data-content id="registro">
-                <h2>holassss</h2>
-            </div>
+                    <div class="entryButtons ">
+                        <a href="# " id="loguearse" class="button">Ingresar</a>
+                        <a href="# " id="faceLoggin" class="button"><img class="icons" src="assets/images/Facebook.png "></img> Ingresar con facebook</a>
+                        <a href="# " id="googleLogin" class="button"><img class="icons" id="googleIcon" src="assets/images/Google__G__Logo 1.png ">Ingresar con Google</a>
+                    </div>
+
+                </div>
+                <div data-content id="registro " class="userData">
+                    <label>Ingrese contraseña:</label>
+
+                </div>
+            </form>
         </div>
-        <div class="area">
-            <ul class="circles">
+        <div class="area ">
+            <ul class="circles ">
                 <li></li>
                 <li></li>
                 <li></li>
@@ -86,8 +105,8 @@
                 <li></li>
             </ul>
         </div>
-    </form>
-    <script src="assets/js/form.js" defer></script>
+    </container>
+    <script src="assets/js/form.js"></script>
 </body>
 
 </html>

@@ -7,6 +7,7 @@ targets.forEach(target => {
     target.addEventListener('click', () => {
         content.forEach(c => {
             c.classList.remove('activeForm')
+            console.log(c.innerHTML);
         })
         tab.forEach(p => {
             p.classList.remove('activeTab');
