@@ -55,10 +55,22 @@
     </aside>
     <form class="regLogin">
         <div class="tabsContainer">
-            <ul class="tabs">
-                <li> <a href="#">Algo</a> </li>
-                <li> <a href="#">Algo mas</a> </li>
-            </ul>
+            <div class="tabs">
+                <div class="pestaña activeTab" data-target="#ingreso">Algo</a>
+                </div>
+                <div class="pestaña" data-target="#registro">Algo mas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div data-content id="ingreso" class="activeForm">
+                <h2>hola</h2>
+            </div>
+
+            <div data-content id="registro">
+                <h2>holassss</h2>
+            </div>
         </div>
         <div class="area">
             <ul class="circles">
@@ -75,6 +87,7 @@
             </ul>
         </div>
     </form>
+    <script src="assets/js/form.js" defer></script>
 </body>
 
 </html>
