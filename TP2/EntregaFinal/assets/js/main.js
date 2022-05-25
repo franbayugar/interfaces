@@ -4,13 +4,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let cierre = document.querySelector('.cerrar_menu');
     
     const abrirMenu = () => {
-        document.querySelector('.menu').classList.add('active');
+        document.querySelector('.menu').classList.add('active_menu');
         document.querySelector('.modal').classList.add('active');
+        document.querySelector('.menu').classList.remove('out_menu');
+
 
     }
 
     const cerrarMenu = () => {
-        document.querySelector('.menu').classList.remove('active');
+        document.querySelector('.menu').classList.add('out_menu');
+         document.querySelector('.menu').classList.remove('active_menu');
         document.querySelector('.modal').classList.remove('active');
 
     }
