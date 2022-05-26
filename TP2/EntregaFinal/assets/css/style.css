@@ -211,8 +211,7 @@ Pre Loader
     height: 16px;
     top: 12px;
     left: 15px;
-    background: #8d99af;
-    border-radius: 50%;
+
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-animation: dot 2.8s infinite;
@@ -234,8 +233,7 @@ Pre Loader
     width: 16px;
     height: 16px;
     margin-left: 16px;
-    background: #8d99af;
-    border-radius: 50%;
+
 }
 
 
