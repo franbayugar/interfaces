@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #F7F4E3;
 }
 
 
@@ -128,7 +129,6 @@ input {
     background: white;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     width: 100%;
-    height: 100vh;
 }
 
 .circles {
@@ -138,6 +138,7 @@ input {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: -2;
 }
 
 .circles li {

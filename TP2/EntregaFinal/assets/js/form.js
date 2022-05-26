@@ -1,7 +1,6 @@
 const targets = document.querySelectorAll('[data-target]');
 const content = document.querySelectorAll('[data-content]');
 const tab = document.querySelectorAll(".pestaña");
-
 targets.forEach(target => {
 
     target.addEventListener('click', () => {
@@ -14,8 +13,6 @@ targets.forEach(target => {
 
         })
         target.classList.add('activeTab');
-
-
 
         const t = document.querySelector(target.dataset.target);
         t.classList.add('activeForm');
