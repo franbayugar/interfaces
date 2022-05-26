@@ -140,10 +140,12 @@ body {
     background-color: #F7F4E3;
     padding: 0 1rem 0 1rem;
     margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .juegos_titulo h1, p{
-    margin-top: 15px;
+    margin-top: 0;
 }
 
 .juegos_titulo p{
@@ -152,6 +154,7 @@ body {
     padding: 5px 8px 5px 8px;
     border-radius: 12px;
     font-size: 14px;
+    margin-right: 12px;
 }
 .juegos_principal{
     width: 50%;
