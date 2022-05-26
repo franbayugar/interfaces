@@ -48,6 +48,10 @@ body {
     list-style-type: none;
 }
 
+.pestaña {
+    background-color: #F7F4E3;
+}
+
 .tabs a {
     color: black;
 }
@@ -86,6 +90,7 @@ label {
 }
 
 input {
+    font-size: large;
     width: 95%;
     height: 3.5rem;
     background-color: #F7F4E3;
