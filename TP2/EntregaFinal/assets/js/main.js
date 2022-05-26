@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     hamburguesa.addEventListener('click', abrirMenu);
     cierre.addEventListener('click', cerrarMenu);
     
+    let preloader = document.querySelector('#js-preloader');
+    window.onload = ()=>{
+        preloader.classList.add('loaded');
+
+    }
+    
 
 
 })
