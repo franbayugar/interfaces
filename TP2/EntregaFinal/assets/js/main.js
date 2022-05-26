@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     cierre.addEventListener('click', cerrarMenu);
     
     let preloader = document.querySelector('#js-preloader');
-    window.onload = ()=>{
+    setTimeout(()=>{
         preloader.classList.add('loaded');
 
-    }
+    }, 1500)
     
 
 
