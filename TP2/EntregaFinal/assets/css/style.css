@@ -134,6 +134,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .contenedor_juegos{
@@ -154,7 +156,7 @@ body {
     padding: 5px 8px 5px 8px;
     border-radius: 12px;
     font-size: 14px;
-    margin-right: 12px;
+
 }
 .juegos_principal{
     width: 50%;
