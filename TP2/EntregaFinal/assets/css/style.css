@@ -332,4 +332,20 @@ footer{
     background-color: #181940;
     top: 4.5rem;
     position: relative;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.footer_texto{
+    color: white;
+    text-align: center;
+
+}
+
+.footer_texto p{
+    margin-bottom: 4px;
+    font-size: 14px;
 }
