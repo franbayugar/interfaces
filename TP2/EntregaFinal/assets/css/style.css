@@ -120,7 +120,7 @@ body {
 /* DESARROLLO INTERNO */
 
 .contenedor_principal{
-    padding: 1rem;
+    padding-top: 1rem;
     position: relative;
     top: 4.5rem;
 }
@@ -133,7 +133,60 @@ body {
 .juegos_titulo{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+.contenedor_juegos{
+    background-color: #F7F4E3;
+    padding: 0 1rem 0 1rem;
+    margin-top: 1rem;
+}
+
+.juegos_titulo h1, p{
+    margin-top: 15px;
+}
+
+.juegos_titulo p{
+    background-color: #181940;
+    color: white;
+    padding: 5px 8px 5px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+.juegos_principal{
+    width: 50%;
+    padding: 0 1rem 0 0;
+    text-align: center;
+}
+.juegos_top div img, .juegos_bottom div img{
+    width: 60px;
+    border-radius: 4px;
+}
+
+.juegos_top, .juegos_bottom{
+    display: flex;
+}
+figcaption h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.juegos_principal img{
+    width: 165px;
+    border-radius: 4px;
+}
+
+.juegos_vista{
+    display: flex;
+}
+.contenedor_otro_juego{
+    width: 80px;
+    text-align: center;
+    padding: 4px;
+}
+
 @-webkit-keyframes run {
     0% {
         left: -80%;
