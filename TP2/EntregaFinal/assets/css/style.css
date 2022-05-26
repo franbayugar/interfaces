@@ -244,6 +244,7 @@ Pre Loader
 .contenedor_principal{
     padding-top: 1rem;
     top: 4.5rem;
+    position: relative;
 }
 
 .barra_busqueda{
@@ -255,20 +256,21 @@ Pre Loader
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
 }
 
 .contenedor_juegos{
     background-color: #F7F4E3;
     padding: 0 1rem 0 1rem;
     margin-top: 1rem;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     padding-bottom: 1rem;
 }
 
 .juegos_titulo h1, p{
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .juegos_titulo p{
@@ -328,4 +330,6 @@ figcaption p{
 
 footer{
     background-color: #181940;
+    top: 4.5rem;
+    position: relative;
 }
