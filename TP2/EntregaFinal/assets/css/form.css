@@ -146,6 +146,7 @@ input {
     height: 100%;
     overflow: hidden;
     z-index: -2;
+    top: 4.5rem;
 }
 
 .circles li {
