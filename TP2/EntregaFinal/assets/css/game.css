@@ -1,0 +1,30 @@
+#game{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+ .game_img{
+    width: 105px;
+    border-radius: 4px;
+    margin-right: 1em;
+}
+
+.share{
+    width: 40px;
+    height: 40px;
+}
+.encabezado_juego_seleccionado{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo_juego_img{
+    display: flex;
+    margin-top: 10px;
+}
+
+.titulo_juego_img h2{
+    margin-top: 18px;
+    margin-bottom: 4px;
+}

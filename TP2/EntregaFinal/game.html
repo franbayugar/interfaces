@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Puro Vicio</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="assets/css/game.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/game.js"></script>
     
@@ -59,9 +60,18 @@
     <aside class="modal">
 
     </aside>
-    <main class="contenedor_juego_individual">
+    <main class="contenedor_principal">
         <div id="game">
-            {{game.name}}
+            <div class="encabezado_juego_seleccionado">
+                <div class="titulo_juego_img">
+                    <img class="game_img" :src="img" alt="" srcset="">
+                    <div>
+                        <h2>{{name}}</h2>
+                        <p>{{category}}</p>
+                    </div>
+                </div>
+                <img class="share" src="assets/images/share.png" alt="">
+            </div>  
         </div>
     </main>
     <footer>
