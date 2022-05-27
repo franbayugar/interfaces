@@ -4,9 +4,10 @@ const tab = document.querySelectorAll(".pestaña");
 targets.forEach(target => {
 
     target.addEventListener('click', () => {
+
         content.forEach(c => {
             c.classList.remove('activeForm')
-            console.log(c.innerHTML);
+
         })
         tab.forEach(p => {
             p.classList.remove('activeTab');
@@ -15,6 +16,12 @@ targets.forEach(target => {
         target.classList.add('activeTab');
 
         const t = document.querySelector(target.dataset.target);
+
         t.classList.add('activeForm');
+
+
+
+
+
     })
 })
