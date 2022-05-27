@@ -58,3 +58,8 @@
     font-size: 24px;
     font-weight: bold;
 }
+
+.descripcion_juego{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
