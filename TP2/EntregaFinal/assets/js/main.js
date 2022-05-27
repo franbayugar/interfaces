@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         document.querySelector('.menu').classList.add('active_menu');
         document.querySelector('.modal').classList.add('active');
         document.querySelector('.menu').classList.remove('out_menu');
-
-
     }
 
     const cerrarMenu = () => {
@@ -26,7 +24,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
         preloader.classList.add('loaded');
 
     }, 1500)
-    
+    window.onscroll = function() {
+        myFunction()
+    };
+
+    function myFunction() {
+        let barra = document.querySelector('.barra_busqueda');
+        let logo = document.querySelector('.logo');
+        barra.classList.toggle('lupita', window.scrollY>15);
+        logo.classList.toggle('invisible', window.scrollY>15);
+
+       
+    }
 
 
 })
