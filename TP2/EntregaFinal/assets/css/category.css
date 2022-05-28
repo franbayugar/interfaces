@@ -83,3 +83,36 @@ img {
     justify-content: center;
     background-color: #C2C4D2;
 }
+
+.lupita {
+    animation: ease-in-out;
+    animation-name: lupita_;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lupita_ {
+    0% {
+        position: static;
+        z-index: 0;
+        opacity: 0;
+    }
+    25% {
+        position: fixed;
+        top: 4.5vh;
+        left: 25vw;
+        right: 25vw;
+        z-index: 23;
+    }
+    50% {
+        top: 3.5vh;
+    }
+    100% {
+        position: fixed;
+        top: 2.5vh;
+        left: 25vw;
+        right: 25vw;
+        opacity: 1;
+        z-index: 23;
+    }
+}

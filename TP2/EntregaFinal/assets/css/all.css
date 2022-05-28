@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+    background-color: #C2C4D2;
+}
+
+.allSearch {
+    position: relative;
+    padding: 0.5rem;
+    top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allSearch div {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#buscaAll {
+    width: 60%;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+#buscaAll input {
+    height: 50%;
+}
+
+.buscaCat {
+    margin-top: 1rem;
+    ;
+}
+
+.buscaCat select {
+    width: 19rem;
+    height: 2.5rem;
+}
