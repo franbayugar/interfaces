@@ -30,7 +30,20 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.activeCont {
+    display: blocK;
+}
+
+.inactiveCont {
+    display: none;
+}
+
 .regLogin {
+    position: relative;
+    top: 4.5rem;
+}
+
+.succesLoggin {
     position: relative;
     top: 4.5rem;
 }
@@ -129,6 +142,10 @@ input {
 #googleIcon {
     width: 1.8rem;
     height: 1.8rem;
+}
+
+.succesLogin {
+    display: none;
 }
 
 .area {
