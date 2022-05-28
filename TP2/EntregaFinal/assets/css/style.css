@@ -20,13 +20,14 @@
         padding-right: 1rem;
         z-index: 20;
     }
-    .lupita{
+    
+    .lupita {
         animation: ease-in-out;
         animation-name: lupita_;
         animation-duration: 0.4s;
         animation-fill-mode: forwards;
-
     }
+    
     .hamburguesa,
     .user,
     .logo,
@@ -47,6 +48,14 @@
     .chevron,
     .barra_busqueda img {
         width: 30px;
+    }
+    
+    .activeCont {
+        display: blocK;
+    }
+    
+    .inactiveCont {
+        display: none;
     }
     
     .menu {
@@ -79,7 +88,6 @@
         display: none;
         backdrop-filter: blur(4px);
     }
-
     
     .botones_menu {
         margin: 0;
@@ -148,14 +156,12 @@
             left: -80%;
         }
     }
-
     
     @keyframes lupita_ {
         0% {
             position: static;
             z-index: 0;
             opacity: 0;
-
         }
         25% {
             position: fixed;
@@ -166,7 +172,6 @@
         }
         50% {
             top: 3.5vh;
-
         }
         100% {
             position: fixed;
@@ -175,11 +180,8 @@
             right: 25vw;
             opacity: 1;
             z-index: 23;
-
         }
     }
-    
-
     /*
 ---------------------------------------------
 Pre Loader
@@ -408,8 +410,8 @@ Pre Loader
         width: 1.5rem;
         height: 1.5rem;
     }
-
-    .publicidad{
+    
+    .publicidad {
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -418,20 +420,17 @@ Pre Loader
         width: 100%;
         z-index: 20;
     }
-
-    .adv{
+    
+    .adv {
         width: 100%;
     }
-
     
     .oculto {
         display: none;
     }
-
-    .invisible{
+    
+    .invisible {
         visibility: hidden;
         opacity: 0;
-
         transition: visibility 0s 0.2s, opacity 0.2s linear;
-
     }

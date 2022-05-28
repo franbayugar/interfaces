@@ -7,6 +7,9 @@ const contLoggin = document.querySelector('.regLogin');
 const succes = document.querySelector('.succesLoggin');
 const sucLog = document.querySelector('#succesLog');
 const sucReg = document.querySelector('#succesReg');
+const usNoLog = document.querySelector('#logIcon');
+const usLog = document.querySelector('#logged');
+const toHome = document.querySelector('#logueado');
 
 
 
@@ -44,6 +47,8 @@ log.forEach(lg => {
 
 
 
+
+
     })
 
 
@@ -63,5 +68,12 @@ reg.forEach(rg => {
     })
 
 
+
+})
+
+toHome.addEventListener('click', () => { //NO ANDA, LPM
+    console.log("hola");
+    usNoLog.classList.add('inactiveCont');
+    usLog.classList.remove('inactiveCont');
 
 })
