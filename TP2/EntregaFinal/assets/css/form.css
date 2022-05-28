@@ -39,11 +39,13 @@ body {
 }
 
 .regLogin {
+    height: 100%;
     position: relative;
     top: 4.5rem;
 }
 
 .succesLoggin {
+    height: 100%;
     position: relative;
     top: 4.5rem;
 }
