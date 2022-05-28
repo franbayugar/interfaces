@@ -48,6 +48,25 @@ body {
     top: 4.5rem;
 }
 
+.succesMsge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    text-align: center;
+    height: 30rem;
+}
+
+.msg {
+    font-size: 1.5rem;
+    color: #5D7320;
+}
+
+.succesText {
+    margin: 2rem 0;
+}
+
 .tabsContainer {
     display: flex;
     width: 100%;
@@ -112,14 +131,28 @@ input {
     border-bottom: solid #27284D;
 }
 
-#loguearse {
+#loguearse,
+#logueado,
+#registrado {
     background-color: #D4832A;
-    border: none;
-    color: #F7F4E3;
-    border-bottom: solid #32335E;
 }
 
-.button {
+
+/*#logueado,
+#registrado {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #17171A;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    width: 15rem;
+    height: 2.5rem;
+    border-radius: 21rem;
+    border-bottom: solid #32335E;
+}*/
+
+.formButton {
     text-align: center;
     display: inline-flex;
     justify-content: center;

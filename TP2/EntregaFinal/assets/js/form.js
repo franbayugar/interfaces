@@ -1,9 +1,13 @@
 const targets = document.querySelectorAll('[data-target]');
 const content = document.querySelectorAll('[data-content]');
 const tab = document.querySelectorAll(".pestaña");
-const log = document.querySelectorAll(".button");
+const log = document.querySelectorAll(".logButton");
+const reg = document.querySelectorAll(".regButton");
 const contLoggin = document.querySelector('.regLogin');
-const succes = document.querySelector('.succesLogin');
+const succes = document.querySelector('.succesLoggin');
+const sucLog = document.querySelector('#succesLog');
+const sucReg = document.querySelector('#succesReg');
+
 
 
 targets.forEach(target => {
@@ -35,8 +39,27 @@ log.forEach(lg => {
         contLoggin.classList.remove('activeCont');
         contLoggin.classList.add('inactiveCont');
         succes.classList.remove('inactiveCont');
-        succes.classList.add('activeCont');
+        succes.classList.add('succesMsge');
 
+
+
+
+    })
+
+
+
+})
+
+reg.forEach(rg => {
+
+    rg.addEventListener('click', () => {
+        contLoggin.classList.remove('activeCont');
+        contLoggin.classList.add('inactiveCont');
+        succes.classList.remove('inactiveCont');
+        succes.classList.add('succesMsge');
+        sucLog.classList.add('inactiveCont');
+        sucReg.classList.remove('inactiveCont');
+        sucReg.classList.add('succesMsge');
     })
 
 
