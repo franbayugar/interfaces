@@ -38,3 +38,18 @@ body {
     width: 19rem;
     height: 2.5rem;
 }
+
+.entryButtons {
+    position: relative;
+    top: 4.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.entryButtons a {
+    width: 11.5rem;
+    height: 2.5rem;
+    border-radius: 00.5rem;
+    background-color: #A3C540;
+    color: white;
+}
