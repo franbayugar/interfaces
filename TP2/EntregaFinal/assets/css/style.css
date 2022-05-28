@@ -21,6 +21,11 @@
         z-index: 20;
     }
     
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
     .lupita {
         animation: ease-in-out;
         animation-name: lupita_;
