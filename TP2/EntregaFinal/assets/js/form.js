@@ -71,7 +71,7 @@ reg.forEach(rg => {
 
 })
 
-toHome.addEventListener('click', () => { //NO ANDA, LPM
+toHome.addEventListener('click', () => { //NO ANDA, LPM.SE SUPONE QUE CAMBIA EL ICONO DE LOGIN POR LA LETRA A...
     console.log("hola");
     usNoLog.classList.add('inactiveCont');
     usLog.classList.remove('inactiveCont');
