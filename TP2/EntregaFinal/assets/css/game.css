@@ -63,3 +63,13 @@
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.como_jugar{
+    display: flex;
+    align-items: center;
+}
+.info {
+    width: 28px;
+    height: 28px;
+    padding-right: 0.4rem;
+}
