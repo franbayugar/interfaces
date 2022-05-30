@@ -52,4 +52,12 @@ body {
     border-radius: 00.5rem;
     background-color: #A3C540;
     color: white;
+    justify-content: center;
+}
+
+.entryButtons img {
+    width: 30px;
+    margin-top: 0.2rem;
+    color: white;
+    margin-left: 0.5rem;
 }
