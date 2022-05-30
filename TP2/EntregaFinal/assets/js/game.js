@@ -94,7 +94,7 @@ for(let elem of games){
 let categoryesGames = [];
 
 for(let elem of games){
-    if(elem.category == selectGame.category){
+    if(elem.category == selectGame.category && elem.id != selectGame.id){
         categoryesGames.push(elem);
     }
 }

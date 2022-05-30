@@ -78,4 +78,30 @@
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: #F7F4E3;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.similar_game img{
+    width: 70px;
+    border-radius: 4px;
+}
+
+figcaption p{
+    white-space: break-spaces;
+}
+
+.similar_game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    padding: 4px;
+}
+
+#games{
+    display: flex;
+    flex-wrap: wrap;
+
 }
