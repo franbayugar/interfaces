@@ -91,7 +91,14 @@ for(let elem of games){
     }
 }
 
+let categoryesGames = [];
 
+for(let elem of games){
+    if(elem.category == selectGame.category){
+        categoryesGames.push(elem);
+    }
+}
+console.log(categoryesGames);
 
 const game = new Vue({
     el: '#game',
@@ -101,6 +108,13 @@ const game = new Vue({
         img: selectGame.img,
         desarrollador: selectGame.desarrollador,
         descripcion: selectGame.descripcion
+    }
+})
+
+const games2 = new Vue({
+    el: '#games',
+    data: {
+        listGames: categoryesGames
     }
 })
 });
