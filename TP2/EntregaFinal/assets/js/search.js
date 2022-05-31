@@ -18,9 +18,9 @@ let nameSearch = url.searchParams.get("res");
 function procesar(){
 
     let gamesMatch = [];
-
-    for(let elem of gamesMatch){
-        if(elem.name.match(`/${nameSearch}.*/`)){
+    let text = new RegExp(nameSearch, "gi");
+    for(let elem of games){
+        if(elem.name.match(text)){
             gamesMatch.push(elem);
         }
     }
@@ -31,7 +31,10 @@ function procesar(){
     const games2 = new Vue({
         el: '#games',
         data: {
-            listGames: gamesMatch
+            resEncontrado: gamesMatch.length,
+            valorBuscado: nameSearch,
+            listGames: gamesMatch,
+            allGames: games
         }
     })
     }

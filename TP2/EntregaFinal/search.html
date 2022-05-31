@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="assets/images/logo-gamer 1.png" type="image/x-icon">
     <script src="assets/js/main.js"></script>
     <script src="assets/js/search.js"></script>
+    <link rel="stylesheet" href="assets/css/search.css">
 
 </head>
 <body>
@@ -68,8 +69,34 @@
     <aside class="modal">
 
     </aside>
-    <div id="games">
-        <h2>Se han encontrado  resultados para: </h2>
-    </div>
+    <main id="games">
+        <h2 v-if="resEncontrado>1" class="found">Se han encontrado {{resEncontrado}} resultados para: {{valorBuscado}}</h2>
+        <h2 v-if="resEncontrado==1" class="found">Se ha encontrado un resultado para: {{valorBuscado}}</h2>
+        <h2 v-if="resEncontrado<1" class="not-found">No se han encontrado resultados para: {{valorBuscado}}</h2>
+        <div v-if="listGames.length>0" class="resultados">
+                <h3>Listado de juegos</h3>
+                <div id="juegos">
+                    <div v-for="item in listGames" class="game_search">
+                        <a :href="'game.html?id='+item.id">
+                        <img :src="item.img" alt="">
+                        </a>
+                        <figcaption>
+                            <p>{{item.name}}</p>
+                        </figcaption>
+                    </div>
+                </div>
+        </div>
+        <div v-else class="resultados">
+            <h3>No te desanimes, ¡proba con alguno de nuestros juegos recomendados!</h3>
+            <div id="juegos">
+                <div v-for="item in allGames" class="game_search">
+                    <img :src="item.img" alt="">
+                    <figcaption>
+                        <p>{{item.name}}</p>
+                    </figcaption>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

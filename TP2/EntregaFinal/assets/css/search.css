@@ -1,0 +1,54 @@
+#games{
+    top: 4.5rem;
+    position: absolute;
+}
+
+.found{
+    color: white;
+    background-color: #ABC169;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+.not-found{
+    color: white;
+    background-color: #900400;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+.resultados{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #F7F4E3;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.game_search img{
+    width: 90px;
+    border-radius: 4px;
+}
+
+figcaption p{
+    white-space: break-spaces;
+}
+
+.game_search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    padding: 4px;
+}
+
+#juegos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
