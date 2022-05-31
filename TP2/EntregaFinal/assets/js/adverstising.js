@@ -27,8 +27,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   
     }
 
-    function search(){
-        let input = document.getElementById('aBuscar').value;
-        window.location.href = `search.html?res=${input}`;
-    }
+
 });

@@ -54,6 +54,15 @@
     .barra_busqueda img {
         width: 30px;
     }
+    #btn-busq{
+        width: 30px;
+        border: 0;
+        background: none;
+    }
+    .barra_busqueda form{
+        display: flex;
+        justify-content: center;
+    }
     
     .activeCont {
         display: blocK;
