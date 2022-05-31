@@ -189,7 +189,7 @@
         }
         100% {
             position: fixed;
-            top: 2.5vh;
+            top: 2.2vh;
             left: 25vw;
             right: 25vw;
             opacity: 1;
@@ -308,8 +308,8 @@ Pre Loader
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-left: 0.2rem;
-        margin-right: 0.2rem;
+        margin-left: 1.8vw;
+        margin-right: 1.8vw;
     }
     
     .contenedor_juegos {
@@ -318,6 +318,8 @@ Pre Loader
         margin-top: 1rem;
         padding-top: 1.5rem;
         padding-bottom: 1rem;
+        padding-left: 5vw;
+        padding-right: 5vw;
     }
     
     .juegos_titulo h1,
@@ -363,7 +365,7 @@ Pre Loader
     }
     
     .juegos_principal img {
-        width: 165px;
+        width: 168px;
         border-radius: 4px;
     }
     
