@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form.css">
     <link rel="stylesheet" href="assets/css/category.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <link rel="shortcut icon" href="assets/images/logo-gamer 1.png" type="image/x-icon">
     <script src="assets/js/main.js"></script>
-    <!-- <script src="assets/js/adverstising.js"></script>
-    <script src="assets/js/form.js"></script>-->
-    <script src="assets/js/game.js"></script>
+
+    <script src="assets/js/category.js"></script>
 
 </head>
 
@@ -62,19 +62,19 @@
         </div>
         <ul class="botones_menu">
             <li><a href="all.html">Todos los juegos </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
-            <li><a href="category.html">Multijugador </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
-            <li><a href="category.html">Acción </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
-            <li><a href="category.html">Aventuras </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
-            <li><a href="category.html">Carreras</a> <img class="chevron" src="assets/images/chevron.png" alt=""></li>
-            <li><a href="category.html">Clásicos</a> <img class="chevron" src="assets/images/chevron.png" alt=""></li>
-            <li><a href="category.html">Infantiles </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
+            <li><a href="category.html?category=Multijugador">Multijugador </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
+            <li><a href="category.html?category=Accion">Acción </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
+            <li><a href="category.html?category=Aventuras">Aventuras </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
+            <li><a href="category.html?category=Carreras">Carreras</a> <img class="chevron" src="assets/images/chevron.png" alt=""></li>
+            <li><a href="category.html?category=Clasicos">Clásicos</a> <img class="chevron" src="assets/images/chevron.png" alt=""></li>
+            <li><a href="category.html?category=Infantiles">Infantiles </a><img class="chevron" src="assets/images/chevron.png" alt=""></li>
         </ul>
     </nav>
     <aside class="modal">
 
     </aside>
     <div class="catSearch">
-        <div id="game" class="catName">
+        <div id="games" class="catName">
             <h2 class="catTitle">{{category}}</h2>
         </div>
         <div id="buscaCat" class="barra_busqueda">
