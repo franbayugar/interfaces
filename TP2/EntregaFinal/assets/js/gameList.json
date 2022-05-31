@@ -47,7 +47,7 @@
 },{
     "id": 7,
     "name": "Hawaii Match 3",
-    "category": "Clásicos",
+    "category": "Aventuras",
     "img": "assets/images/juegos/hawai.png",
     "desarrollador": "G5 Entertainment",
     "descripcion": "Te damos la bienvenida a la isla tropical donde la joven Katie Lockwood ha vuelto a la hermosa, pero destrozada, mansión de su familia. ¡Necesita que la ayudes a reconstruirla tras el paso de un huracán para devolverla a su antigua gloria!"
@@ -73,5 +73,45 @@
     "img": "assets/images/juegos/pacman.png",
     "desarrollador": "Namco",
     "descripcion": "¡El Pac Man ha vuelto! Disfruta de uno de los clásicos más famosos de todos los tiempos y un fenómeno mundial en la industria de los videojuegos. ¡PACMAN! Ayuda a nuestro protagonista a comerse todos los puntos de la pantalla para pasar al siguiente nivel mientras evita toparse con los 4 peligrosos fantasmas del juego."
-}
+},
+{
+    "id": 11,
+    "name": "Squid Game",
+    "category": "Acción",
+    "img": "assets/images/juegos/squidgame.png",
+    "desarrollador": "Netflix",
+    "descripcion": "¿Ya has visto El Juego del Calamar? Ahora puedes jugar a Squid Game (El Juego del Calamar, serie de Netflix) en tu navegador web y sin morir en el intento. El juego se llama así ya que los jugadores deben dibujar diferentes formas geométricas (círculo, cuadrado o triángulo) en el suelo, que, en su conjunto, parecen formar un calamar. Si un atacante logra atravesar al defensor y entrar en la cabeza del calamar, se proclama a este como ganador del juego."
+},
+    {
+    "id": 12,
+    "name": "Among Us",
+    "category": "Multijugador",
+    "img": "assets/images/juegos/amongus.png",
+    "desarrollador": "InnerSloth",
+    "descripcion": "¡Among Us: Online Edition es un juego de sigilo y aventuras creado por fans del famoso y aclamado Among Us! Ponte en la piel de un impostor que se ha infiltrado entre una tripulación de astronautas y recorre la nave mientras evitas que los personajes arreglen los daños de la nave matándolos uno a uno y sin que te pillen."
+    },
+    {
+        "id": 13,
+        "name": "Bullet Echo",
+        "category": "Clásicos",
+        "img": "assets/images/juegos/BulletEcho.png",
+        "desarrollador": "Zeptolab",
+        "descripcion": "¡Disfruta con el juego battle royale más táctico de todos los tiempos y lleva a tus jugadores hasta la victoria en Bullet Echo! Tendrás la posibilidad de escoger entre decenas de héroes diferentes para formar un gran equipo de guerreros. ¿Lograrás ser el último equipo en pie al final de la batalla?"
+    },
+    {
+        "id": 14,
+        "name": "Gun Sprint",
+        "category": "Acción",
+        "img": "assets/images/juegos/gunsprint.png",
+        "desarrollador": "KAYAC Inc",
+        "descripcion": "¿Te consideras un habilidoso pistolero? Es hora de demostrarlo en el juego Gun Sprint mientras te relajas tras un día agotador. Alza la vista directamente hacia el horizonte y haz girar tu arma en el aire a toda velocidad hasta dar directamente en el blanco con alguna tus balas. ¡Solo así podrás avanzar!"
+    },{
+        "id": 15,
+        "name": "Towerland",
+        "category": "Aventuras",
+        "img": "assets/images/juegos/towerland.png",
+        "desarrollador": "Black Bears",
+        "descripcion": "¡Un juego de aventuras tower defense único de lo más adictivo llega hasta nuestras pantallas para hacernos disfrutar como nunca en el juego Towerlands: Strategy of Tower Defense! La fusión perfecta entre un juego de estrategia y rol permitirá que te pongas en la piel del señor de un castillo situado en un mundo de fantasía dispuesto a defender a muerte sus tierras hasta el final." 
+
+    }
 ]

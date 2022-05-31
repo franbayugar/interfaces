@@ -362,6 +362,7 @@ Pre Loader
         white-space: nowrap;
         margin-top: 7px;
         margin-bottom: 7px;
+        color: black;
     }
     
     .juegos_principal img {
@@ -372,6 +373,8 @@ Pre Loader
     .juegos_principal h4 {
         margin-top: 8px;
         margin-bottom: 8px;
+        color: black;
+        text-align: center;
     }
     
     .juegos_vista {
