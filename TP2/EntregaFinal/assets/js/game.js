@@ -1,56 +1,54 @@
-
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
     "use strict";
 
     let games = [];
 
     getGames();
-    async function getGames(){
+    async function getGames() {
         let response = await fetch('https://618eb5aa50e24d0017ce13ee.mockapi.io/fran/games');
-        if(response.ok){
+        if (response.ok) {
             games = await response.json();
             procesar();
         }
     }
 
-let url_string = window.location.href; 
-let url = new URL(url_string);
-let id = url.searchParams.get("id");
-let selectGame = null;
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let id = url.searchParams.get("id");
+    let selectGame = null;
 
-function procesar(){
-    for(let elem of games){
-        if(elem.id == id){
-            selectGame = elem;
+    function procesar() {
+        for (let elem of games) {
+            if (elem.id == id) {
+                selectGame = elem;
+            }
         }
-    }
 
-    let categoryesGames = [];
+        let categoryesGames = [];
 
-    for(let elem of games){
-        if(elem.category == selectGame.category && elem.id != selectGame.id){
-            categoryesGames.push(elem);
+        for (let elem of games) {
+            if (elem.category == selectGame.category && elem.id != selectGame.id) {
+                categoryesGames.push(elem);
+            }
         }
-    }
-    console.log(categoryesGames);
+        console.log(categoryesGames);
 
-    const game = new Vue({
-        el: '#game',
-        data: {
-            name: selectGame.name,
-            category: selectGame.category,
-            img: selectGame.img,
-            desarrollador: selectGame.desarrollador,
-            descripcion: selectGame.descripcion
-        }
-    })
+        const game = new Vue({
+            el: '#game',
+            data: {
+                name: selectGame.name,
+                category: selectGame.category,
+                img: selectGame.img,
+                desarrollador: selectGame.desarrollador,
+                descripcion: selectGame.descripcion
+            }
+        })
 
-    const games2 = new Vue({
-        el: '#games',
-        data: {
-            listGames: categoryesGames
-        }
-    })
+        const games2 = new Vue({
+            el: '#games',
+            data: {
+                listGames: categoryesGames
+            }
+        })
     }
 });
-

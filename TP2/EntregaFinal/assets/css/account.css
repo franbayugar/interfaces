@@ -33,10 +33,8 @@
     .playerLevel {
         position: relative;
         top: 4.5rem;
-        width: 100%;
         display: flex;
         justify-content: left;
-        padding-left: 6rem;
     }
     
     .playerLevel h4 {
@@ -67,4 +65,69 @@
         width: 30px;
         height: 30px;
         margin-left: 0.5rem;
+    }
+    
+    .progress {
+        position: relative;
+        top: 4.5rem;
+        margin-left: 1rem;
+    }
+    
+    .progress h3 {
+        color: #3D3E61;
+        font-size: 1.5rem;
+    }
+    
+    .level {
+        position: relative;
+        top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        width: 88%;
+        padding: 0rem 1.2rem;
+    }
+    
+    #progressbar {
+        margin: auto;
+        width: 60%;
+        /*  position: relative;
+        top: 1rem;*/
+        background-color: white;
+    }
+    
+    #progressbar>div {
+        background-color: #A3C540;
+        width: 40%;
+        height: 20px;
+    }
+    
+    .contFavs {
+        position: relative;
+        top: 4.5rem;
+        background-color: #F7F4E3;
+    }
+    
+    .favGames {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .favGames img {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .footer {
+        position: relative;
+        bottom: 0;
+    }
+    
+    figcaption p {
+        margin-top: 0;
+    }
+    
+    h3 {
+        font-size: 2rem;
     }

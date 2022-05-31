@@ -56,9 +56,17 @@ html {
     justify-content: center;
 }
 
+.contenedor_destacado {
+    width: 30%;
+}
+
 .contenedor_destacado img {
     max-width: 6.25rem;
     max-height: 6.25rem;
+}
+
+.contenedor_resto {
+    width: 30%;
 }
 
 .contenedor_resto img {

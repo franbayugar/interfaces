@@ -74,7 +74,7 @@
                         <p>{{category}}</p>
                     </div>
                 </div>
-                <img class="share" src="assets/images/share.png" alt="">
+                <a href="https://api.whatsapp.com/send?text=Proba este juego" target="_blank"><img class="share" src="assets/images/share.png" alt=""></a>
             </div>
             <div class="contenedor_carrousel ">
                 <div>
@@ -98,7 +98,7 @@
                 <div v-for="item in listGames" class="similar_game">
                     <img :src="item.img" alt="">
                     <figcaption>
-                        <p>{{item.name}}</p> 
+                        <p>{{item.name}}</p>
                     </figcaption>
                 </div>
             </div>
