@@ -90,10 +90,13 @@
             <h3>No te desanimes, ¡proba con alguno de nuestros juegos recomendados!</h3>
             <div id="juegos">
                 <div v-for="item in allGames" class="game_search">
+                    <a :href="'game.html?id='+item.id">
+
                     <img :src="item.img" alt="">
                     <figcaption>
                         <p>{{item.name}}</p>
                     </figcaption>
+                    </a>
                 </div>
             </div>
         </div>

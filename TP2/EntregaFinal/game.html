@@ -96,9 +96,11 @@
             <h3>Juegos similares</h3>
             <div id="games">
                 <div v-for="item in listGames" class="similar_game">
-                    <img :src="item.img" alt="">
+                    <a :href="'game.html?id='+item.id">
+                        <img :src="item.img" alt="">
                     <figcaption>
                         <p>{{item.name}}</p>
+                        </a>
                     </figcaption>
                 </div>
             </div>
