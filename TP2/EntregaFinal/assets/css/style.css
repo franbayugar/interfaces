@@ -362,8 +362,8 @@ Pre Loader
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin-top: 7px;
-        margin-bottom: 7px;
+        margin-top: 0px;
+        margin-bottom: 4px;
         color: black;
     }
     
