@@ -469,7 +469,7 @@ Pre Loader
     width: 25px !important;
 }
 
-#logged{
+#logged div{
     display: flex;
     align-items: center;
 }
