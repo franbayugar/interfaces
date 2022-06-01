@@ -58,6 +58,10 @@ html {
 }
 
 .contenedor_destacado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     width: 30%;
 }
 
@@ -67,7 +71,14 @@ html {
 }
 
 .contenedor_resto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     width: 30%;
+}
+.contenedor_resto a{
+    text-align: center;
 }
 
 .contenedor_resto img {
@@ -88,6 +99,12 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     background-color: #C2C4D2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.juegos_titulo{
+    padding-left: 1rem;
 }
 
 .lupita {
