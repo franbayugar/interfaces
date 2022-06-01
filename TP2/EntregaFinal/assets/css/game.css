@@ -119,3 +119,17 @@ figcaption p{
 .contenedor_carrousel div{
     height: 300px;
 }
+
+.como_jugar a{
+    color: black;
+}
+
+.how_to_play{
+    background-color: #F7F4E3;
+    height: 300px;
+    margin-top: 1rem;
+}
+
+.how_to_play{
+    
+}
