@@ -50,5 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 listGames: categoryesGames
             }
         })
+
+      
     }
 });

@@ -102,3 +102,20 @@ figcaption p{
     flex-wrap: wrap;
 
 }
+
+
+.swiper{
+    width: 80%;
+    position: absolute !important;
+    top: 248px;
+    height: 300px;
+    left: 9vw;
+}
+
+.swiper-slide{
+    width: 100%;
+}
+
+.contenedor_carrousel div{
+    height: 300px;
+}
