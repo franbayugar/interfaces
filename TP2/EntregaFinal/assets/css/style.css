@@ -54,12 +54,14 @@
     .barra_busqueda img {
         width: 30px;
     }
-    #btn-busq{
+    
+    #btn-busq {
         width: 30px;
         border: 0;
         background: none;
     }
-    .barra_busqueda form{
+    
+    .barra_busqueda form {
         display: flex;
         justify-content: center;
     }
@@ -395,6 +397,7 @@ Pre Loader
     footer {
         background-color: #181940;
         top: 4.5rem;
+        margin-top: auto;
         position: relative;
         height: 8rem;
         display: flex;

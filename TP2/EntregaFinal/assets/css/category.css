@@ -46,6 +46,7 @@ html {
 
 .destacados {
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
     background-color: white;
     position: relative;
     top: 4.5rem;
@@ -67,6 +68,7 @@ html {
 
 .contenedor_resto {
     width: 30%;
+    margin: auto;
 }
 
 .contenedor_resto img {
