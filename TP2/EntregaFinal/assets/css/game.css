@@ -130,6 +130,8 @@ figcaption p{
     margin-top: 1rem;
 }
 
-.how_to_play{
-    
+.how_to_play h2{
+    padding-left: 1rem;
+    padding-top: 1rem;
+    color: #17171A;
 }
