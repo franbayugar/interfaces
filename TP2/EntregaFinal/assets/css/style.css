@@ -465,7 +465,14 @@ Pre Loader
             font-weight: bold;
             position: absolute;
 }
+.logged-chev{
+    width: 25px !important;
+}
 
+#logged div{
+    display: flex;
+    align-items: center;
+}
 
  @-webkit-keyframes heartbeat {
     from {
