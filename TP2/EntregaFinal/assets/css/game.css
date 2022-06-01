@@ -1,15 +1,15 @@
-
- .game_img{
+.game_img {
     width: 100px;
     border-radius: 4px;
     margin-right: 0.5em;
 }
 
-.share{
+.share {
     width: 40px;
     height: 40px;
 }
-.encabezado_juego_seleccionado{
+
+.encabezado_juego_seleccionado {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,17 +17,17 @@
     padding-right: 1rem;
 }
 
-.titulo_juego_img{
+.titulo_juego_img {
     display: flex;
     margin-top: 10px;
 }
 
-.titulo_juego_img h2{
+.titulo_juego_img h2 {
     margin-top: 18px;
     margin-bottom: 4px;
 }
 
-.contenedor_carrousel{
+.contenedor_carrousel {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     background-color: #F7F4E3;
@@ -35,10 +35,9 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 1.5rem;
-
 }
 
-.button_play{
+.button_play {
     background-color: #D4832A;
     text-align: center;
     display: inline-flex;
@@ -56,22 +55,23 @@
     font-weight: bold;
 }
 
-.descripcion_juego{
+.descripcion_juego {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-.como_jugar{
+.como_jugar {
     display: flex;
     align-items: center;
 }
+
 .info {
     width: 28px;
     height: 28px;
     padding-right: 0.4rem;
 }
 
-.similares{
+.similares {
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: #F7F4E3;
@@ -79,16 +79,16 @@
     padding-bottom: 1rem;
 }
 
-.similar_game img{
+.similar_game img {
     width: 70px;
     border-radius: 4px;
 }
 
-figcaption p{
+figcaption p {
     white-space: break-spaces;
 }
 
-.similar_game{
+.similar_game {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,14 +97,12 @@ figcaption p{
     padding: 4px;
 }
 
-#games{
+#games {
     display: flex;
     flex-wrap: wrap;
-
 }
 
-
-.swiper{
+.swiper {
     width: 80%;
     position: absolute !important;
     top: 248px;
@@ -112,10 +110,22 @@ figcaption p{
     left: 9vw;
 }
 
-.swiper-slide{
+.swiper-slide {
     width: 100%;
 }
 
-.contenedor_carrousel div{
+.contenedor_carrousel div {
     height: 300px;
 }
+
+.como_jugar a {
+    color: black;
+}
+
+.how_to_play {
+    background-color: #F7F4E3;
+    height: 300px;
+    margin-top: 1rem;
+}
+
+.how_to_play {}

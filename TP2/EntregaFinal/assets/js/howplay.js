@@ -24,14 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        let categoryesGames = [];
 
-        for (let elem of games) {
-            if (elem.category == selectGame.category && elem.id != selectGame.id) {
-                categoryesGames.push(elem);
-            }
-        }
-        console.log(categoryesGames);
+
 
         const game = new Vue({
             el: '#game',
@@ -45,13 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
 
-        const games2 = new Vue({
-            el: '#games',
-            data: {
-                listGames: categoryesGames
-            }
-        })
-
-      
     }
 });
