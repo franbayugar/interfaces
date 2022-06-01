@@ -124,12 +124,25 @@ figcaption p {
 
 .how_to_play {
     background-color: #F7F4E3;
-    height: 300px;
     margin-top: 1rem;
+    padding: 1rem
+
 }
 
 .how_to_play h2{
-    padding-left: 1rem;
-    padding-top: 1rem;
+
     color: #17171A;
 }
+
+.how_to_play h3{
+    color: #17171A;
+    font-weight: 600;
+}
+
+
+.how_to_play img {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
