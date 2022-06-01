@@ -14,13 +14,34 @@ header {
     height: 467px;
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.playContainer img {
+.gifContainer img {
     position: relative;
     max-width: 100%;
     margin: auto;
+}
+
+.gameMenu {
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    vertical-align: top;
+}
+
+.cansado {
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameMenu img {
+    max-width: 2rem;
+    max-height: 2rem;
 }
 
 footer {
