@@ -2,10 +2,6 @@ html {
     height: 100%;
 }
 
-body {
-    height: 100%;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 * {
     margin: 0px;
@@ -13,6 +9,7 @@ body {
 }
 
 body {
+    height: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: white;
 }
@@ -47,14 +44,13 @@ body {
 }
 
 section {
-    height: 100%;
     position: relative;
     top: 4.5rem;
 }
 
 .succesLoggin {
-    height: 100%;
-    position: relative;
+    /* height: 100%;*/
+    /* position: relative;*/
     top: 4.5rem;
 }
 
@@ -65,7 +61,7 @@ section {
     margin-left: 3.5rem;
     margin-right: 3.5rem;
     text-align: center;
-    height: 30rem;
+    height: 28rem;
 }
 
 .msg {
@@ -75,6 +71,8 @@ section {
 
 .succesText {
     margin: 2rem 0;
+    position: relative;
+    margin: auto;
 }
 
 .tabsContainer {
@@ -307,5 +305,44 @@ input {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
+    }
+}
+
+.slide-in-elliptic-top-fwd {
+    -webkit-animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
     }
 }
