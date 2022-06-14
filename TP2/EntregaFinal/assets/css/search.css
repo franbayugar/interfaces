@@ -1,6 +1,8 @@
 #games{
     top: 4.5rem;
-    position: absolute;
+    position: relative;
+    min-height: 80vh;
+    background-color: #F7F4E3;
 }
 
 .found{

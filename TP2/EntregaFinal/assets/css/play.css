@@ -11,7 +11,7 @@ header {
 .playContainer {
     position: relative;
     top: 4.5rem;
-    height: 467px;
+    height: 80vh;
     align-items: center;
     display: flex;
     flex-direction: column;

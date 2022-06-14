@@ -344,7 +344,6 @@ Pre Loader
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 5px;
     }
     
     .juegos_top div img,
@@ -368,19 +367,20 @@ Pre Loader
     }
     
     .juegos_principal img {
-        width: 168px;
+        width: 160px;
         border-radius: 4px;
     }
     
     .juegos_principal h4 {
-        margin-top: 8px;
-        margin-bottom: 8px;
+        margin-top: 3px;
+        margin-bottom: 6px;
         color: black;
         text-align: center;
     }
     
     .juegos_vista {
         display: flex;
+        justify-content: space-between;
     }
     
     .contenedor_otro_juego {
@@ -458,12 +458,14 @@ Pre Loader
     }
     
 .heartbeat {
+    text-align: center;
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
 	        animation: heartbeat 1.5s ease-in-out infinite both;
             background-color: #E1CF2E;
             color: black;
             font-weight: bold;
             position: absolute;
+            margin-top: -5px;
 }
 .logged-chev{
     width: 25px !important;
