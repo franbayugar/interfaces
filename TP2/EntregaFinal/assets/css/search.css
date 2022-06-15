@@ -1,11 +1,11 @@
-#games{
+#games {
     top: 4.5rem;
     position: relative;
     min-height: 80vh;
-    background-color: #F7F4E3;
+    background-color: #C2C4D2;
 }
 
-.found{
+.found {
     color: white;
     background-color: #ABC169;
     margin-top: 0;
@@ -13,7 +13,7 @@
     padding: 1rem;
 }
 
-.not-found{
+.not-found {
     color: white;
     background-color: #900400;
     margin-top: 0;
@@ -21,25 +21,38 @@
     padding: 1rem;
 }
 
-.resultados{
-    padding-left: 1rem;
-    padding-right: 1rem;
+h3 {
+    font-size: 1rem;
+}
+
+h2 {
+    margin: 0;
+    padding: 1rem;
+}
+
+.animo {
     background-color: #F7F4E3;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    min-height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultados {
+    background-color: #C2C4D2;
     text-align: center;
 }
 
-.game_search img{
+.game_search img {
     width: 90px;
     border-radius: 4px;
 }
 
-figcaption p{
+figcaption p {
     white-space: break-spaces;
 }
 
-.game_search{
+.game_search {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,9 +61,10 @@ figcaption p{
     padding: 4px;
 }
 
-#juegos{
+#juegos {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: #C2C4D2;
 }
