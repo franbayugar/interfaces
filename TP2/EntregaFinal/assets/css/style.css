@@ -399,7 +399,7 @@ Pre Loader
         top: 4.5rem;
         margin-top: auto;
         position: relative;
-        height: 6rem;
+        height: 5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -429,11 +429,17 @@ Pre Loader
         font-size: 14px;
     }
     
+    .logo {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+    
     .redes {
-        height: 90%;
+        width: 60%;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         padding-left: 2rem;
         padding-bottom: 0.5rem;
         padding-top: 0.5rem;
