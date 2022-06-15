@@ -26,7 +26,8 @@ body {
 }
 
 #buscaAll input {
-    height: 50%;
+    height: 70%;
+    margin-top: 0.2rem;
 }
 
 .buscaCat {
