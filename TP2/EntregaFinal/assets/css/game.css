@@ -54,10 +54,15 @@
     font-size: 24px;
     font-weight: bold;
 }
-.cont_btn_play{
+
+.cont_btn_play {
     text-align: center;
+    display: flex;
+    justify-content: center;
     padding-bottom: 1.5rem;
+    padding-top: 1rem;
 }
+
 .descripcion_juego {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -128,185 +133,187 @@ figcaption p {
 .how_to_play {
     background-color: #F7F4E3;
     margin-top: 1rem;
-    padding: 1rem
-
+    /*  padding: 1rem*/
 }
 
-.how_to_play h2{
+.how_to_play h2 {
     margin-top: 0;
     color: #17171A;
 }
 
-.how_to_play h3{
+.how_to_play h3 {
     color: #17171A;
     font-weight: 600;
 }
 
+.gifAndButton {
+    padding: 1rem;
+}
+
+.textInstructions {
+    background-color: #C2C4D2;
+    padding: 1rem;
+}
 
 .how_to_play img {
     position: relative;
     max-width: 100%;
-    margin: auto;
 }
+
 .jello-vertical {
-	-webkit-animation: jello-vertical 0.9s ease-in-out 2s both;
-	        animation: jello-vertical 0.9s ease-in-out 2s both;
+    -webkit-animation: jello-vertical 0.9s ease-in-out 2s both;
+    animation: jello-vertical 0.9s ease-in-out 2s both;
 }
+
 @-webkit-keyframes jello-vertical {
     0% {
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
     30% {
-      -webkit-transform: scale3d(0.75, 1.25, 1);
-              transform: scale3d(0.75, 1.25, 1);
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
     }
     40% {
-      -webkit-transform: scale3d(1.25, 0.75, 1);
-              transform: scale3d(1.25, 0.75, 1);
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
     }
     50% {
-      -webkit-transform: scale3d(0.85, 1.15, 1);
-              transform: scale3d(0.85, 1.15, 1);
+        -webkit-transform: scale3d(0.85, 1.15, 1);
+        transform: scale3d(0.85, 1.15, 1);
     }
     65% {
-      -webkit-transform: scale3d(1.05, 0.95, 1);
-              transform: scale3d(1.05, 0.95, 1);
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
     }
     75% {
-      -webkit-transform: scale3d(0.95, 1.05, 1);
-              transform: scale3d(0.95, 1.05, 1);
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
     }
     100% {
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
-  }
-  @keyframes jello-vertical {
+}
+
+@keyframes jello-vertical {
     0% {
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
     30% {
-      -webkit-transform: scale3d(0.75, 1.25, 1);
-              transform: scale3d(0.75, 1.25, 1);
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
     }
     40% {
-      -webkit-transform: scale3d(1.25, 0.75, 1);
-              transform: scale3d(1.25, 0.75, 1);
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
     }
     50% {
-      -webkit-transform: scale3d(0.85, 1.15, 1);
-              transform: scale3d(0.85, 1.15, 1);
+        -webkit-transform: scale3d(0.85, 1.15, 1);
+        transform: scale3d(0.85, 1.15, 1);
     }
     65% {
-      -webkit-transform: scale3d(1.05, 0.95, 1);
-              transform: scale3d(1.05, 0.95, 1);
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
     }
     75% {
-      -webkit-transform: scale3d(0.95, 1.05, 1);
-              transform: scale3d(0.95, 1.05, 1);
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
     }
     100% {
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
-  }
-  
+}
 
 @media (min-width: 1000px) {
-    .hamburguesa{
+    .hamburguesa {
         display: none;
     }
-    .nombre_logo{
+    .nombre_logo {
         display: block;
     }
-    .logo a{
+    .logo a {
         display: flex;
         align-items: center;
     }
-    .logo a p{
+    .logo a p {
         margin-bottom: 0;
         font-size: 26px;
         padding-left: 1rem;
     }
-    .header{
+    .header {
         position: absolute;
     }
-    .menu{
+    .menu {
         display: block;
         position: absolute;
         left: 25vw;
         height: 4.5rem;
         width: auto;
-        background-color:transparent;
+        background-color: transparent;
     }
-    .subtitulo_menu{
+    .subtitulo_menu {
         display: none;
     }
-    .header-menu{
+    .header-menu {
         display: none;
-    
     }
-    .botones_menu{
+    .botones_menu {
         display: flex;
         align-items: center;
         height: 100%;
-      
     }
-    .botones_menu li{
+    .botones_menu li {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
-       text-align: center;
+        text-align: center;
     }
-    .botones_menu li:hover{
+    .botones_menu li:hover {
         background-color: #23233fc5;
     }
-
-    .encabezado_juego_seleccionado{
+    .encabezado_juego_seleccionado {
         padding-right: 12rem;
         padding-left: 12rem;
     }
-
-    .swiper{
+    .swiper {
         display: flex;
         justify-content: center;
         left: 0;
         width: 100%;
     }
-
-    .swiper-slide{
+    .swiper-slide {
         width: 100% !important;
         text-align: center;
     }
-    .contenedor_carrousel a{
+    .contenedor_carrousel a {
         max-width: 400px;
-
     }
-    .contenedor_carrousel a:hover{
+    .contenedor_carrousel a:hover {
         background-color: #ABC169;
     }
-    .descripcion_juego{
+    .descripcion_juego {
         padding-right: 12rem;
         padding-left: 12rem;
     }
-    .similares{
+    .similares {
         padding-right: 12rem;
         padding-left: 12rem;
     }
-    .swiper-button-prev{
+    .swiper-button-prev {
         margin-left: 12rem;
     }
-    .swiper-button-next{
+    .swiper-button-next {
         margin-right: 12rem;
     }
-    footer{
+    footer {
         padding-left: 12rem;
         padding-right: 12rem;
     }
-    .redes{
+    .redes {
         display: flex;
     }
-  }
+}
