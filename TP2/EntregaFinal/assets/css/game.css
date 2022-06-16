@@ -9,6 +9,14 @@
     height: 40px;
 }
 
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: block;
+}
+
 .encabezado_juego_seleccionado {
     display: flex;
     justify-content: space-between;
@@ -282,9 +290,63 @@ figcaption p {
     .botones_menu li:hover {
         background-color: #23233fc5;
     }
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
     .encabezado_juego_seleccionado {
-        padding-right: 12rem;
-        padding-left: 12rem;
+        display: flex;
+    }
+    .titulo_juego_img {
+        width: 65%;
+        display: flex;
+        justify-content: right;
+        margin-left: 0%;
+    }
+    .game_img {
+        width: 25rem;
+        border-radius: 4px;
+        margin-right: 0.5em em;
+    }
+    .gameName {
+        display: flex;
+        flex-direction: column;
+    }
+    .gameName h2 {
+        font-size: 4rem;
+    }
+    .gameName p {
+        font-size: 2rem;
+    }
+    .descripcion_juego {
+        margin-left: 1rem;
+    }
+    .descripcion_juego h3 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+    .como_jugar {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+    }
+    .info {
+        width: 3rem;
+        height: 3rem;
+        padding-right: 0.4rem;
+    }
+    #shareDesktop {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 50%;
+        align-items: center;
+    }
+    .share {
+        width: 80px;
+        height: 80px;
     }
     .container {
         display: block;
@@ -315,13 +377,26 @@ figcaption p {
     .button_play {
         margin-top: 5rem;
     }
-    .descripcion_juego {
-        padding-right: 12rem;
-        padding-left: 12rem;
-    }
     .similares {
         padding-right: 12rem;
         padding-left: 12rem;
+        background: #C2C4D2;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .similar_game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 10rem;
+        padding: 4px;
+    }
+    .similar_game img {
+        width: 8rem;
+        border-radius: 4px;
     }
     .swiper-button-prev {
         margin-left: 12rem;

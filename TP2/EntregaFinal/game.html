@@ -87,12 +87,31 @@
             <div class="encabezado_juego_seleccionado">
                 <div class="titulo_juego_img">
                     <img class="game_img" :src="img" alt="" srcset="">
-                    <div>
+                    <div class="gameName">
                         <h2>{{name}}</h2>
                         <p>{{category}}</p>
+                        <div class="whatss desktop" id="shareDesktop">
+                            <a href="https://api.whatsapp.com/send?text=Proba este juego" target="_blank"><img class="share" src="assets/images/share.png" alt=""></a>
+                        </div>
                     </div>
                 </div>
-                <a href="https://api.whatsapp.com/send?text=Proba este juego" target="_blank"><img class="share" src="assets/images/share.png" alt=""></a>
+                <div class="descripcion_juego desktop">
+                    <h3>Descripción</h3>
+                    <p>{{descripcion}}</p>
+                    <p><strong>Desarrollado por: </strong>{{desarrollador}}</p>
+                    <div class="como_jugar">
+                        <a :href="'howtoplay.html?id='+ id">
+                            <img class="info" src="assets/images/info.png" alt="">
+                        </a>
+                        <a :href="'howtoplay.html?id='+ id">
+
+                            <h3>Cómo jugar</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="whatss mobile">
+                    <a href="https://api.whatsapp.com/send?text=Proba este juego" target="_blank"><img class="share" src="assets/images/share.png" alt=""></a>
+                </div>
             </div>
             <div class="contenedor_carrousel">
                 <div class="container">
@@ -113,7 +132,7 @@
                 </div>
                 <a href="playing.html" class="button_play jello-vertical">Jugar <img src="assets/images/play_arrow.png" alt=""></a>
             </div>
-            <div class="descripcion_juego">
+            <div class="descripcion_juego mobile">
                 <h3>Descripción</h3>
                 <p>{{descripcion}}</p>
                 <p><strong>Desarrollado por: </strong>{{desarrollador}}</p>
