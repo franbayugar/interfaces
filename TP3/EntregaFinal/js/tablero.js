@@ -2,9 +2,9 @@
 
 class Tablero {
     constructor(ctx) {
-        this.alto = 4;
-        this.ancho = 4;
-        this.comienzoX = 500;
+        this.alto = 5;
+        this.ancho = 5;
+        this.comienzoX = 200;
         this.comienzoY = 200;
         this.ladoImagen = 100;
         this.ctx = ctx;

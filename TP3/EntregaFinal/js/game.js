@@ -3,9 +3,10 @@ class Juego {
     constructor(tablero, ficha1, ficha2) {
         this.tablero = tablero;
         this.arrayFichas1 = [];
+        this.arrayFichas2 = [];
         this.mostrarTablero();
         this.generarFichas(ficha1, 10);
-        this.generarFichas(ficha2, 50);
+        this.generarFichas(ficha2, 900);
 
     }
 
@@ -21,6 +22,15 @@ class Juego {
             ficha1.draw(canvas.width);
             this.arrayFichas1.push(ficha1);
         }
+    }
+
+    
+    getMousePos(canvas, evt) {
+    let ClientRect = canvas.getBoundingClientRect();
+    return {
+        x: Math.round(evt.clientX - ClientRect.left),
+        y: Math.round(evt.clientY - ClientRect.top)
+    }
     }
 
 }

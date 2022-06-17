@@ -7,6 +7,11 @@ class Ficha{
         this.color = color;
         this.ctx = ctx;
         this.radio = radio;
+        this.image = new Image();
+        this.image.src = "img/ficha1.png";
+        this.image.onload =() => {
+            this.draw();
+        };
     }
 
     getPosX(){
@@ -33,15 +38,18 @@ class Ficha{
         this.color = color;
     }
 
-    draw(width){
-        this.ctx.beginPath();
-        if (this.color == "#ff0000"){
-            this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
-        }else{
-            this.ctx.arc(width - this.radio, this.posY, this.radio, 0, 2 * Math.PI);
-        }
-        this.ctx.fillStyle = this.color;
-        this.ctx.fill();
+    draw(){ 
+        this.ctx.fillStyle = this.image;
+            // this.ctx.beginPath();
+            // if (this.color == "#ff0000"){
+            //     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
+            // }else{
+            //     this.ctx.arc(width - this.radio, this.posY, this.radio, 0, 2 * Math.PI);
+            // }
+            // let imagenFicha = this.ctx.createPattern(this.image, "repeat");
+            // this.ctx.fillStyle = this.imagenFicha;
+            // this.ctx.fill();
+        
     }
 
     isClickedCuadrado(posicion){
