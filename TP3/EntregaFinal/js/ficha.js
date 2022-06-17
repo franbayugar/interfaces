@@ -1,14 +1,14 @@
 "use strict";
 
 class Ficha{
-    constructor(posX, posY, color, ctx, radio){
+    constructor(posX, posY, color, ctx, radio, imagen){
         this.posX = posX;
         this.posY = posY;
         this.color = color;
         this.ctx = ctx;
         this.radio = radio;
         this.image = new Image();
-        this.image.src = "img/ficha1.png";
+        this.image.src = imagen;
         this.image.onload =() => {
             this.draw();
         };
@@ -40,6 +40,11 @@ class Ficha{
 
     draw(){ 
         this.ctx.fillStyle = this.image;
+        
+        this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
+
+        this.ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
+
             // this.ctx.beginPath();
             // if (this.color == "#ff0000"){
             //     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);

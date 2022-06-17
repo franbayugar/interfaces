@@ -16,9 +16,14 @@ class Juego {
 
     generarFichas(ficha, pos){
         for (let i = 0; i < 10; i++){
-            let radius = 15;
+            let radius = 45;
+            let ficha1;
+            if(pos == 10){
 
-            let ficha1 = new Ficha(pos+radius,radius + 2*radius*i,'#ff0000',ctx, radius);
+                ficha1 = new Ficha(pos+radius,radius + 2*radius*i,'#ff0000',ctx, radius, 'img/ficha1.png');
+            }else{
+                ficha1 = new Ficha(pos+radius,radius + 2*radius*i,'#ff0000',ctx, radius, 'img/ficha2.png');
+            }
             ficha1.draw(canvas.width);
             this.arrayFichas1.push(ficha1);
         }
