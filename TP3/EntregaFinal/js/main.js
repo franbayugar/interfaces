@@ -12,5 +12,5 @@ document.addEventListener('DOMContentLoaded',  ()=> {
 
 function cargarJuego() {
     let tablero = new Tablero(ctx);
-    let juego = new Juego(tablero);
+    let juego = new Juego(tablero, 'ficha1', 'ficha2');
 }
