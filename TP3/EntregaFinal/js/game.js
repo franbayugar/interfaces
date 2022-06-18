@@ -5,10 +5,10 @@ class Juego {
         this.arrayFichas1 = [];
         this.arrayFichas2 = [];
         this.mostrarTablero();
-        //ficha1.posx1 = this.tablero.comienzoX - 50;
-        //  posx2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 150;
-        this.generarFichas(ficha1, this.tablero.comienzoX - 120);
-        this.generarFichas(ficha2, this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30);
+        let pos1 = this.tablero.comienzoX - 120;
+        let pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.generarFichas(ficha1, pos1);
+        this.generarFichas(ficha2, pos2);
 
     }
 
@@ -19,7 +19,7 @@ class Juego {
     generarFichas(ficha, pos) {
         for (let i = 0; i < 10; i++) {
             let radius = 45;
-            if (pos == this.tablero.comienzoX - 160) {
+            if (pos == this.tablero.comienzoX - 120) {
 
                 ficha = new Ficha(pos + radius, radius + 2 * radius * i, '#ff0000', ctx, radius, 'img/ficha1.png');
             } else {
