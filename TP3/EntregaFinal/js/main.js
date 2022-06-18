@@ -31,33 +31,35 @@ function cargarJuego() {
 
 
     for (let i = 0; i < 10; i++) {
-        let ficha1 = juego.generarFichas('ficha1', juego.getpos1());
-        ficha1.draw();
-        fichas.push(ficha1);
-
-        let ficha2 = juego.generarFichas('ficha2', juego.getpos2());
-        ficha2.draw();
-        fichas.push(ficha2);
-
-
+        juego.generarFichas('ficha1', juego.getpos1());
+        juego.generarFichas('ficha2', juego.getpos2());
 
     }
-    console.table(fichas);
-}
+    juego.mostrarFichas();
+
+
+
+
 
 
 canvas.addEventListener('mousedown', (evt) => {
     var mousePos = oMousePos(canvas, evt);
 
-    for (let i = 0; i < fichas.length; i++) {
-        if (fichas[i].isClickedCirculo(mousePos)) {
-                
+    for (let i = 0; i < juego.fichas.length; i++) {
+        let ficha = juego.fichas[i];
+        if (ficha.isClickedCirculo(mousePos)) {
+            ficha.setPosX(mousePos.x);
+            ficha.setPosY(mousePos.y);
 
+                ctx.clearRect(0, 0, width, height);
 
-            ctx.clearRect(0, 0, width, height);
-
+            tablero.draw();
+            juego.mostrarFichas();
         }
     }
 
 
-})
+});
+}
+
+
