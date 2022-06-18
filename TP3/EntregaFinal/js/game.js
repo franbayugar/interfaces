@@ -6,10 +6,10 @@ class Juego {
         this.arrayFichas1 = [];
         this.arrayFichas2 = [];
         this.mostrarTablero();
-        let pos1 = this.tablero.comienzoX - 120;
-        let pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
-        this.generarFichas(ficha1, pos1);
-        this.generarFichas(ficha2, pos2);
+        this.pos1 = this.tablero.comienzoX - 120;
+        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.generarFichas(ficha1, this.pos1);
+        this.generarFichas(ficha2, this.pos2);
 
 
 
@@ -37,11 +37,14 @@ class Juego {
 
                 ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha1.png');
 
+                return ficha;
             } else {
                 ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png');
 
+
+                return ficha;
             }
-            ficha.draw();
+  
             //   this.arrayFichas1.push(ficha);
         }
     }
