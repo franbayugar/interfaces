@@ -4,6 +4,8 @@ let canvas = /** @type { HTMLcanvasElement} */ document.getElementById("canvas")
 let ctx = canvas.getContext('2d');
 let width = canvas.width;
 let height = canvas.height;
+let fichas = [];
+let drag = false;
 
 
 
@@ -28,13 +30,33 @@ function cargarJuego() {
     let juego = new Juego(tablero, 'ficha1', 'ficha2');
 
 
+    for (let i = 0; i < 10; i++) {
+        juego.generarFichas('ficha1', juego.getpos1());
+        fichas.push('ficha1');
+
+        juego.generarFichas('ficha2', juego.getpos2());
+        fichas.push('ficha2');
+
+
+
+    }
+
+    console.table(fichas);
 }
+
+
 canvas.addEventListener('mousedown', (evt) => {
     var mousePos = oMousePos(canvas, evt);
 
-    if (ctx.isPointInPath(mousePos.x, mousePos.y)) {
+    for (let i = 0; i < fichas.length; i++) {
+        if (fichas[i].isClickedCirculo(mousePos)) {
 
-        ctx.clearRect(0, 0, width, height);
 
+
+            ctx.clearRect(0, 0, width, height);
+
+        }
     }
+
+
 })

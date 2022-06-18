@@ -16,24 +16,34 @@ class Juego {
 
     }
 
+    getpos1() {
+        return this.pos1;
+    }
+
+    getpos2() {
+        return this.pos2;
+    }
+
+
 
     mostrarTablero() {
         this.tablero.crearTablero();
     }
 
     generarFichas(ficha, pos) {
-        // for (let i = 0; i < 10; i++) {
-        let radius = 45;
-        if (pos == this.tablero.comienzoX - 120) {
+        for (let i = 0; i < 10; i++) {
+            let radius = 45;
+            if (pos == this.tablero.comienzoX - 120) {
 
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha1.png');
-            console.log(ficha);
-        } else {
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png');
+                ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha1.png');
+
+            } else {
+                ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png');
+
+            }
+            ficha.draw();
+            //   this.arrayFichas1.push(ficha);
         }
-        ficha.draw(canvas.width);
-        //   this.arrayFichas1.push(ficha);
-        //  }
     }
 
 
