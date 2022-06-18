@@ -17,12 +17,12 @@ class Tablero {
 
     crearTablero() {
         let tablero = this;
-        this.image.onload =() => {
+        this.image.onload = () => {
             tablero.draw();
         };
     }
 
-    generarMatriz() {  
+    generarMatriz() {
         let matriz = [this.alto];
         for (let i = 0; i < this.alto; i++) {
             matriz[i] = [];
@@ -33,7 +33,7 @@ class Tablero {
         return matriz;
     }
 
-    generarArregloColumnas() { 
+    generarArregloColumnas() {
         let arregloColumnas = [];
         arregloColumnas[0] = this.comienzoX + this.ladoImagen;
         for (let i = 1; i < this.ancho; i++) {
@@ -42,7 +42,7 @@ class Tablero {
         return arregloColumnas;
     }
 
-    draw() { 
+    draw() {
         let imagenTablero = this.ctx.createPattern(this.image, "repeat");
         this.ctx.fillStyle = imagenTablero;
         this.ctx.fillRect(this.comienzoX, this.comienzoY, (this.image.width * this.ancho), (this.image.height * this.alto));

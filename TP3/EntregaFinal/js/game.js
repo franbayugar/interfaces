@@ -5,8 +5,10 @@ class Juego {
         this.arrayFichas1 = [];
         this.arrayFichas2 = [];
         this.mostrarTablero();
-        this.generarFichas(ficha1, 10);
-        this.generarFichas(ficha2, 900);
+        //ficha1.posx1 = this.tablero.comienzoX - 50;
+        //  posx2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 150;
+        this.generarFichas(ficha1, this.tablero.comienzoX - 120);
+        this.generarFichas(ficha2, this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30);
 
     }
 
@@ -14,28 +16,27 @@ class Juego {
         this.tablero.crearTablero();
     }
 
-    generarFichas(ficha, pos){
-        for (let i = 0; i < 10; i++){
+    generarFichas(ficha, pos) {
+        for (let i = 0; i < 10; i++) {
             let radius = 45;
-            let ficha1;
-            if(pos == 10){
+            if (pos == this.tablero.comienzoX - 160) {
 
-                ficha1 = new Ficha(pos+radius,radius + 2*radius*i,'#ff0000',ctx, radius, 'img/ficha1.png');
-            }else{
-                ficha1 = new Ficha(pos+radius,radius + 2*radius*i,'#ff0000',ctx, radius, 'img/ficha2.png');
+                ficha = new Ficha(pos + radius, radius + 2 * radius * i, '#ff0000', ctx, radius, 'img/ficha1.png');
+            } else {
+                ficha = new Ficha(pos + radius, radius + 2 * radius * i, '#ff0000', ctx, radius, 'img/ficha2.png');
             }
-            ficha1.draw(canvas.width);
-            this.arrayFichas1.push(ficha1);
+            ficha.draw(canvas.width);
+            this.arrayFichas1.push(ficha);
         }
     }
 
-    
+
     getMousePos(canvas, evt) {
-    let ClientRect = canvas.getBoundingClientRect();
-    return {
-        x: Math.round(evt.clientX - ClientRect.left),
-        y: Math.round(evt.clientY - ClientRect.top)
-    }
+        let ClientRect = canvas.getBoundingClientRect();
+        return {
+            x: Math.round(evt.clientX - ClientRect.left),
+            y: Math.round(evt.clientY - ClientRect.top)
+        }
     }
 
 }
