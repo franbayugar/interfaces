@@ -49,6 +49,7 @@ canvas.addEventListener('mousedown', (evt) => {
     for (let i = 0; i < juego.fichas.length; i++) {
         let ficha = juego.fichas[i];
         if (ficha.isClickedCirculo(mousePos)) {
+            if(!ficha.estaUbicada()){
             arrastrar = true;
             fichaSelect = ficha;
             ficha.setPosX(mousePos.x);
@@ -56,6 +57,7 @@ canvas.addEventListener('mousedown', (evt) => {
             ctx.clearRect(0, 0, width, height);
             tablero.draw();
             juego.mostrarFichas();
+            }
         }
     }
 
@@ -80,6 +82,7 @@ canvas.addEventListener("mousemove", function(evt) {
     arrastrar = false;
     if(fichaSelect){
         juego.ubicarFicha(mousePos.x, mousePos.y, fichaSelect, ctx);
+    
     }
     fichaSelect = null;
 

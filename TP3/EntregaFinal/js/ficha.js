@@ -8,6 +8,7 @@ class Ficha {
         this.ctx = ctx;
         this.radio = radio;
         this.selected = false;
+        this.bloqueada = false;
         this.image = new Image();
         this.image.src = imagen;
         this.image.onload = () => {
@@ -39,6 +40,13 @@ class Ficha {
         this.color = color;
     }
 
+    bloquearFicha(){
+        this.bloqueada = true;
+    }
+
+    estaUbicada(){
+        return this.bloqueada;
+    }
     draw() {
         this.ctx.fillStyle = this.image;
 

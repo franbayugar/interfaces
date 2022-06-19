@@ -68,6 +68,7 @@ class Juego {
                 ctx.clearRect(0, 0, width, height);
                 this.tablero.draw();
                 this.mostrarFichas();
+                fichaSelect.bloquearFicha();
 
             }
         }
