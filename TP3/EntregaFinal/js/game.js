@@ -1,6 +1,6 @@
 "use strict";
 class Juego {
-    constructor(tablero, ficha1, ficha2) {
+    constructor(tablero) {
 
         this.tablero = tablero;
         this.fichas = [];

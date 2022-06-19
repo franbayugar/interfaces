@@ -5,9 +5,10 @@ let ctx = canvas.getContext('2d');
 let width = canvas.width;
 let height = canvas.height;
 let fichas = [];
-let drag = false;
-
-
+let fichaSelect; 
+let arrastrar = false;
+let tablero;
+let juego;
 
 function oMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
@@ -26,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function cargarJuego() {
-    let tablero = new Tablero(ctx);
-    let juego = new Juego(tablero, 'ficha1', 'ficha2');
+    tablero = new Tablero(ctx);
+    juego = new Juego(tablero, 'ficha1', 'ficha2');
 
 
     for (let i = 0; i < 10; i++) {
@@ -40,7 +41,7 @@ function cargarJuego() {
 
 
 
-
+}
 
 canvas.addEventListener('mousedown', (evt) => {
     var mousePos = oMousePos(canvas, evt);
@@ -48,18 +49,32 @@ canvas.addEventListener('mousedown', (evt) => {
     for (let i = 0; i < juego.fichas.length; i++) {
         let ficha = juego.fichas[i];
         if (ficha.isClickedCirculo(mousePos)) {
+            arrastrar = true;
+            fichaSelect = ficha;
             ficha.setPosX(mousePos.x);
             ficha.setPosY(mousePos.y);
-
-                ctx.clearRect(0, 0, width, height);
-
+            ctx.clearRect(0, 0, width, height);
             tablero.draw();
             juego.mostrarFichas();
         }
     }
 
 
-});
-}
+}, false);
 
+canvas.addEventListener("mousemove", function(evt) {
+    var mousePos = oMousePos(canvas, evt);
+
+    if (arrastrar) {
+        ctx.clearRect(0, 0, width, height);
+        fichaSelect.setPosX(mousePos.x);
+        fichaSelect.setPosY(mousePos.y);
+        tablero.draw();
+        juego.mostrarFichas();
+    }
+  }, false);
+
+  canvas.addEventListener("mouseup", function(evt) {
+    arrastrar = false;
+  }, false);
 
