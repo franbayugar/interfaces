@@ -63,7 +63,7 @@ canvas.addEventListener('mousedown', (evt) => {
 }, false);
 
 canvas.addEventListener("mousemove", function(evt) {
-    var mousePos = oMousePos(canvas, evt);
+    let mousePos = oMousePos(canvas, evt);
 
     if (arrastrar) {
         ctx.clearRect(0, 0, width, height);
@@ -75,6 +75,13 @@ canvas.addEventListener("mousemove", function(evt) {
   }, false);
 
   canvas.addEventListener("mouseup", function(evt) {
+    let mousePos = oMousePos(canvas, evt);
+
     arrastrar = false;
+    if(fichaSelect){
+        juego.ubicarFicha(mousePos.x, mousePos.y, fichaSelect, ctx);
+    }
+    fichaSelect = null;
+
   }, false);
 

@@ -42,6 +42,49 @@ class Tablero {
         return arregloColumnas;
     }
 
+    esValida(x, y) { 
+        let col = -1;
+        if (y > this.comienzoY - 100 && y < this.comienzoY) {
+            let i = 0;
+            while (i < this.ancho) {
+                if (x < this.arrCol[i]) {
+                    col = i;
+                    return col;
+                }
+                i++;
+            }
+        }
+
+        return col;
+    }
+
+    getNroCol() { /**Devuelve el ancho del tablero */
+        return this.ancho;
+    }
+
+    ingresoFicha(nroCol) { 
+        let i = this.alto - 1;
+
+        while (i >= 0) {
+            if (this.matriz[i][nroCol] == 0) {
+                this.matriz[i][nroCol] = 1;
+
+                return i;
+            }
+            i--;
+        }
+        return i;
+    }
+
+
+    caeFicha(ficha, fila, columna) { 
+        let x = this.comienzoX + fila * this.ladoImagen + this.ladoImagen / 2;
+        let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
+        ficha.setPosX(x);
+        ficha.setPosY(y);
+    }
+
+
     draw() {
         let imagenTablero = this.ctx.createPattern(this.image, "repeat");
         this.ctx.fillStyle = imagenTablero;
