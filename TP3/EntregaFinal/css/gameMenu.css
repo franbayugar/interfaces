@@ -32,6 +32,15 @@ body {
     width: 100%;
     display: block;
     z-index: 1;
+    margin-top: 2rem;
+}
+
+.connect {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .gameMen img {
@@ -133,8 +142,8 @@ label span {
     position: absolute;
     display: block;
     list-style: none;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     animation: animate 12s linear infinite;
     top: -150px;
     background-image: url("../img/ficha2.png");
@@ -211,46 +220,6 @@ label span {
 
 .circles li:nth-child(10) {
     left: 85%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-.circles li:nth-child(11) {
-    left: 5%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-.circles li:nth-child(12) {
-    left: 15%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-.circles li:nth-child(13) {
-    left: 95%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-.circles li:nth-child(14) {
-    left: 30%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-.circles li:nth-child(15) {
-    left: 45%;
     width: 90px;
     height: 90px;
     animation-delay: 0s;
