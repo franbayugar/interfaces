@@ -7,13 +7,15 @@ body {
 
 body {
     height: 100%;
-    background: linear-gradient(to bottom, blue, white);
+    background-color: linear-gradient(to bottom, #565dc2 0%, #f1f1f1 100%);
+    z-index: -5;
 }
 
 .contMenu {
     display: flex;
     flex-direction: column;
     height: 100%;
+    /*  background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);*/
 }
 
 .imgCont {
@@ -21,24 +23,85 @@ body {
     top: 4.5rem;
     margin: auto;
     margin-top: 0;
+    margin-bottom: 3rem;
+    width: 40%;
+    ;
+}
+
+.imgCont img {
+    width: 100%;
+    display: block;
+    z-index: 1;
+}
+
+.gameMen img {
+    width: 60%;
 }
 
 .gameMen {
-    width: 40%;
-    height: 30%;
-    background-color: lightgreen;
+    background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 50%;
+    height: 70%;
     margin: auto;
-    margin-top: 0;
 }
 
-canvas {
-    display: block;
-    position: absolute;
-    z-index: -3;
+.size {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+}
+
+.playBtn {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    align-items: center;
+}
+
+.playBtn button {
+    text-decoration: none;
+    color: white;
+    height: 4rem;
+    width: 80%;
+    border-radius: 1rem;
+    background-color: #FF9700;
+    border-style: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.playBtn span {
+    margin-left: 3rem;
+    font-size: 2rem;
+}
+
+.rotate-hor-center {
+    -webkit-animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+.playBtn button:hover {
+    box-shadow: #D88000 0.5rem 0.5rem 0.5rem;
+}
+
+.playBtn button:hover img {
+    -webkit-animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+#fichaBtn {
+    width: 50px;
+    background-position: 50% 50%;
 }
 
 h2 {
@@ -47,4 +110,199 @@ h2 {
 
 label span {
     font-size: 1.5rem;
+}
+
+.area {
+    width: 100%;
+    z-index: -2;
+}
+
+.circles {
+    opacity: 1;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+    top: 4.5rem;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    animation: animate 12s linear infinite;
+    top: -150px;
+    background-image: url("../img/ficha2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 2s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 2s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 2s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(11) {
+    left: 5%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(12) {
+    left: 15%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(13) {
+    left: 95%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(14) {
+    left: 30%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(15) {
+    left: 45%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        /* border-radius: 0;*/
+    }
+    100% {
+        transform: translateY(1000px) rotate(720deg);
+        opacity: 1;
+        /* border-radius: 50%;*/
+    }
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-6-19 19:20:9
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+
+/**
+ * ----------------------------------------
+ * animation rotate-hor-center
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes rotate-hor-center {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-360deg);
+        transform: rotateX(-360deg);
+    }
+}
+
+@keyframes rotate-hor-center {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-360deg);
+        transform: rotateX(-360deg);
+    }
 }
