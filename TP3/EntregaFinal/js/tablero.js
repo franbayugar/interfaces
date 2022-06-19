@@ -21,7 +21,7 @@ class Tablero {
             tablero.draw();
         };
     }
-
+    //genera matriz
     generarMatriz() {
         let matriz = [this.alto];
         for (let i = 0; i < this.alto; i++) {
