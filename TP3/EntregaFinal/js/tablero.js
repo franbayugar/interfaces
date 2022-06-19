@@ -62,12 +62,12 @@ class Tablero {
         return this.ancho;
     }
 
-    ingresoFicha(nroCol) { 
+    ingresoFicha(nroCol, ficha) { 
         let i = this.alto - 1;
 
         while (i >= 0) {
             if (this.matriz[i][nroCol] == 0) {
-                this.matriz[i][nroCol] = 1;
+                this.matriz[i][nroCol] = ficha.getJugador();
 
                 return i;
             }
@@ -82,6 +82,7 @@ class Tablero {
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
         ficha.setPosX(x);
         ficha.setPosY(y);
+        console.table(this.matriz);
     }
 
 

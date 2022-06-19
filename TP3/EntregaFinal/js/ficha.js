@@ -1,12 +1,13 @@
 "use strict";
 
 class Ficha {
-    constructor(posX, posY, color, ctx, radio, imagen) {
+    constructor(posX, posY, color, ctx, radio, imagen, numJugador) {
         this.posX = posX;
         this.posY = posY;
         this.color = color;
         this.ctx = ctx;
         this.radio = radio;
+        this.jugador = numJugador;
         this.selected = false;
         this.bloqueada = false;
         this.image = new Image();
@@ -34,6 +35,10 @@ class Ficha {
 
     getColor() {
         return this.color;
+    }
+
+    getJugador() {
+        return this.jugador;
     }
 
     setColor(color) {

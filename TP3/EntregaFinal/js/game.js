@@ -27,11 +27,11 @@ class Juego {
         let radius = 45;
         if (pos == this.tablero.comienzoX - 120) {
 
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha1.png');
+            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha1.png', 1);
 
             this.fichas.push(ficha);
         } else {
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png');
+            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png', 2);
 
 
             this.fichas.push(ficha);
@@ -62,7 +62,7 @@ class Juego {
         let columnaValida = 0;
         columnaValida = this.tablero.esValida(x, y);
         if (columnaValida > -1 && columnaValida < this.tablero.getNroCol()) {
-            let filaValida = this.tablero.ingresoFicha(columnaValida);
+            let filaValida = this.tablero.ingresoFicha(columnaValida, fichaSelect);
             if (filaValida > -1) {
                 this.tablero.caeFicha(fichaSelect, columnaValida, filaValida);
                 ctx.clearRect(0, 0, width, height);
