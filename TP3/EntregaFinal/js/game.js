@@ -69,9 +69,10 @@ class Juego {
                 this.tablero.draw();
                 this.mostrarFichas();
                 if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, 4)) {;
-                    console.log("gano");
-                } else {
-                    console.log("todavia no");
+                    this.fichas.forEach(ficha => {
+                        ficha.bloquearFicha();
+                    })
+                    alert("Ganó el jugador " + fichaSelect.getJugador());
                 }
 
             }

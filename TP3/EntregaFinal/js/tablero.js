@@ -83,6 +83,7 @@ class Tablero {
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
         ficha.setPosX(x);
         ficha.setPosY(y);
+        ficha.bloquearFicha();
         console.table(this.matriz);
     }
 
