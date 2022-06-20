@@ -9,6 +9,7 @@ class Juego {
         this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
     }
 
+
     getpos1() {
         return this.pos1;
     }
@@ -73,7 +74,7 @@ class Juego {
                     this.fichas.forEach(ficha => {
                         ficha.bloquearFicha();
                     })
-                    alert("Ganó el jugador " + fichaSelect.getJugador());
+                    ganador.innerHTML = `El ganador es ${fichaSelect.getJugador()}`;
                 }
 
             }

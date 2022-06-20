@@ -84,6 +84,13 @@ class Tablero {
         ficha.setPosX(x);
         ficha.setPosY(y);
         ficha.bloquearFicha();
+        juego.fichas.forEach(ficha => {
+            if (ficha.getJugador() == fichaSelect.getJugador()) {
+                ficha.bloquearFicha();
+            } else {
+                ficha.desbloquearFicha();
+            }
+        });
         console.table(this.matriz);
     }
 

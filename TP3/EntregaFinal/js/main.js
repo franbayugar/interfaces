@@ -83,13 +83,7 @@ canvas.addEventListener("mouseup", function(evt) {
     arrastrar = false;
     if (fichaSelect) {
         juego.ubicarFicha(mousePos.x, mousePos.y, fichaSelect, ctx);
-        juego.fichas.forEach(ficha => {
-            if (ficha.getJugador() == fichaSelect.getJugador()) {
-                ficha.bloquearFicha();
-            } else {
-                ficha.desbloquearFicha();
-            }
-        });
+
     }
     fichaSelect = null;
 
