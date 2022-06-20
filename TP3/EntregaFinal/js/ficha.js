@@ -45,11 +45,15 @@ class Ficha {
         this.color = color;
     }
 
-    bloquearFicha(){
+    bloquearFicha() {
         this.bloqueada = true;
     }
 
-    estaUbicada(){
+    desbloquearFicha() {
+        this.bloqueada = false;
+    }
+
+    estaUbicada() {
         return this.bloqueada;
     }
     draw() {

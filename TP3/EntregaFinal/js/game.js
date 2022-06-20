@@ -32,6 +32,7 @@ class Juego {
             this.fichas.push(ficha);
         } else {
             ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png', 2);
+            ficha.bloquearFicha();
 
 
             this.fichas.push(ficha);
