@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cargarJuego(jugabilidad) {
     tablero = new Tablero(ctx, jugabilidad);
-    juego = new Juego(tablero, 'ficha1', 'ficha2', jugabilidad);
+    juego = new Juego(tablero, jugabilidad);
 
 
     for (let i = 0; i < 10; i++) {
