@@ -144,6 +144,7 @@ class Juego {
         while (contador < 4 && columna < this.tablero.ancho && arrHilera[columna] == fichaSelect.getJugador()) {
             columna++;
             contador++;
+
         }
 
         return contador;
@@ -153,7 +154,7 @@ class Juego {
         let contador = 0;
 
         while (contador < 4 && columna >= 0 && arrHilera[columna] == fichaSelect.getJugador()) {
-            columna++;
+            columna--;
             contador++;
         }
 
