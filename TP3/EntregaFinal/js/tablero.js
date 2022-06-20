@@ -16,12 +16,12 @@ class Tablero {
     }
 
     crearTablero() {
-        let tablero = this;
-        this.image.onload = () => {
-            tablero.draw();
-        };
-    }
-    //genera matriz
+            let tablero = this;
+            this.image.onload = () => {
+                tablero.draw();
+            };
+        }
+        //genera matriz
     generarMatriz() {
         let matriz = [this.alto];
         for (let i = 0; i < this.alto; i++) {
@@ -42,7 +42,7 @@ class Tablero {
         return arregloColumnas;
     }
 
-    esValida(x, y) { 
+    esValida(x, y) {
         let col = -1;
         if (y > this.comienzoY - 100 && y < this.comienzoY) {
             let i = 0;
@@ -62,7 +62,7 @@ class Tablero {
         return this.ancho;
     }
 
-    ingresoFicha(nroCol, ficha) { 
+    ingresoFicha(nroCol, ficha) {
         let i = this.alto - 1;
 
         while (i >= 0) {
@@ -77,7 +77,7 @@ class Tablero {
     }
 
 
-    caeFicha(ficha, fila, columna) { 
+    caeFicha(ficha, fila, columna) {
         let x = this.comienzoX + fila * this.ladoImagen + this.ladoImagen / 2;
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
         ficha.setPosX(x);
