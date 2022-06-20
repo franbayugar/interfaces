@@ -68,11 +68,147 @@ class Juego {
                 ctx.clearRect(0, 0, width, height);
                 this.tablero.draw();
                 this.mostrarFichas();
-                fichaSelect.bloquearFicha();
+                if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, 4)) {;
+                    console.log("gano");
+                } else {
+                    console.log("todavia no");
+                }
 
             }
         }
     }
+
+    //chequear si alguien alineo la cantidad necesaria para ganar
+
+    alguienGana(matriz, fila, columna, fichaSelect, cantFichas) {
+        let gana = false;
+        let enLinea = 0;
+
+        if (matriz.length - fila >= cantFichas) { // solo busca hacia abajo si hay la cantidad de filas necesarias en esa direccion
+            enLinea = this.abajo(matriz, fila, columna, fichaSelect, cantFichas);
+        }
+        if (enLinea >= cantFichas) {
+            gana = true;
+        } else {
+            enLinea = this.derecha(matriz[fila], columna, fichaSelect, cantFichas);
+            if (enLinea >= cantFichas) {
+                gana = true;
+            } else { //si no llego a la cantidad en esa direccion, busca en la direccion opuesta a partir de la posicion original,y suma los elementos
+                enLinea += this.izquierda(matriz[fila], columna, fichaSelect, cantFichas) - 1;
+            }
+        }
+        if (enLinea >= cantFichas) {
+            gana = true;
+        } else {
+            enLinea = this.derechaAbajo(matriz, fila, columna, fichaSelect, cantFichas);
+            if (enLinea >= cantFichas) {
+                gana = true;
+            } else {
+                enLinea += this.izquierdaArriba(matriz, fila, columna, fichaSelect, cantFichas) - 1;
+            }
+        }
+        if (enLinea >= cantFichas) {
+            gana = true;
+
+        } else {
+            enLinea = this.derechaArriba(matriz, fila, columna, fichaSelect, cantFichas);
+            if (enLinea >= cantFichas) {
+                gana = true;
+            } else {
+                enLinea += this.izquierdaAbajo(matriz, fila, columna, fichaSelect, cantFichas) - 1;
+            }
+        }
+        if (enLinea >= cantFichas) {
+            gana = true;
+        }
+        return gana;
+
+    }
+
+    //Recorridos para chequear cantidad fichas alineadas
+    abajo(matriz, fila, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && matriz[fila][columna] == fichaSelect.getJugador()) {
+            fila++;
+            contador++;
+        }
+
+        return contador;
+    }
+
+    derecha(arrHilera, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && columna < this.tablero.ancho && arrHilera[columna] == fichaSelect.getJugador()) {
+            columna++;
+            contador++;
+        }
+
+        return contador;
+    }
+
+    izquierda(arrHilera, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && columna >= 0 && arrHilera[columna] == fichaSelect.getJugador()) {
+            columna++;
+            contador++;
+        }
+
+        return contador;
+    }
+    derechaArriba(matriz, fila, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && fila < this.tablero.alto && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
+            fila++;
+            columna++;
+
+            contador++;
+        }
+        return contador;
+    }
+
+    derechaAbajo(matriz, fila, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && fila >= 0 && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
+            fila--;
+            columna++;
+
+            contador++;
+        }
+        return contador;
+    }
+
+    izquierdaArriba(matriz, fila, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && fila >= 0 && columna >= 0 && matriz[fila][columna] == fichaSelect.getJugador()) {
+            fila--;
+            columna--;
+
+            contador++;
+        }
+        return contador;
+    }
+
+    izquierdaAbajo(matriz, fila, columna, fichaSelect) {
+        let contador = 0;
+
+        while (contador < 4 && fila < this.tablero.alto && columna >= 0 && matriz[fila][columna] == fichaSelect.getJugador()) {
+            fila++;
+            columna--;
+
+            contador++;
+        }
+        console.log(contador);
+        return contador;
+    }
+
+
+
 
 
 }

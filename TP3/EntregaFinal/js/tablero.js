@@ -2,7 +2,7 @@
 
 class Tablero {
     constructor(ctx) {
-        this.alto = 5;
+        this.alto = 5; // document.querySelector(("input[name=boardSize]:checked").value);
         this.ancho = 5;
         this.comienzoX = 200;
         this.comienzoY = 200;
@@ -14,6 +14,7 @@ class Tablero {
         this.arrCol = this.generarArregloColumnas();
 
     }
+
 
     crearTablero() {
             let tablero = this;
