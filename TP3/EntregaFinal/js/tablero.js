@@ -81,12 +81,27 @@ class Tablero {
     caeFicha(ficha, fila, columna) {
         let x = this.comienzoX + fila * this.ladoImagen + this.ladoImagen / 2;
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
+        let player1 = document.querySelector("#player1");
+        let player2 = document.querySelector("#player2");
         ficha.setPosX(x);
         ficha.setPosY(y);
         ficha.bloquearFicha();
         juego.fichas.forEach(ficha => {
             if (ficha.getJugador() == fichaSelect.getJugador()) {
                 ficha.bloquearFicha();
+                if (fichaSelect.getJugador() == 1) {
+                    player1.classList.remove("visible");
+                    player1.classList.add("invisible");
+                    player2.classList.remove("invisible");
+                    player2.classList.add("visible");
+                } else {
+                    player2.classList.remove("visible");
+                    player2.classList.add("invisible");
+                    player1.classList.remove("invisible");
+                    player1.classList.add("visible");
+
+                }
+
             } else {
                 ficha.desbloquearFicha();
             }

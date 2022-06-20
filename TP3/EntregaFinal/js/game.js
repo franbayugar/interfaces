@@ -74,7 +74,8 @@ class Juego {
                     this.fichas.forEach(ficha => {
                         ficha.bloquearFicha();
                     })
-                    ganador.innerHTML = `El ganador es ${fichaSelect.getJugador()}`;
+                    let ganador = document.querySelector("#theWinnerIs");
+                    ganador.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
                 }
 
             }

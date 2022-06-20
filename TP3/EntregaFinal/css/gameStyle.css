@@ -8,3 +8,20 @@ canvas {
     display: block;
     margin: 0 auto;
 }
+
+.gameInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+#theWinnerIs {
+    margin: 1rem auto;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
