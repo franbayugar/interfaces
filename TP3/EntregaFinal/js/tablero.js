@@ -2,8 +2,8 @@
 
 class Tablero {
     constructor(ctx, cantidad) {
-        this.alto = 2+cantidad; // document.querySelector(("input[name=boardSize]:checked").value);
-        this.ancho = 2+cantidad;
+        this.alto = 2 + cantidad;
+        this.ancho = 2 + cantidad;
         this.comienzoX = 200;
         this.comienzoY = 200;
         this.ladoImagen = 100;

@@ -1,7 +1,9 @@
 .juego {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);
 }
 
 canvas {
@@ -12,12 +14,34 @@ canvas {
 .gameInfo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
 }
 
 #theWinnerIs {
     margin: 1rem auto;
+}
+
+.turno {
+    display: flex;
+    justify-content: center;
+    color: white;
+    height: 4rem;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: 1.5rem;
+}
+
+.turno h2 {
+    margin: 0;
+}
+
+#player1 {
+    background-color: #00000090;
+}
+
+#player2 {
+    background-color: #e6222290;
 }
 
 .exit {

@@ -46,6 +46,7 @@
         </div>
 
     </div>
+
     <div class="area ">
         <ul class="circles ">
             <li></li>
@@ -60,7 +61,7 @@
             <li></li>
         </ul>
     </div>
-    <div class="area ">
+    <div class="area1">
         <ul class="circles ">
             <li></li>
             <li></li>
@@ -79,34 +80,37 @@
             <li></li>
         </ul>
     </div>
+
+
 
 
     <div id="contenedor_juego" class="juego inactive">
         <!-- ACA IRIA JUGABILIDAD-->
         <div class="gameInfo">
-            <div class="turno">
-                <h2 id="player1">Turno jugador 1</h2>
+            <div class="turno" id="player1">
+                <h2>Turno jugador 1</h2>
             </div>
 
-            <div class="winner">
-                <h2 id="theWinnerIs"></h2>
+            <div id="theWinnerIs" class="inactive">
+                <h2 id="quienGano"></h2>
             </div>
 
-            <div>
-                <h2>Tiempo restante:</h2>
+            <div id="tmp">
+                <h2>Tiempo restante</h2>
                 <h2 id="cronometro"></h2>
             </div>
-            <div class="turno">
-                <h2 id="player2" class="invisible">Turno jugador 2</h2>
+            <div class="turno invisible" id="player2">
+                <h2>Turno jugador 2</h2>
             </div>
         </div>
         <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
-    </div>
-    <section class="invisible" id="tablero">
-        <!-- ACA IRIA EL TABLERO DEL JUEGO-->
-        <canvas id="canvas" class="canvas" width="1000" height="1000"></canvas>
 
-    </section>
+        <section class="invisible" id="tablero">
+            <!-- ACA IRIA EL TABLERO DEL JUEGO-->
+            <canvas id="canvas" class="canvas" width="1000" height="1000"></canvas>
+
+        </section>
+    </div>
 
     <script src="js/cronometro.js"></script>
 
