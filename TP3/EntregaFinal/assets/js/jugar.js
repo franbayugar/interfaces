@@ -42,6 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+/*let contenedor_menu = document.getElementById('init_juego');
+let contenedor_juego = document.getElementById('contenedor_juego');
+let areas = document.querySelectorAll('.area');
+let tablero_cont = document.getElementById('tablero');
+let salir = document.getElementById('btn_exit');
+salir.addEventListener('click', () => {
+    contenedor_menu.classList.remove('inactive')
+    contenedor_menu.classList.add('active');
+    contenedor_juego.classList.remove('active');
+    contenedor_juego.classList.add('inactive');
+    for (let area of areas) {
+        area.classList.remove('inactive');
+    }
+    tablero_cont.classList.add('invisible');
+
+
+})*/
+
 function cargarJuego(jugabilidad) {
     tablero = new Tablero(ctx, jugabilidad);
     juego = new Juego(tablero, jugabilidad);

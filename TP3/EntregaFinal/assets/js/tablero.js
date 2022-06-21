@@ -5,18 +5,17 @@ class Tablero {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
         console.log(cantidad)
-        if (cantidad == 4 ) {
+        if (cantidad == 4) {
             this.comienzoX = 300;
-        } 
-        else{
+        } else {
             this.comienzoX = 200
         }
-       
+
         this.comienzoY = 100;
         this.ladoImagen = 100;
         this.ctx = ctx;
         this.image = new Image();
-        this.image.src = "img/tablero_forma.png";
+        this.image.src = "assets/images/tablero_forma.png";
         this.matriz = this.generarMatriz();
         this.arrCol = this.generarArregloColumnas();
 

@@ -11,6 +11,25 @@ canvas {
     margin: 0 auto;
 }
 
+.options {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.options a {
+    text-decoration: none;
+    color: white;
+    height: 3rem;
+    width: 10%;
+    border-radius: 1rem;
+    background-color: #FF9700;
+    border-style: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 .gameInfo {
     display: flex;
     flex-direction: row;
@@ -25,7 +44,6 @@ canvas {
 .turno {
     display: flex;
     justify-content: center;
-    color: white;
     height: 4rem;
     align-items: center;
     padding: 0 1rem;
@@ -37,11 +55,19 @@ canvas {
 }
 
 #player1 {
-    background-color: #00000090;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 3rem;
 }
 
 #player2 {
-    background-color: #e6222290;
+    border-style: solid;
+    border-color: #e62222;
+    border-radius: 3rem;
+}
+
+.turno img {
+    width: 50px;
 }
 
 .exit {

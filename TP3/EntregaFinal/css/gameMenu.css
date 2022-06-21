@@ -165,7 +165,7 @@ label span {
     height: 90px;
     animation: animate 20s linear infinite;
     top: -150px;
-    background-image: url('../img/ficha2.png');
+    background-image: url('../assets/images/ficha2.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -270,7 +270,7 @@ label span {
     height: 90px;
     animation: animate 10s linear infinite;
     top: -150px;
-    background-image: url('../img/ficha1.png');
+    background-image: url('../assets/images/ficha1.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }

@@ -31,11 +31,11 @@ class Juego {
         let radius = 45;
         if (pos == this.tablero.comienzoX - 120) {
 
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha1.png', 1);
+            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha1.png', 1);
 
             this.fichas.push(ficha);
         } else {
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'img/ficha2.png', 2);
+            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha2.png', 2);
             ficha.bloquearFicha();
 
 
@@ -225,7 +225,7 @@ class Juego {
         this.fichas.forEach(ficha => {
             ficha.bloquearFicha();
         })
-        let turnos = document.querySelectorAll("turno"); //no anda
+        let turnos = document.querySelectorAll('turno'); //no anda
         turnos.forEach(turno => {
             turno.classList.remove("visible");
             turno.classList.add("invisible");
@@ -234,7 +234,7 @@ class Juego {
         tiempo.classList.add("inactive");
         let ganador = document.querySelector("#theWinnerIs");
         let gano = document.querySelector("#quienGano");
-        gano.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
+        gano.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
         ganador.classList.remove("inactive");
         ganador.classList.add("active");
         clearInterval(this.espera);
