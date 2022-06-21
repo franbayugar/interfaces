@@ -12,10 +12,23 @@ canvas {
 .gameInfo {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 #theWinnerIs {
     margin: 1rem auto;
+}
+
+.exit {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.exit a {
+    text-decoration: none;
 }
 
 .visible {
