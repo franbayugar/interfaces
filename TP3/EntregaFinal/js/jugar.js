@@ -9,9 +9,7 @@ let fichaSelect;
 let arrastrar = false;
 let tablero;
 let juego;
-let espera;
-let cronometro;
-let cronometro_contenedor = document.getElementById('cronometro');
+
 
 function oMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
@@ -56,7 +54,7 @@ function cargarJuego(jugabilidad) {
 
     }
     juego.mostrarFichas();
-    timer();
+    juego.timer();
 
 
 
@@ -107,24 +105,3 @@ canvas.addEventListener("mouseup", function(evt) {
     fichaSelect = null;
 
 }, false);
-
-function timer() {
-    cronometro = new Cronometro();
-    cronometro_contenedor.innerHTML = cronometro.getTiempo();
-    espera = setInterval(() => {
-        cronometro.descontar();
-        let tiempo = cronometro.getTiempo();
-        if (tiempo == "0:00") {
-            clearInterval(espera);
-            tiempoFinal();
-        } 
-        cronometro_contenedor.innerHTML = tiempo;
-    }, 1000);
-}
-
-function tiempoFinal() {
-    let contGanador = document.querySelector("#theWinnerIs");
-
-    contGanador.innerHTML = "¡Se terminó el tiempo!";
-    juego.terminarJuego();
-}

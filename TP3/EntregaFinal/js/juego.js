@@ -8,6 +8,8 @@ class Juego {
         this.limite = fichasAGanar;
         this.pos1 = this.tablero.comienzoX - 120;
         this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.espera;
+        this.cronometro;
     }
 
 
@@ -75,6 +77,8 @@ class Juego {
                     this.terminar();
                     let ganador = document.querySelector("#theWinnerIs");
                     ganador.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
+                    clearInterval(this.espera);
+
                 }
 
             }
@@ -219,6 +223,28 @@ class Juego {
     }
 
 
+    timer() {
+        let cronometro_contenedor = document.getElementById('cronometro');
+
+        this.cronometro = new Cronometro();
+        cronometro_contenedor.innerHTML = this.cronometro.getTiempo();
+        this.espera = setInterval(() => {
+            this.cronometro.descontar();
+            let tiempo = this.cronometro.getTiempo();
+            if (tiempo == "0:00") {
+                clearInterval(espera);
+                tiempoFinal();
+            } 
+            cronometro_contenedor.innerHTML = tiempo;
+        }, 1000);
+    }
+    
+    tiempoFinal() {
+        let contGanador = document.querySelector("#theWinnerIs");
+    
+        contGanador.innerHTML = "¡Se terminó el tiempo!";
+        juego.terminarJuego();
+    }
 
 
 
