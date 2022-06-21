@@ -72,9 +72,7 @@ class Juego {
                 this.tablero.draw();
                 this.mostrarFichas();
                 if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {;
-                    this.fichas.forEach(ficha => {
-                        ficha.bloquearFicha();
-                    })
+                    this.terminar();
                     let ganador = document.querySelector("#theWinnerIs");
                     ganador.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
                 }
@@ -211,6 +209,13 @@ class Juego {
         }
         console.log(contador);
         return contador;
+    }
+
+    terminar(){
+        this.fichas.forEach(ficha => {
+            ficha.bloquearFicha();
+        })
+
     }
 
 
