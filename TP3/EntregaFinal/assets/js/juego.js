@@ -1,12 +1,15 @@
 "use strict";
 class Juego {
-    constructor(tablero) {
+    constructor(tablero, fichasAGanar) {
 
         this.tablero = tablero;
         this.fichas = [];
         this.mostrarTablero();
+        this.limite = fichasAGanar;
         this.pos1 = this.tablero.comienzoX - 120;
         this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.espera;
+        this.cronometro;
     }
 
 
@@ -70,12 +73,18 @@ class Juego {
                 ctx.clearRect(0, 0, width, height);
                 this.tablero.draw();
                 this.mostrarFichas();
-                if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, 4)) {;
-                    this.fichas.forEach(ficha => {
-                        ficha.bloquearFicha();
-                    })
-                    let ganador = document.querySelector("#theWinnerIs");
-                    ganador.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
+                if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {;
+                    this.terminar();
+                    /*  let tiempo = document.querySelector("#tmp");
+                      tiempo.classList.add("inactive");
+                      let ganador = document.querySelector("#theWinnerIs");
+                      let gano = document.querySelector("#quienGano");
+                      gano.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
+
+                      ganador.classList.remove("inactive");
+                      ganador.classList.add("active");*/
+                    clearInterval(this.espera);
+
                 }
 
             }
@@ -133,7 +142,7 @@ class Juego {
     abajo(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && matriz[fila][columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && matriz[fila][columna] == fichaSelect.getJugador()) {
             fila++;
             contador++;
         }
@@ -144,7 +153,7 @@ class Juego {
     derecha(arrHilera, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && columna < this.tablero.ancho && arrHilera[columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && columna < this.tablero.ancho && arrHilera[columna] == fichaSelect.getJugador()) {
             columna++;
             contador++;
 
@@ -156,7 +165,7 @@ class Juego {
     izquierda(arrHilera, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && columna >= 0 && arrHilera[columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && columna >= 0 && arrHilera[columna] == fichaSelect.getJugador()) {
             columna--;
             contador++;
         }
@@ -166,7 +175,7 @@ class Juego {
     derechaArriba(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && fila < this.tablero.alto && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && fila < this.tablero.alto && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
             fila++;
             columna++;
 
@@ -178,7 +187,7 @@ class Juego {
     derechaAbajo(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && fila >= 0 && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && fila >= 0 && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
             fila--;
             columna++;
 
@@ -190,7 +199,7 @@ class Juego {
     izquierdaArriba(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && fila >= 0 && columna >= 0 && matriz[fila][columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && fila >= 0 && columna >= 0 && matriz[fila][columna] == fichaSelect.getJugador()) {
             fila--;
             columna--;
 
@@ -202,7 +211,7 @@ class Juego {
     izquierdaAbajo(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < 4 && fila < this.tablero.alto && columna >= 0 && matriz[fila][columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && fila < this.tablero.alto && columna >= 0 && matriz[fila][columna] == fichaSelect.getJugador()) {
             fila++;
             columna--;
 
@@ -212,7 +221,49 @@ class Juego {
         return contador;
     }
 
+    terminar() {
+        this.fichas.forEach(ficha => {
+            ficha.bloquearFicha();
+        })
+        let turnos = document.querySelectorAll("turno"); //no anda
+        turnos.forEach(turno => {
+            turno.classList.remove("visible");
+            turno.classList.add("invisible");
+        })
+        let tiempo = document.querySelector("#tmp");
+        tiempo.classList.add("inactive");
+        let ganador = document.querySelector("#theWinnerIs");
+        let gano = document.querySelector("#quienGano");
+        gano.innerHTML = `El ganador es el jugador número ${fichaSelect.getJugador()}`;
+        ganador.classList.remove("inactive");
+        ganador.classList.add("active");
+        clearInterval(this.espera);
 
+    }
+
+
+    timer() {
+        let cronometro_contenedor = document.getElementById('cronometro');
+
+        this.cronometro = new Cronometro();
+        cronometro_contenedor.innerHTML = this.cronometro.getTiempo();
+        this.espera = setInterval(() => {
+            this.cronometro.descontar();
+            let tiempo = this.cronometro.getTiempo();
+            if (tiempo == "0:00") {
+                clearInterval(espera);
+                tiempoFinal();
+            }
+            cronometro_contenedor.innerHTML = tiempo;
+        }, 1000);
+    }
+
+    tiempoFinal() {
+        let contGanador = document.querySelector("#theWinnerIs");
+
+        contGanador.innerHTML = "¡Se terminó el tiempo!";
+        juego.terminarJuego();
+    }
 
 
 

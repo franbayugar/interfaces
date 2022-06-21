@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/gameMenu.css">
+
+    <link rel="stylesheet" href="css/gameStyle.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="contMenu">
+    <div id="init_juego" class="contMenu">
 
 
 
@@ -44,6 +46,7 @@
         </div>
 
     </div>
+
     <div class="area ">
         <ul class="circles ">
             <li></li>
@@ -58,7 +61,7 @@
             <li></li>
         </ul>
     </div>
-    <div class="area ">
+    <div class="area1">
         <ul class="circles ">
             <li></li>
             <li></li>
@@ -77,10 +80,45 @@
             <li></li>
         </ul>
     </div>
-    <script src="assets/js/main.js"></script>
+
+
+
+
+    <div id="contenedor_juego" class="juego inactive">
+        <!-- ACA IRIA JUGABILIDAD-->
+        <div class="gameInfo">
+            <div class="turno" id="player1">
+                <h2>Turno jugador 1</h2>
+            </div>
+
+            <div id="theWinnerIs" class="inactive">
+                <h2 id="quienGano"></h2>
+            </div>
+
+            <div id="tmp">
+                <h2>Tiempo restante</h2>
+                <h2 id="cronometro"></h2>
+            </div>
+            <div class="turno invisible" id="player2">
+                <h2>Turno jugador 2</h2>
+            </div>
+        </div>
+        <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
+
+        <section class="invisible" id="tablero">
+            <!-- ACA IRIA EL TABLERO DEL JUEGO-->
+            <canvas id="canvas" class="canvas" width="1000" height="1000"></canvas>
+
+        </section>
+    </div>
+
+    <script src="assets/js/cronometro.js"></script>
+
+    <script src="assets/js/jugar.js"></script>
     <script src="assets/js/tablero.js"></script>
     <script src="assets/js/ficha.js"></script>
-    <script src="assets/js/game.js"></script>
+    <script src="assets/js/juego.js"></script>
+
 </body>
 
 </html>

@@ -10,6 +10,7 @@ let arrastrar = false;
 let tablero;
 let juego;
 
+
 function oMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return { // devuelve un objeto
@@ -21,14 +22,29 @@ function oMousePos(canvas, evt) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    cargarJuego();
+    let btnPlay = document.getElementById('btn_play');
+    let contenedor_menu = document.getElementById('init_juego');
+    let contenedor_juego = document.getElementById('contenedor_juego');
+    let areas = document.querySelectorAll('.area');
+    let tablero_cont = document.getElementById('tablero');
+    btnPlay.addEventListener('click', () => {
+        contenedor_menu.classList.add('inactive');
+        contenedor_juego.classList.remove('inactive');
+        let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
+        for (let area of areas) {
+            area.classList.add('inactive');
+        }
+        tablero_cont.classList.remove('invisible');
+        cargarJuego(Number(jugabilidad));
+    });
+
 
 });
 
 
-function cargarJuego() {
-    tablero = new Tablero(ctx);
-    juego = new Juego(tablero, 'ficha1', 'ficha2');
+function cargarJuego(jugabilidad) {
+    tablero = new Tablero(ctx, jugabilidad);
+    juego = new Juego(tablero, jugabilidad);
 
 
     for (let i = 0; i < 10; i++) {
@@ -38,6 +54,7 @@ function cargarJuego() {
 
     }
     juego.mostrarFichas();
+    juego.timer();
 
 
 
