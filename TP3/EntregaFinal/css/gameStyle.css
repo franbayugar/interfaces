@@ -13,6 +13,7 @@ canvas {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 #theWinnerIs {
@@ -32,12 +33,17 @@ canvas {
 }
 
 .visible {
-    display: block;
+    visibility: visible;
 }
 
 .invisible {
+    visibility: hidden;
+}
+
+.inactive {
     display: none;
 }
 
-
-
+.active {
+    display: block;
+}
