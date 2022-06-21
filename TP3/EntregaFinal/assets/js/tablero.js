@@ -4,8 +4,15 @@ class Tablero {
     constructor(ctx, cantidad) {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
-        this.comienzoX = 200;
-        this.comienzoY = 200;
+        console.log(cantidad)
+        if (cantidad == 4 ) {
+            this.comienzoX = 300;
+        } 
+        else{
+            this.comienzoX = 200
+        }
+       
+        this.comienzoY = 100;
         this.ladoImagen = 100;
         this.ctx = ctx;
         this.image = new Image();
