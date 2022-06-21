@@ -251,7 +251,7 @@ class Juego {
             this.cronometro.descontar();
             let tiempo = this.cronometro.getTiempo();
             if (tiempo == "0:00") {
-                clearInterval(espera);
+                clearInterval(this.espera);
                 tiempoFinal();
             }
             cronometro_contenedor.innerHTML = tiempo;
