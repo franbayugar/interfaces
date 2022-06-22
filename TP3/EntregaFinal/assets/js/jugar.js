@@ -91,7 +91,7 @@ canvas.addEventListener('mousedown', (evt) => {
     //obtenemos la posicion
     var mousePos = oMousePos(canvas, evt);
     //recorremos todas las fichas para ver cual esta clickeada
-    for (let i = 0; i < juego.fichas.length; i++) {
+    for (let i = juego.fichas.length-1; i >=0; i--) {
         let ficha = juego.fichas[i];
         //si se hizo click en la ficha y no esta ubicada se genera el arrastre
         if (ficha.isClickedCirculo(mousePos)) {
@@ -104,7 +104,6 @@ canvas.addEventListener('mousedown', (evt) => {
                 tablero.draw();
                 juego.mostrarFichas();
                 break;
-
             }
         }
     }
