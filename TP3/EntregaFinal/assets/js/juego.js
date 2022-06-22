@@ -4,9 +4,11 @@ class Juego {
 
         this.tablero = tablero;
         this.fichas = [];
+        this.contadorFichasUbicadas = 0;
         //mostramos el tablero
         this.mostrarTablero();
         this.limite = fichasAGanar;
+        this.ganador = null;
         //establecemos pos1 y pos2 para las fichas
         this.pos1 = this.tablero.comienzoX - 120;
         this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
@@ -82,11 +84,18 @@ class Juego {
                 ctx.clearRect(0, 0, width, height);
                 this.tablero.draw();
                 this.mostrarFichas();
+                this.contadorFichasUbicadas++;
                 //se comprueba si hay ganador
-                if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {;
+                if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {
+                    this.ganador = fichaSelect.getJugador();
                     this.terminar();
                     clearInterval(this.espera);
 
+                }
+                //pregunta si no hay mas fichas que ubicar y termina el juego
+                if(this.noHayMasFichas()){
+                    this.terminar();
+                    clearInterval(this.espera);
                 }
 
             }else{
@@ -153,7 +162,9 @@ class Juego {
         return gana;
 
     }
-
+    noHayMasFichas(){
+        return this.fichas.length == this.contadorFichasUbicadas;
+    }
     //Recorridos para chequear cantidad fichas alineadas
     abajo(matriz, fila, columna, fichaSelect) {
         let contador = 0;
@@ -248,15 +259,22 @@ class Juego {
         turnos.forEach(turno => {
             turno.classList.remove("visible");
             turno.classList.add("invisible");
-        })
-        //se muestra quien gano
+        });
         let tiempo = document.querySelector("#tmp");
         tiempo.classList.add("inactive");
+        let contenedor = document.querySelector("#quienGano");
         let ganador = document.querySelector("#theWinnerIs");
-        let gano = document.querySelector("#quienGano");
-        gano.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
         ganador.classList.remove("inactive");
         ganador.classList.add("active");
+        //se muestra quien gano
+        if(this.ganador){
+       
+        contenedor.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
+
+        }else{
+            
+        contenedor.innerHTML = "No hay mas fichas. ¡Empataron!";
+        }
         //se corta el timer
         clearInterval(this.espera);
 
