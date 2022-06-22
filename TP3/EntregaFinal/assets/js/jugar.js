@@ -67,16 +67,18 @@ salir.addEventListener('click', () => {
 })*/
 
 function cargarJuego(jugabilidad) {
+    //dibujamos el tablero y creamos la modalida dde juego
     tablero = new Tablero(ctx, jugabilidad);
     juego = new Juego(tablero, jugabilidad);
-
-
-    for (let i = 0; i < 10; i++) {
+    let cantfichas = (((jugabilidad+2)*(jugabilidad+2))/2);
+    //generamos las fichas
+    for (let i = 0; i < cantfichas; i++) {
         juego.generarFichas('ficha1', juego.getpos1());
         juego.generarFichas('ficha2', juego.getpos2());
 
-
     }
+
+    //llamamos a mostrar fichas e inicializamos el timer
     juego.mostrarFichas();
     juego.timer();
 

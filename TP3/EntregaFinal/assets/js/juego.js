@@ -257,6 +257,7 @@ class Juego {
         gano.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
         ganador.classList.remove("inactive");
         ganador.classList.add("active");
+        //se corta el timer
         clearInterval(this.espera);
 
     }
@@ -266,11 +267,14 @@ class Juego {
         let cronometro_contenedor = document.getElementById('cronometro');
 
         this.cronometro = new Cronometro();
+        //le pedimos el tiempo al cronometro
         cronometro_contenedor.innerHTML = this.cronometro.getTiempo();
+        //llamamos a espera cada 1 segundo para ir descontando el tiempo
         this.espera = setInterval(() => {
             this.cronometro.descontar();
             let tiempo = this.cronometro.getTiempo();
             if (tiempo == "0:00") {
+                //si el tiempo es 0 se termina el juego
                 clearInterval(this.espera);
                 tiempoFinal();
             }
