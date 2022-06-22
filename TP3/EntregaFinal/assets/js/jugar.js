@@ -98,11 +98,13 @@ canvas.addEventListener('mousedown', (evt) => {
             if (!ficha.estaUbicada()) {
                 arrastrar = true;
                 fichaSelect = ficha;
-                ficha.setPosX(mousePos.x);
-                ficha.setPosY(mousePos.y);
+                fichaSelect.setPosX(mousePos.x);
+                fichaSelect.setPosY(mousePos.y);
                 ctx.clearRect(0, 0, width, height);
                 tablero.draw();
                 juego.mostrarFichas();
+                break;
+
             }
         }
     }
