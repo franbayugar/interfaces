@@ -132,6 +132,11 @@ figcaption p {
 
 .swiper-slide {
     width: 100%;
+    background-size: contain;
+}
+
+.swiper-slide img {
+    max-width: 331px;
 }
 
 .contenedor_carrousel div {
