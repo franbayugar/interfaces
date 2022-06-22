@@ -4,14 +4,18 @@ class Ficha {
     constructor(posX, posY, color, ctx, radio, imagen, numJugador) {
         this.posX = posX;
         this.posY = posY;
+        this.posXAnt = posX;
+        this.posYAnt = posY;
         this.color = color;
         this.ctx = ctx;
         this.radio = radio;
+        //se le asigna a la ficha un numero de jugador para reconocerla a la hora de ubicarla
         this.jugador = numJugador;
         this.selected = false;
         this.bloqueada = false;
         this.image = new Image();
         this.image.src = imagen;
+        //una vez que la imagen se carga se dibuja la ficha
         this.image.onload = () => {
             this.draw();
         };
@@ -25,13 +29,22 @@ class Ficha {
         this.posX = x;
     }
 
+    getPosXAnt() {
+        return this.posXAnt;
+    }
+
+
+
     getPosY() {
         return this.posY;
     }
-
+    getPosYAnt() {
+        return this.posYAnt;
+    }
     setPosY(y) {
         this.posY = y;
     }
+
 
     getColor() {
         return this.color;
@@ -57,21 +70,12 @@ class Ficha {
         return this.bloqueada;
     }
     draw() {
+        //dibuja la ficha dada una imagen
         this.ctx.fillStyle = this.image;
 
         this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
 
         this.ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
-
-        // this.ctx.beginPath();
-        // if (this.color == "#ff0000"){
-        //     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
-        // }else{
-        //     this.ctx.arc(width - this.radio, this.posY, this.radio, 0, 2 * Math.PI);
-        // }
-        // let imagenFicha = this.ctx.createPattern(this.image, "repeat");
-        // this.ctx.fillStyle = this.imagenFicha;
-        // this.ctx.fill();
 
     }
 
@@ -86,6 +90,7 @@ class Ficha {
     }
 
     isClickedCirculo(posicion) {
+        //verifica que el circulo se haya clickeado
         if (Math.sqrt((posicion.x - this.posX) * (posicion.x - this.posX) + (posicion.y - this.posY) * (posicion.y - this.posY)) <=
             this.radio) {
             return true;
