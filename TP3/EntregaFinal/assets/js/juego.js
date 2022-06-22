@@ -225,7 +225,7 @@ class Juego {
         this.fichas.forEach(ficha => {
             ficha.bloquearFicha();
         })
-        let turnos = document.querySelectorAll('turno'); //no anda
+        let turnos = document.querySelectorAll('.turno'); //no anda
         turnos.forEach(turno => {
             turno.classList.remove("visible");
             turno.classList.add("invisible");
