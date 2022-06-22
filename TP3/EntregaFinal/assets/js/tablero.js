@@ -5,6 +5,7 @@ class Tablero {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
         console.log(cantidad)
+        //dependiendo la cantidad de fichas con las que se juega en donde commienza X
         if (cantidad == 4) {
             this.comienzoX = 300;
         } else {
@@ -21,14 +22,14 @@ class Tablero {
 
     }
 
-
+    //se crea el tablero una vez que se carga la imagen
     crearTablero() {
             let tablero = this;
             this.image.onload = () => {
                 tablero.draw();
             };
         }
-        //genera matriz
+        //genera matriz para la logica del juego
     generarMatriz() {
         let matriz = [this.alto];
         for (let i = 0; i < this.alto; i++) {
@@ -40,6 +41,7 @@ class Tablero {
         return matriz;
     }
 
+    //se genera un arreglo de columnas -- aca se establece el limite de cada pixel en donde se va a tnomar cada columna
     generarArregloColumnas() {
         let arregloColumnas = [];
         arregloColumnas[0] = this.comienzoX + this.ladoImagen;
@@ -49,6 +51,7 @@ class Tablero {
         return arregloColumnas;
     }
 
+    //se pregunta si la posicion corresponde a una columna valida
     esValida(x, y) {
         let col = -1;
         if (y > this.comienzoY - 100 && y < this.comienzoY) {
@@ -69,6 +72,8 @@ class Tablero {
         return this.ancho;
     }
 
+    //ingreso de ficha, va a buscar desde la ultima fila hasta la primera para ver donde cae, mientras haya un 1 o un 2 no vaa poner la ficha, 
+    //unicamente lo va a hacer cuando se choque con un 0
     ingresoFicha(nroCol, ficha) {
         let i = this.alto - 1;
 
@@ -83,8 +88,9 @@ class Tablero {
         return i;
     }
 
-
+    //cae la ficha en una fila columna especifica
     caeFicha(ficha, fila, columna) {
+        //calculamos con el comienzo en x del tablero para la fila y le sumamos el tamanio de la imagen y la fila, lo mismo para la columna pero desde Y
         let x = this.comienzoX + fila * this.ladoImagen + this.ladoImagen / 2;
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
         let player1 = document.querySelector("#player1");
@@ -92,6 +98,7 @@ class Tablero {
         ficha.setPosX(x);
         ficha.setPosY(y);
         ficha.bloquearFicha();
+        //se recorren las fichas, para ver a que jugador coresponde y manejar turnos
         juego.fichas.forEach(ficha => {
             if (ficha.getJugador() == fichaSelect.getJugador()) {
                 ficha.bloquearFicha();
@@ -115,7 +122,7 @@ class Tablero {
         console.table(this.matriz);
     }
 
-
+    //dibujamos el tablero
     draw() {
         let imagenTablero = this.ctx.createPattern(this.image, "repeat");
         this.ctx.fillStyle = imagenTablero;

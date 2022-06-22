@@ -86,12 +86,14 @@ function cargarJuego(jugabilidad) {
 
 
 }
-
+//cuando se hace click en el mouse
 canvas.addEventListener('mousedown', (evt) => {
+    //obtenemos la posicion
     var mousePos = oMousePos(canvas, evt);
-
+    //recorremos todas las fichas para ver cual esta clickeada
     for (let i = 0; i < juego.fichas.length; i++) {
         let ficha = juego.fichas[i];
+        //si se hizo click en la ficha y no esta ubicada se genera el arrastre
         if (ficha.isClickedCirculo(mousePos)) {
             if (!ficha.estaUbicada()) {
                 arrastrar = true;
@@ -107,7 +109,7 @@ canvas.addEventListener('mousedown', (evt) => {
 
 
 }, false);
-
+//cuando se mueve el mouse dibujamos de nuevo las fichas en las respectivas posiciones
 canvas.addEventListener("mousemove", function(evt) {
     let mousePos = oMousePos(canvas, evt);
 
@@ -120,6 +122,7 @@ canvas.addEventListener("mousemove", function(evt) {
     }
 }, false);
 
+//una vez que se suelta la ficha comprobamos en donde termino ese evento
 canvas.addEventListener("mouseup", function(evt) {
     let mousePos = oMousePos(canvas, evt);
 
