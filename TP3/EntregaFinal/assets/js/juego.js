@@ -9,9 +9,10 @@ class Juego {
         this.mostrarTablero();
         this.limite = fichasAGanar;
         this.ganador = null;
-        //establecemos pos1 y pos2 para las fichas
+        //establecemos pos1 y pos2 para ubicar las fichas
         this.pos1 = this.tablero.comienzoX - 120;
         this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.radius = 35;
         this.espera;
         this.cronometro;
     }
@@ -32,19 +33,16 @@ class Juego {
     }
 
     generarFichas(ficha, pos) {
-        let radius = 35;
         if (pos == this.tablero.comienzoX - 120) {
             //genera la ficha 1 y la agrega al arreglo
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha1_2.png', 1);
+            ficha = new Ficha(pos + this.radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, 'assets/images/ficha1_2.png', 1);
 
             this.fichas.push(ficha);
         } else {
             //genera la ficha 2 y la agrega al arreglo
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha2_2.png', 2);
+            ficha = new Ficha(pos + this.radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, 'assets/images/ficha2_2.png', 2);
             //la ficha es  bloqueada porque siempre arranca el jugador 1
             ficha.bloquearFicha();
-
-
             this.fichas.push(ficha);
 
         }
@@ -84,9 +82,11 @@ class Juego {
                 ctx.clearRect(0, 0, width, height);
                 this.tablero.draw();
                 this.mostrarFichas();
+                //si ubica la ficha aumento el contador para el control
                 this.contadorFichasUbicadas++;
                 //se comprueba si hay ganador
                 if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {
+                    //seteamos el ganador y terminamos el juego
                     this.ganador = fichaSelect.getJugador();
                     this.terminar();
                     clearInterval(this.espera);
@@ -162,9 +162,7 @@ class Juego {
         return gana;
 
     }
-    noHayMasFichas(){
-        return this.fichas.length == this.contadorFichasUbicadas;
-    }
+
     //Recorridos para chequear cantidad fichas alineadas
     abajo(matriz, fila, columna, fichaSelect) {
         let contador = 0;
@@ -304,6 +302,10 @@ class Juego {
         let contGanador = document.querySelector("#theWinnerIs");
 
         contGanador.innerHTML = "¡Se terminó el tiempo!";
+    }
+    //chequea si quedan fichas por ubicar
+    noHayMasFichas(){
+        return this.fichas.length == this.contadorFichasUbicadas;
     }
 
 

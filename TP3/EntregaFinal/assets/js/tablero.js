@@ -4,7 +4,6 @@ class Tablero {
     constructor(ctx, cantidad) {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
-        console.log(cantidad)
         //dependiendo la cantidad de fichas con las que se juega en donde commienza X
         if (cantidad == 4) {
             this.comienzoX = 320;
@@ -48,16 +47,19 @@ class Tablero {
         for (let i = 1; i < this.ancho; i++) {
             arregloColumnas[i] = (arregloColumnas[i - 1] + this.ladoImagen);
         }
+
         return arregloColumnas;
     }
 
     //se pregunta si la posicion corresponde a una columna valida
     esValida(x, y) {
         let col = -1;
-        if (y > this.comienzoY - 100 && y < this.comienzoY) {
+        //si y es mayor a al comienzo - 80 e y es menor al comienzo de y del tablero
+        if (y > this.comienzoY - 80 && y < this.comienzoY) {
             let i = 0;
             while (i < this.ancho) {
-                if (x < this.arrCol[i]) {
+                //preguntamos si x esta entre la medida donde arranca la columna y donde termina
+                if (x < this.arrCol[i]&& x>this.arrCol[i]-80) {
                     col = i;
                     return col;
                 }
@@ -91,6 +93,7 @@ class Tablero {
     //cae la ficha en una fila columna especifica
     caeFicha(ficha, fila, columna) {
         //calculamos con el comienzo en x del tablero para la fila y le sumamos el tamanio de la imagen y la fila, lo mismo para la columna pero desde Y
+        //se suma la division por dos para dar en la mitad de la imagen
         let x = this.comienzoX + fila * this.ladoImagen + this.ladoImagen / 2;
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
         let player1 = document.querySelector("#player1");

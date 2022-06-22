@@ -96,7 +96,9 @@ canvas.addEventListener('mousedown', (evt) => {
         //si se hizo click en la ficha y no esta ubicada se genera el arrastre
         if (ficha.isClickedCirculo(mousePos)) {
             if (!ficha.estaUbicada()) {
+                //cambiamos el estado de arrastrar para el movimiento del mouse
                 arrastrar = true;
+                //seteamos la nueva posicion de ficha
                 fichaSelect = ficha;
                 fichaSelect.setPosX(mousePos.x);
                 fichaSelect.setPosY(mousePos.y);
@@ -115,11 +117,12 @@ canvas.addEventListener("mousemove", function(evt) {
     let mousePos = oMousePos(canvas, evt);
 
     if (arrastrar) {
-        ctx.clearRect(0, 0, width, height);
-        fichaSelect.setPosX(mousePos.x);
-        fichaSelect.setPosY(mousePos.y);
-        tablero.draw();
-        juego.mostrarFichas();
+            ctx.clearRect(0, 0, width, height);
+            fichaSelect.setPosX(mousePos.x);
+            fichaSelect.setPosY(mousePos.y);
+            tablero.draw();
+            juego.mostrarFichas();
+        
     }
 }, false);
 
@@ -134,4 +137,20 @@ canvas.addEventListener("mouseup", function(evt) {
     }
     fichaSelect = null;
 
+}, false);
+
+canvas.addEventListener("mouseout", function(evt) {
+    if(arrastrar){
+        arrastrar=false;
+        ctx.clearRect(0, 0, width, height);
+        fichaSelect.setPosX(fichaSelect.getPosXAnt());
+        fichaSelect.setPosY(fichaSelect.getPosYAnt());
+        tablero.draw();
+        juego.mostrarFichas();
+    }
+    if(fichaSelect){
+        fichaSelect = null;
+
+    }
+    
 }, false);
