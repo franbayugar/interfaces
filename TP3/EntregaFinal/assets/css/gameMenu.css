@@ -85,6 +85,14 @@ h2 {
     align-items: center;
 }
 
+.playBtn a {
+    text-decoration: none;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
 .playBtn button {
     text-decoration: none;
     color: white;
@@ -155,9 +163,9 @@ label span {
     list-style: none;
     width: 90px;
     height: 90px;
-    animation: animate 25s linear infinite;
+    animation: animate 20s linear infinite;
     top: -150px;
-    background-image: url('../img/ficha2.png');
+    background-image: url('../images/ficha2.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -230,6 +238,111 @@ label span {
 }
 
 .circles li:nth-child(10) {
+    left: 85%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.area1 {
+    width: 100%;
+    z-index: -2;
+}
+
+.area1 .circles {
+    opacity: 1;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+    top: 4.5rem;
+}
+
+.area1 .circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 90px;
+    height: 90px;
+    animation: animate 10s linear infinite;
+    top: -150px;
+    background-image: url('../images/ficha1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.area1 .circles li:nth-child(1) {
+    left: 25%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 3s;
+}
+
+.area1.circles li:nth-child(2) {
+    left: 10%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
+.area1 .circles li:nth-child(3) {
+    left: 70%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 6s;
+}
+
+.area1 .circles li:nth-child(4) {
+    left: 40%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 0s;
+    animation-duration: 10s;
+}
+
+.area1 .circles li:nth-child(5) {
+    left: 65%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 5s;
+}
+
+.area1 .circles li:nth-child(6) {
+    left: 75%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 9s;
+}
+
+.area1 .circles li:nth-child(7) {
+    left: 35%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 17s;
+}
+
+.area1 .circles li:nth-child(8) {
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 8s;
+    animation-duration: 45s;
+}
+
+.area1 .circles li:nth-child(9) {
+    left: 20%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 7s;
+    animation-duration: 35s;
+}
+
+.area1 .circles li:nth-child(10) {
     left: 85%;
     width: 90px;
     height: 90px;

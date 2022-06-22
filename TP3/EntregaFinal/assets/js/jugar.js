@@ -41,6 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+let reset = document.getElementById('btn_reset');
+reset.addEventListener('click', () => {
+    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
+    cargarJuego(Number(jugabilidad));
+})
 
 
 /*let contenedor_menu = document.getElementById('init_juego');
