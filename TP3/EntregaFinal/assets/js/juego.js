@@ -30,15 +30,15 @@ class Juego {
     }
 
     generarFichas(ficha, pos) {
-        let radius = 45;
+        let radius = 35;
         if (pos == this.tablero.comienzoX - 120) {
             //genera la ficha 1 y la agrega al arreglo
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha1.png', 1);
+            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha1_2.png', 1);
 
             this.fichas.push(ficha);
         } else {
             //genera la ficha 2 y la agrega al arreglo
-            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha2.png', 2);
+            ficha = new Ficha(pos + radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, radius, 'assets/images/ficha2_2.png', 2);
             //la ficha es  bloqueada porque siempre arranca el jugador 1
             ficha.bloquearFicha();
 
@@ -276,7 +276,7 @@ class Juego {
             if (tiempo == "0:00") {
                 //si el tiempo es 0 se termina el juego
                 clearInterval(this.espera);
-                tiempoFinal();
+                this.tiempoFinal();
             }
             cronometro_contenedor.innerHTML = tiempo;
         }, 1000);

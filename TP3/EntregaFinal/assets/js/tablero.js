@@ -7,16 +7,16 @@ class Tablero {
         console.log(cantidad)
         //dependiendo la cantidad de fichas con las que se juega en donde commienza X
         if (cantidad == 4) {
-            this.comienzoX = 300;
+            this.comienzoX = 320;
         } else {
-            this.comienzoX = 200
+            this.comienzoX = 240
         }
 
-        this.comienzoY = 100;
-        this.ladoImagen = 100;
+        this.comienzoY = 80;
+        this.ladoImagen = 80;
         this.ctx = ctx;
         this.image = new Image();
-        this.image.src = "assets/images/tablero_forma.png";
+        this.image.src = "assets/images/tablero_forma2.png";
         this.matriz = this.generarMatriz();
         this.arrCol = this.generarArregloColumnas();
 
