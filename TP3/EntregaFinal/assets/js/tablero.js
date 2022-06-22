@@ -13,6 +13,7 @@ class Tablero {
 
         this.comienzoY = 80;
         this.ladoImagen = 80;
+
         this.ctx = ctx;
         this.image = new Image();
         this.image.src = "assets/images/tablero_forma2.png";
@@ -59,7 +60,7 @@ class Tablero {
             let i = 0;
             while (i < this.ancho) {
                 //preguntamos si x esta entre la medida donde arranca la columna y donde termina
-                if (x < this.arrCol[i]&& x>this.arrCol[i]-80) {
+                if (x < this.arrCol[i] && x > this.arrCol[i] - 80) {
                     col = i;
                     return col;
                 }

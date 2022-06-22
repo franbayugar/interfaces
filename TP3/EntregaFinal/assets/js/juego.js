@@ -68,47 +68,47 @@ class Juego {
 
     //se ubica una ficha en una columna
     ubicarFicha(x, y, fichaSelect, ctx) {
-        let columnaValida = 0;
+            let columnaValida = 0;
 
-        //se obtiene un numero de columna valida dependiendo la ubicacion de x e y 
-        columnaValida = this.tablero.esValida(x, y);
-        if (columnaValida > -1 && columnaValida < this.tablero.getNroCol()) {
-            //si la columna es valida se obtiene una fila valida
-            let filaValida = this.tablero.ingresoFicha(columnaValida, fichaSelect);
-            if (filaValida > -1) {
-                //si la fila tambien es valida entonces la ficha cae
-                this.tablero.caeFicha(fichaSelect, columnaValida, filaValida);
-                //se vuelve a dibujar el tablero
-                ctx.clearRect(0, 0, width, height);
-                this.tablero.draw();
-                this.mostrarFichas();
-                //si ubica la ficha aumento el contador para el control
-                this.contadorFichasUbicadas++;
-                //se comprueba si hay ganador
-                if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {
-                    //seteamos el ganador y terminamos el juego
-                    this.ganador = fichaSelect.getJugador();
-                    this.terminar();
-                    clearInterval(this.espera);
+            //se obtiene un numero de columna valida dependiendo la ubicacion de x e y 
+            columnaValida = this.tablero.esValida(x, y);
+            if (columnaValida > -1 && columnaValida < this.tablero.getNroCol()) {
+                //si la columna es valida se obtiene una fila valida
+                let filaValida = this.tablero.ingresoFicha(columnaValida, fichaSelect);
+                if (filaValida > -1) {
+                    //si la fila tambien es valida entonces la ficha cae
+                    this.tablero.caeFicha(fichaSelect, columnaValida, filaValida);
+                    //se vuelve a dibujar el tablero
+                    ctx.clearRect(0, 0, width, height);
+                    this.tablero.draw();
+                    this.mostrarFichas();
+                    //si ubica la ficha aumento el contador para el control
+                    this.contadorFichasUbicadas++;
+                    //se comprueba si hay ganador
+                    if (this.alguienGana(this.tablero.matriz, filaValida, columnaValida, fichaSelect, this.limite)) {
+                        //seteamos el ganador y terminamos el juego
+                        this.ganador = fichaSelect.getJugador();
+                        this.terminar();
+                        clearInterval(this.espera);
 
-                }
-                //pregunta si no hay mas fichas que ubicar y termina el juego
-                if(this.noHayMasFichas()){
-                    this.terminar();
-                    clearInterval(this.espera);
-                }
+                    }
+                    //pregunta si no hay mas fichas que ubicar y termina el juego
+                    if (this.noHayMasFichas()) {
+                        this.terminar();
+                        clearInterval(this.espera);
+                    }
 
-            }else{
+                } else {
                     //reubicamos la ficha si se suelta en cualquiera lado 
+                    this.reubicarFicha(fichaSelect, ctx);
+                }
+            } else {
+                //reubicamos la ficha si se suelta en cualquiera lado 
                 this.reubicarFicha(fichaSelect, ctx);
             }
-        }else{
-                //reubicamos la ficha si se suelta en cualquiera lado 
-            this.reubicarFicha(fichaSelect, ctx);
         }
-    }
-    //se reubica la ficha mediante las posiciones iniciales de la misma
-    reubicarFicha(fichaSelect, ctx){
+        //se reubica la ficha mediante las posiciones iniciales de la misma
+    reubicarFicha(fichaSelect, ctx) {
         fichaSelect.setPosY(fichaSelect.getPosYAnt());
         fichaSelect.setPosX(fichaSelect.getPosXAnt());
         ctx.clearRect(0, 0, width, height);
@@ -116,7 +116,7 @@ class Juego {
         this.mostrarFichas();
     }
 
-        //chequear si alguien alineo la cantidad necesaria para ganar
+    //chequear si alguien alineo la cantidad necesaria para ganar
 
     alguienGana(matriz, fila, columna, fichaSelect, cantFichas) {
         let gana = false;
@@ -201,7 +201,7 @@ class Juego {
         let contador = 0;
 
         while (contador < this.limite && fila < this.tablero.alto && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
-            fila++;
+            fila--;
             columna++;
 
             contador++;
@@ -212,8 +212,8 @@ class Juego {
     derechaAbajo(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < this.limite && fila >= 0 && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
-            fila--;
+        while (contador < this.limite && fila < this.tablero.alto && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
+            fila++;
             columna++;
 
             contador++;
@@ -250,10 +250,10 @@ class Juego {
     terminar() {
         //se bloquean todas las fichas
         this.fichas.forEach(ficha => {
-            ficha.bloquearFicha();
-        })
-        //limpiamos cuadro de turnos
-        let turnos = document.querySelectorAll('.turno'); 
+                ficha.bloquearFicha();
+            })
+            //limpiamos cuadro de turnos
+        let turnos = document.querySelectorAll('.turno');
         turnos.forEach(turno => {
             turno.classList.remove("visible");
             turno.classList.add("invisible");
@@ -265,13 +265,13 @@ class Juego {
         ganador.classList.remove("inactive");
         ganador.classList.add("active");
         //se muestra quien gano
-        if(this.ganador){
-       
-        contenedor.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
+        if (this.ganador) {
 
-        }else{
-            
-        contenedor.innerHTML = "No hay mas fichas. ¡Empataron!";
+            contenedor.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
+
+        } else {
+
+            contenedor.innerHTML = "No hay mas fichas. ¡Empataron!";
         }
         //se corta el timer
         clearInterval(this.espera);
@@ -299,12 +299,12 @@ class Juego {
     }
 
     tiempoFinal() {
-        let contGanador = document.querySelector("#theWinnerIs");
+            let contGanador = document.querySelector("#theWinnerIs");
 
-        contGanador.innerHTML = "¡Se terminó el tiempo!";
-    }
-    //chequea si quedan fichas por ubicar
-    noHayMasFichas(){
+            contGanador.innerHTML = "¡Se terminó el tiempo!";
+        }
+        //chequea si quedan fichas por ubicar
+    noHayMasFichas() {
         return this.fichas.length == this.contadorFichasUbicadas;
     }
 

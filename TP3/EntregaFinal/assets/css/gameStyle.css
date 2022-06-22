@@ -17,7 +17,7 @@ canvas {
 .options {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1rem 2rem 0;
 }
 
 .options a {
@@ -72,6 +72,10 @@ canvas {
 
 .turno img {
     width: 50px;
+}
+
+#cronometro {
+    margin-top: 0;
 }
 
 .exit {
