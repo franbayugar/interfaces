@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: center;
     background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);
+    top: 4.5rem;
+    position: relative;
 }
 
 canvas {
