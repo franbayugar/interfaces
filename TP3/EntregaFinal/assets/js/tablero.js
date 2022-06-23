@@ -16,7 +16,10 @@ class Tablero {
 
         this.ctx = ctx;
         this.image = new Image();
+        this.imageArrow = new Image();
+
         this.image.src = "assets/images/tablero_forma2.png";
+        this.imageArrow.src = "assets/images/chevron.png"
         this.matriz = this.generarMatriz();
         this.arrCol = this.generarArregloColumnas();
 
@@ -24,10 +27,10 @@ class Tablero {
 
     //se crea el tablero una vez que se carga la imagen
     crearTablero() {
-            let tablero = this;
             this.image.onload = () => {
-                tablero.draw();
-            };
+                this.imageArrow.onload = ()=>{
+                    this.draw();
+                }            };
         }
         //genera matriz para la logica del juego
     generarMatriz() {
@@ -129,8 +132,14 @@ class Tablero {
     //dibujamos el tablero
     draw() {
         let imagenTablero = this.ctx.createPattern(this.image, "repeat");
+        let arrowImage = this.ctx.createPattern(this.imageArrow, "repeat");
+
         this.ctx.fillStyle = imagenTablero;
         this.ctx.fillRect(this.comienzoX, this.comienzoY, (this.image.width * this.ancho), (this.image.height * this.alto));
+
+        this.ctx.fillStyle = arrowImage;
+        this.ctx.fillRect(this.comienzoX, this.comienzoY-80, (this.imageArrow.width * this.ancho), (this.imageArrow.height * 1));
+
 
     }
 
