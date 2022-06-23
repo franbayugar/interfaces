@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             area.classList.add('inactive');
         }
         tablero_cont.classList.remove('invisible');
+        let cuantas = document.getElementById("cantFichas");
+        cuantas.innerHTML = "Fichas para ganar: " + jugabilidad;
         cargarJuego(Number(jugabilidad));
     });
 
@@ -57,6 +59,7 @@ function cargarJuego(jugabilidad) {
 
     }
 
+
     //llamamos a mostrar fichas e inicializamos el timer
     juego.mostrarFichas();
     juego.timer();
@@ -70,9 +73,9 @@ function cargarJuego(jugabilidad) {
 let reset = document.querySelector("#btn_reset"); //reinicia el juego con la modalidad ya seleccionada
 
 reset.addEventListener('click', () => {
-    console.log("hola");
-    ctx.clearRect(0, 0, width, height);
-    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
+
+    ctx.clearRect(0, 0, width, height); //limpiamos canvas
+    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; //mantenemos la modalidad de juego seleccionada
     let turno = document.getElementById("player1");
     let noTurno = document.getElementById("player2");
     turno.classList.remove("invisible");
@@ -81,8 +84,8 @@ reset.addEventListener('click', () => {
     noTurno.classList.add("invisible");
 
 
-    clearInterval(juego.espera);
-    let mensajes = document.querySelectorAll("#theWinnerIs h2");
+    clearInterval(juego.espera); //reiniciamos timer
+    let mensajes = document.querySelectorAll("#theWinnerIs h2"); //para el caso de que se reinicie por un ganador
     mensajes.forEach(mje => {
         mje.innerHTML = '';
     });
