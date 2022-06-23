@@ -75,7 +75,6 @@ h2 {
     flex-wrap: wrap;
     align-content: space-around;
     align-items: center;
-    margin-bottom: 2rem;
 }
 
 .playBtn {
@@ -103,14 +102,14 @@ h2 {
     background-color: #FF9700;
     border-style: none;
     display: flex;
-    justify-content: left;
+
     align-items: center;
 }
 
 .playBtn span {
     font-family: "Staatliches", cursive;
-    margin-left: 3rem;
     font-size: 2rem;
+    text-align:center;
 }
 
 .rotate-hor-center {
@@ -120,6 +119,7 @@ h2 {
 
 .playBtn button:hover {
     box-shadow: #D88000 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
 }
 
 .playBtn button:hover img {
@@ -144,6 +144,10 @@ label span {
 .area {
     width: 100%;
     z-index: -2;
+}
+
+.title{
+    margin-bottom: 2rem;
 }
 
 .circles {
