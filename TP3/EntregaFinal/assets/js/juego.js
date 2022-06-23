@@ -200,7 +200,7 @@ class Juego {
     derechaArriba(matriz, fila, columna, fichaSelect) {
         let contador = 0;
 
-        while (contador < this.limite && fila < this.tablero.alto && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
+        while (contador < this.limite && fila >= 0 && columna < this.tablero.ancho && matriz[fila][columna] == fichaSelect.getJugador()) {
             fila--;
             columna++;
 
@@ -271,7 +271,7 @@ class Juego {
 
         } else {
 
-            contenedor.innerHTML = "No hay mas fichas. ¡Empataron!";
+            contenedor.innerHTML = /*"No hay mas fichas.*/ "¡Empataron!"; //charlar con Fran
         }
         //se corta el timer
         clearInterval(this.espera);
@@ -299,9 +299,13 @@ class Juego {
     }
 
     tiempoFinal() {
-            let contGanador = document.querySelector("#theWinnerIs");
+            let contGanador = document.getElementById("theWinnerIs");
+            let finalizado = document.getElementById("sinTiempo");
+            //  contGanador.classList.remove('inactive');
+            //  contGanador.classList.add('active');
+            this.terminar();
+            finalizado.innerHTML = "¡Se terminó el tiempo!";
 
-            contGanador.innerHTML = "¡Se terminó el tiempo!";
         }
         //chequea si quedan fichas por ubicar
     noHayMasFichas() {

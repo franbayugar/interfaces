@@ -7,7 +7,7 @@ body {
 
 body {
     height: 100%;
-    background-color: linear-gradient(to bottom, #565dc2 0%, #f1f1f1 100%);
+    background-color: red;
     z-index: -5;
 }
 
@@ -21,6 +21,7 @@ h2 {
     display: flex;
     flex-direction: column;
     height: 100%;
+    z-index: -5;
     /*  background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);*/
 }
 
@@ -154,7 +155,6 @@ label span {
     height: 100%;
     overflow: hidden;
     z-index: -2;
-    top: 4.5rem;
 }
 
 .circles li {
@@ -168,6 +168,7 @@ label span {
     background-image: url('../images/ficha2_2.png');
     background-repeat: no-repeat;
     background-size: 100%;
+    z-index: -2;
 }
 
 .circles li:nth-child(1) {
@@ -175,6 +176,7 @@ label span {
     width: 90px;
     height: 90px;
     animation-delay: 0s;
+    z-index: -2;
 }
 
 .circles li:nth-child(2) {
@@ -259,7 +261,6 @@ label span {
     height: 100%;
     overflow: hidden;
     z-index: -2;
-    top: 4.5rem;
 }
 
 .area1 .circles li {
