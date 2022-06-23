@@ -73,16 +73,18 @@ reset.addEventListener('click', () => {
     console.log("hola");
     ctx.clearRect(0, 0, width, height);
     let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
-    let turnos = document.querySelectorAll('.turno');
-    turnos.forEach(turno => {
-        turno.classList.remove("visible");
-        turno.classList.add("invisible");
+    let turno = document.getElementById("player1");
+    let noTurno = document.getElementById("player2");
+    turno.classList.remove("invisible");
+    turno.classList.add("visible");
+    noTurno.classList.remove("visible");
+    noTurno.classList.add("invisible");
 
-    });
+
     clearInterval(juego.espera);
     let mensajes = document.querySelectorAll("#theWinnerIs h2");
     mensajes.forEach(mje => {
-        mje.innerHTML.remove();
+        mje.innerHTML = '';
     });
 
     cargarJuego(Number(jugabilidad));
