@@ -321,6 +321,7 @@ figcaption p {
     }
     .gameName h2 {
         font-size: 4rem;
+        text-align: center;
     }
     .gameName p {
         font-size: 2rem;
@@ -336,6 +337,8 @@ figcaption p {
         display: flex;
         align-items: center;
         font-size: 2rem;
+        margin-top: 4rem;
+        padding-top: 1rem;
     }
     .info {
         width: 3rem;
@@ -345,9 +348,10 @@ figcaption p {
     #shareDesktop {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         height: 50%;
         align-items: center;
+        margin-left: 1rem;
     }
     .share {
         width: 80px;

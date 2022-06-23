@@ -11,6 +11,7 @@ let tablero;
 let juego;
 
 
+
 function oMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return { // devuelve un objeto
@@ -41,36 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-let reset = document.getElementById('btn_reset');
-reset.addEventListener('click', () => {
-    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
-    cargarJuego(Number(jugabilidad));
-})
 
 
-/*let contenedor_menu = document.getElementById('init_juego');
-let contenedor_juego = document.getElementById('contenedor_juego');
-let areas = document.querySelectorAll('.area');
-let tablero_cont = document.getElementById('tablero');
-let salir = document.getElementById('btn_exit');
-salir.addEventListener('click', () => {
-    contenedor_menu.classList.remove('inactive')
-    contenedor_menu.classList.add('active');
-    contenedor_juego.classList.remove('active');
-    contenedor_juego.classList.add('inactive');
-    for (let area of areas) {
-        area.classList.remove('inactive');
-    }
-    tablero_cont.classList.add('invisible');
-
-
-})*/
 
 function cargarJuego(jugabilidad) {
     //dibujamos el tablero y creamos la modalida dde juego
     tablero = new Tablero(ctx, jugabilidad);
     juego = new Juego(tablero, jugabilidad);
-    let cantfichas = (((jugabilidad+2)*(jugabilidad+2))/2);
+    let cantfichas = (((jugabilidad + 2) * (jugabilidad + 2)) / 2);
     //generamos las fichas
     for (let i = 0; i < cantfichas; i++) {
         juego.generarFichas('ficha1', juego.getpos1());
@@ -86,12 +65,36 @@ function cargarJuego(jugabilidad) {
 
 
 }
+
+
+let reset = document.querySelector("#btn_reset"); //reinicia el juego con la modalidad ya seleccionada
+
+reset.addEventListener('click', () => {
+    console.log("hola");
+    ctx.clearRect(0, 0, width, height);
+    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
+    let turnos = document.querySelectorAll('.turno');
+    turnos.forEach(turno => {
+        turno.classList.remove("visible");
+        turno.classList.add("invisible");
+
+    });
+    clearInterval(juego.espera);
+    let mensajes = document.querySelectorAll("#theWinnerIs h2");
+    mensajes.forEach(mje => {
+        mje.innerHTML.remove();
+    });
+
+    cargarJuego(Number(jugabilidad));
+})
+
+//}
 //cuando se hace click en el mouse
 canvas.addEventListener('mousedown', (evt) => {
     //obtenemos la posicion
     var mousePos = oMousePos(canvas, evt);
     //recorremos todas las fichas para ver cual esta clickeada
-    for (let i = juego.fichas.length-1; i >=0; i--) {
+    for (let i = juego.fichas.length - 1; i >= 0; i--) {
         let ficha = juego.fichas[i];
         //si se hizo click en la ficha y no esta ubicada se genera el arrastre
         if (ficha.isClickedCirculo(mousePos)) {
@@ -117,12 +120,12 @@ canvas.addEventListener("mousemove", function(evt) {
     let mousePos = oMousePos(canvas, evt);
 
     if (arrastrar) {
-            ctx.clearRect(0, 0, width, height);
-            fichaSelect.setPosX(mousePos.x);
-            fichaSelect.setPosY(mousePos.y);
-            tablero.draw();
-            juego.mostrarFichas();
-        
+        ctx.clearRect(0, 0, width, height);
+        fichaSelect.setPosX(mousePos.x);
+        fichaSelect.setPosY(mousePos.y);
+        tablero.draw();
+        juego.mostrarFichas();
+
     }
 }, false);
 
@@ -140,17 +143,17 @@ canvas.addEventListener("mouseup", function(evt) {
 }, false);
 
 canvas.addEventListener("mouseout", function(evt) {
-    if(arrastrar){
-        arrastrar=false;
+    if (arrastrar) {
+        arrastrar = false;
         ctx.clearRect(0, 0, width, height);
         fichaSelect.setPosX(fichaSelect.getPosXAnt());
         fichaSelect.setPosY(fichaSelect.getPosYAnt());
         tablero.draw();
         juego.mostrarFichas();
     }
-    if(fichaSelect){
+    if (fichaSelect) {
         fichaSelect = null;
 
     }
-    
+
 }, false);

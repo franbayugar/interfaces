@@ -279,6 +279,7 @@ class Juego {
     }
 
 
+
     timer() {
         let cronometro_contenedor = document.getElementById('cronometro');
 
