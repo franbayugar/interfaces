@@ -1,0 +1,107 @@
+@keyframes scroll {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -1200px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.gameContainer {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    top: 100px;
+}
+
+.layer {
+    min-width: 500px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
+.layer back {
+    max-width: 10px;
+    max-height: 6px;
+}
+
+.layer10 {
+    background-image: url('img/backgrounds/sky_01.png');
+    /*animation: scroll 20s infinite linear;*/
+}
+
+.layer9 {
+    background-image: url('img/backgrounds/building_01.png');
+    animation: scroll 20s infinite linear;
+    position: absolute;
+    top: 10.7rem;
+    height: 389px;
+}
+
+.layer8 {
+    background-image: url('img/backgrounds/pavement_01.png');
+    animation: scroll 15s infinite linear;
+    position: absolute;
+    top: 32.5rem;
+    height: 35px;
+
+}
+
+.layer7 {
+    background-image: url('img/backgrounds/ruins_01.png');
+    animation: scroll 10s infinite linear;
+    position: absolute;
+    top: 29rem;
+    height: 95px;
+
+}
+
+.layer6 {
+    background-image: url('img/backgrounds/building_02.png');
+    animation: scroll 5s infinite linear;
+    position: absolute;
+    top: 16rem;
+    height: 308px;
+
+}
+
+.layer5 {
+    background-image: url('img/backgrounds/carhumo.png');
+    animation: scroll 5s infinite linear;
+    position: absolute;
+    opacity: 0.7;
+    height: 400px;
+
+}
+
+.layer3 {
+    background-image: url('img/backgrounds/fire_01\ \(1\).png');
+    animation: scroll 5s infinite linear;
+    top: 15rem;
+    height: 314px;
+
+}
+
+.layer1 {
+    background-image: url('img/backgrounds/road_01.png');
+    animation: scroll 2s infinite linear;
+    position: absolute;
+    top: 34rem;
+    height: 57px;
+
+}
