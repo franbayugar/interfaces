@@ -21,7 +21,7 @@ body {
     width: 800px;
     height: 600px;
     position: relative;
-    top: 100px;
+    top: 50px;
 }
 
 .layer {
@@ -32,7 +32,6 @@ body {
     top: 0;
     left: 0;
     background-repeat: repeat-x;
-    background-size: cover;
 }
 
 .layer back {
@@ -103,5 +102,27 @@ body {
     position: absolute;
     top: 34rem;
     height: 57px;
+}
 
+.characterCont {
+    width: 100%;
+    position: absolute;
+    top: 14.5rem;
+}
+
+.character {
+    width: 112px;
+    height: 156px;
+    background: url('img/characters/Bern.png')left center;
+    animation: walk 1s steps(6) infinite;
+    margin-left: 200px;
+}
+
+@keyframes walk {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -672px;
+    }
 }
