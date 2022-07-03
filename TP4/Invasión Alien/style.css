@@ -34,11 +34,6 @@ body {
     /*  background-size: cover;*/
 }
 
-.layer back {
-    max-width: 10px;
-    max-height: 6px;
-}
-
 .layer10 {
     background-image: url('img/backgrounds/sky_01.png');
     /*animation: scroll 20s infinite linear;*/
@@ -90,4 +85,27 @@ body {
     animation: scroll 2s infinite linear;
     position: absolute;
     top: 22rem;
+}
+
+.characterCont {
+    width: 100%;
+    position: absolute;
+    top: 14.5rem;
+}
+
+.character {
+    width: 112px;
+    height: 156px;
+    background: url('img/characters/Bern.png')left center;
+    animation: walk 1s steps(6) infinite;
+    margin-left: 200px;
+}
+
+@keyframes walk {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -672px;
+    }
 }
