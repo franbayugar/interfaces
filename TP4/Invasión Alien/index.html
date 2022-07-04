@@ -25,6 +25,34 @@
             </div>
         </div>
     </div>
+    <script>
+        var keyDown = false;
+        var salto = document.querySelector(".characterCont");
+        var personaje = document.querySelector(".character");
+
+        window.addEventListener("keydown", () => {
+            keyDown = true;
+        });
+
+        window.addEventListener("keyup", () => {
+            keyDown = false;
+        });
+
+        let intervalId = setInterval(function() {
+            if (keyDown) {
+                personaje.classList.remove("character");
+                personaje.classList.add("jump");
+
+                console.log("hola");
+            } else {
+                personaje.classList.remove("jump");
+                personaje.classList.add("character");
+                console.log("chau");
+
+
+            }
+        }, 50);
+    </script>
 
 
 </body>

@@ -58,7 +58,6 @@ body {
     position: absolute;
     top: 32.5rem;
     height: 35px;
-
 }
 
 .layer7 {
@@ -67,7 +66,6 @@ body {
     position: absolute;
     top: 29rem;
     height: 95px;
-
 }
 
 .layer6 {
@@ -76,7 +74,6 @@ body {
     position: absolute;
     top: 16rem;
     height: 308px;
-
 }
 
 .layer5 {
@@ -85,7 +82,6 @@ body {
     position: absolute;
     opacity: 0.7;
     height: 400px;
-
 }
 
 .layer3 {
@@ -93,7 +89,6 @@ body {
     animation: scroll 5s infinite linear;
     top: 15rem;
     height: 314px;
-
 }
 
 .layer1 {
@@ -107,14 +102,14 @@ body {
 .characterCont {
     width: 100%;
     position: absolute;
-    top: 14.5rem;
+    top: 26.5rem;
 }
 
 .character {
-    width: 112px;
-    height: 156px;
-    background: url('img/characters/Bern.png')left center;
-    animation: walk 1s steps(6) infinite;
+    width: 65px;
+    height: 150px;
+    background: url('img/characters/tiraprueba-removebg-preview.png')left center;
+    animation: walk 3s steps(12) infinite;
     margin-left: 200px;
 }
 
@@ -123,6 +118,14 @@ body {
         background-position: 0px;
     }
     100% {
-        background-position: -672px;
+        background-position: -890px;
     }
+}
+
+.jump {
+    width: 112px;
+    height: 156px;
+    background: url('img/characters/tiraprueba-removebg-preview.png')left center;
+    margin-left: 200px;
+    transform: translateY(-150px);
 }
