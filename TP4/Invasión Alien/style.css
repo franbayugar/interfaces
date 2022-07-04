@@ -80,6 +80,7 @@ body {
     background-image: url('img/backgrounds/carhumo.png');
     animation: scroll 5s infinite linear;
     position: absolute;
+    top: 12rem;
     opacity: 0.7;
     height: 400px;
 }
@@ -87,7 +88,7 @@ body {
 .layer3 {
     background-image: url('img/backgrounds/fire_01\ \(1\).png');
     animation: scroll 5s infinite linear;
-    top: 15rem;
+    top: 16rem;
     height: 314px;
 }
 
@@ -125,7 +126,7 @@ body {
 
 .deslizando {
     background: url('img/characters/cody-slide.png')left center;
-    animation: down 0.7s steps(6) infinite;
+    animation: down 0.65s steps(5) infinite;
     width: 95px;
     height: 126px;
 }
@@ -144,7 +145,7 @@ body {
         background-position: 0px;
     }
     100% {
-        background-position: -617px;
+        background-position: -540px;
     }
 }
 
