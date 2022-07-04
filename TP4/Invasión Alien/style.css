@@ -106,16 +106,29 @@ body {
 
 .characterCont {
     width: 100%;
+
+}
+
+
+.character_init{
+    width: 72px;
+    height: 100px;
+    margin-left: 200px;
     position: absolute;
     top: 28.5rem;
 }
 
-.character {
-    width: 72px;
-    height: 100px;
+.caminando {
     background: url('img/characters/walk-cody-2.png')left center;
     animation: walk 1s steps(12) infinite;
-    margin-left: 200px;
+}
+
+.saltando{
+    background: url('img/characters/jump-cody.png')left center;
+    animation: jump 0.8s steps(8) infinite;
+    width: 88px;
+    height: 126px;
+
 }
 
 @keyframes walk {
@@ -124,5 +137,23 @@ body {
     }
     100% {
         background-position: -896px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -761px;
+    }
+    0% {
+        top: 26rem;
+    }
+    50% {
+        top: 22rem;
+    }
+    100% {
+        top: 28rem;
     }
 }
