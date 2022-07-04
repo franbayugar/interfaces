@@ -131,12 +131,31 @@ body {
 
 }
 
+.deslizando{
+    background: url('img/characters/cody-slide.png')left center;
+    animation: down 0.65s steps(5) infinite;
+    width: 95px;
+    height: 126px;
+
+}
+
+
 @keyframes walk {
     0% {
         background-position: 0px;
     }
     100% {
         background-position: -896px;
+    }
+}
+
+
+@keyframes down {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -540px;
     }
 }
 

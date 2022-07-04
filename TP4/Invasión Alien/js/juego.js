@@ -14,6 +14,13 @@ window.onkeyup = function (event) {
             personaje.saltar();
         }
      } 
+
+     if (event.keyCode === 40 || event.keyCode === 83) { 
+        // contempla flechita abajo  y la S
+        if(personaje.estado == 'caminando'){
+            personaje.deslizar();
+        }
+     } 
 }
 
 
