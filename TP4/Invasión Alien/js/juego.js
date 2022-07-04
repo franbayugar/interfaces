@@ -10,7 +10,9 @@ window.onkeyup = function (event) {
        
     if (event.keyCode === 32 || event.keyCode === 38 || event.keyCode === 87) { 
         // contempla barra espaciadora flechita arriba  y la W
-        personaje.saltar();
+        if(personaje.estado == 'caminando'){
+            personaje.saltar();
+        }
      } 
 }
 
