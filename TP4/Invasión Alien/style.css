@@ -93,7 +93,7 @@ body {
 
 .layer1 {
     background-image: url('img/backgrounds/road_01.png');
-    animation: scroll 2s infinite linear;
+    animation: scroll 3s infinite linear;
     position: absolute;
     top: 34rem;
     height: 57px;
@@ -101,16 +101,33 @@ body {
 
 .characterCont {
     width: 100%;
-    position: absolute;
-    top: 26.5rem;
 }
 
-.character {
-    width: 65px;
-    height: 150px;
-    background: url('img/characters/tiraprueba-removebg-preview.png')left center;
-    animation: walk 3s steps(12) infinite;
+.character_init {
+    width: 72px;
+    height: 100px;
     margin-left: 200px;
+    position: absolute;
+    top: 30rem;
+}
+
+.caminando {
+    background: url('img/characters/walk-cody-2.png')left center;
+    animation: walk 1s steps(12) infinite;
+}
+
+.saltando {
+    background: url('img/characters/jump-cody.png')left center;
+    animation: jump 0.8s steps(8) infinite;
+    width: 88px;
+    height: 126px;
+}
+
+.deslizando {
+    background: url('img/characters/cody-slide.png')left center;
+    animation: down 0.65s steps(5) infinite;
+    width: 95px;
+    height: 126px;
 }
 
 @keyframes walk {
@@ -118,7 +135,34 @@ body {
         background-position: 0px;
     }
     100% {
-        background-position: -890px;
+        background-position: -896px;
+    }
+}
+
+@keyframes down {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -540px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -761px;
+    }
+    0% {
+        top: 26rem;
+    }
+    50% {
+        top: 22rem;
+    }
+    100% {
+        top: 28rem;
     }
 }
 
