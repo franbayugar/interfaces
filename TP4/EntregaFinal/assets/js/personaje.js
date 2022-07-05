@@ -17,11 +17,8 @@ class Personaje {
     }
 
     saltar() {
-        this.contenedor.classList.replace(this.caminata, this.saltando);
-        this.contenedor.classList.replace(this.caminata, this.saltando);
         this.estado = 'saltando';
         let interval = setInterval(() => {
-            this.contenedor.classList.replace(this.saltando, this.caminata);
             this.contenedor.classList.replace(this.saltando, this.caminata);
             this.estado = 'caminando';
 
@@ -32,11 +29,8 @@ class Personaje {
     }
 
     deslizar() {
-        this.contenedor.classList.replace(this.caminata, this.deslizando);
-        this.contenedor.classList.replace(this.caminata, this.deslizando);
         this.estado = 'deslizando';
         let interval = setInterval(() => {
-            this.contenedor.classList.replace(this.deslizando, this.caminata);
             this.contenedor.classList.replace(this.deslizando, this.caminata);
             this.estado = 'caminando';
 
