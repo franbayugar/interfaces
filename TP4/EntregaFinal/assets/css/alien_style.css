@@ -7,21 +7,22 @@
     }
 }
 
-html,
-body {
-    height: 100%;
-}
 
-body {
+
+.cont_contJuego{
     display: flex;
     justify-content: center;
-}
 
+}
 .gameContainer {
     width: 800px;
     height: 600px;
     position: relative;
-    top: 50px;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    top: 4.5rem;
 }
 
 .layer {
@@ -40,12 +41,12 @@ body {
 }
 
 .layer10 {
-    background-image: url('img/backgrounds/sky_01.png');
+    background-image: url('../images/backgrounds/sky_01.png');
     /*animation: scroll 20s infinite linear;*/
 }
 
 .layer9 {
-    background-image: url('img/backgrounds/building_01.png');
+    background-image: url('../images/backgrounds/building_01.png');
     animation: scroll 20s infinite linear;
     position: absolute;
     top: 10.7rem;
@@ -53,7 +54,7 @@ body {
 }
 
 .layer8 {
-    background-image: url('img/backgrounds/pavement_01.png');
+    background-image: url('../images/backgrounds/pavement_01.png');
     animation: scroll 15s infinite linear;
     position: absolute;
     top: 32.5rem;
@@ -61,7 +62,7 @@ body {
 }
 
 .layer7 {
-    background-image: url('img/backgrounds/ruins_01.png');
+    background-image: url('../images/backgrounds/ruins_01.png');
     animation: scroll 10s infinite linear;
     position: absolute;
     top: 29rem;
@@ -69,7 +70,7 @@ body {
 }
 
 .layer6 {
-    background-image: url('img/backgrounds/building_02.png');
+    background-image: url('../images/backgrounds/building_02.png');
     animation: scroll 5s infinite linear;
     position: absolute;
     top: 16rem;
@@ -77,7 +78,7 @@ body {
 }
 
 .layer5 {
-    background-image: url('img/backgrounds/carhumo.png');
+    background-image: url('../images/backgrounds/carhumo.png');
     animation: scroll 5s infinite linear;
     position: absolute;
     top: 12rem;
@@ -86,14 +87,14 @@ body {
 }
 
 .layer3 {
-    background-image: url('img/backgrounds/fire_01\ \(1\).png');
+    background-image: url('../images/backgrounds/fire_01\ \(1\).png');
     animation: scroll 5s infinite linear;
     top: 16rem;
     height: 314px;
 }
 
 .layer1 {
-    background-image: url('img/backgrounds/road_01.png');
+    background-image: url('../images/backgrounds/road_01.png');
     animation: scroll 3s infinite linear;
     position: absolute;
     top: 34rem;
@@ -113,19 +114,19 @@ body {
 }
 
 .caminando {
-    background: url('img/characters/walk-cody-2.png')left center;
+    background: url('../images/characters/walk-cody-2.png')left center;
     animation: walk 1s steps(12) infinite;
 }
 
 .saltando {
-    background: url('img/characters/jump-cody.png')left center;
+    background: url('../images/characters/jump-cody.png')left center;
     animation: jump 0.8s steps(8) infinite;
     width: 88px;
     height: 126px;
 }
 
 .deslizando {
-    background: url('img/characters/cody-slide.png')left center;
+    background: url('../images/characters/cody-slide.png')left center;
     animation: down 0.7s steps(6) infinite;
         width: 95px;
     height: 126px;
@@ -170,7 +171,7 @@ body {
 .jump {
     width: 112px;
     height: 156px;
-    background: url('img/characters/tiraprueba-removebg-preview.png')left center;
+    background: url('../images/characters/tiraprueba-removebg-preview.png')left center;
     margin-left: 200px;
     transform: translateY(-150px);
 }
