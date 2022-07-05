@@ -52,8 +52,13 @@
         </ul>
     </nav>
     <div class="cont_contJuego">
-
-        <div class="gameContainer">
+        <div id="juego_menu"  class="gameContainer gameMenu">
+            <h1>Seleccione un personaje</h1>
+            <input type="radio" name="personaje" value="cody" checked>Cody
+            <input type="radio" name="personaje" value="haagar">Haagar
+            <button id="btn_jugar">Jugar</button>
+        </div>
+        <div id="juego_ejecucion" class="gameContainer oculto">
             <div class="layer layer10"></div>
             <div class="layer layer9"></div>
             <div class="layer layer8"></div>

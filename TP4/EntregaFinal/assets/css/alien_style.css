@@ -14,6 +14,11 @@
     justify-content: center;
 
 }
+
+.gameMenu{
+    background-color: black;
+    color: white;
+}
 .gameContainer {
     width: 800px;
     height: 600px;
@@ -113,22 +118,42 @@
     top: 30rem;
 }
 
-.caminando {
+.caminando_cody {
     background: url('../images/characters/walk-cody-2.png')left center;
     animation: walk 1s steps(12) infinite;
 }
+.caminando_haagar {
+    background: url('../images/characters/walk-hagar.png')left center;
+    animation: walkHaagar 1s steps(12) infinite;
+    width: 92px;
 
-.saltando {
+}
+
+.saltando_cody {
     background: url('../images/characters/jump-cody.png')left center;
     animation: jump 0.8s steps(8) infinite;
     width: 88px;
     height: 126px;
 }
 
-.deslizando {
+.saltando_haagar {
+    background: url('../images/characters/jump-haagar.png')left center;
+    animation: jumpHaagar 0.8s steps(5) infinite;
+    width: 80px;
+    height: 126px;
+}
+
+.deslizando_cody {
     background: url('../images/characters/cody-slide.png')left center;
     animation: down 0.7s steps(6) infinite;
-        width: 95px;
+    width: 95px;
+    height: 126px;
+}
+
+.deslizando_haagar {
+    background: url('../images/characters/slide_haagar.png')left center;
+    animation: downHaagar 0.7s steps(5) infinite;
+    width: 92px;
     height: 126px;
 }
 
@@ -141,6 +166,16 @@
     }
 }
 
+@keyframes walkHaagar {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -1229px;
+    }
+}
+
+
 @keyframes down {
     0% {
         background-position: 0px;
@@ -150,6 +185,15 @@
     }
 }
 
+
+@keyframes downHaagar {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -479px;
+    }
+}
 @keyframes jump {
     0% {
         background-position: 0px;
@@ -167,6 +211,26 @@
         top: 28rem;
     }
 }
+
+
+@keyframes jumpHaagar {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -421px;
+    }
+    0% {
+        top: 26rem;
+    }
+    50% {
+        top: 22rem;
+    }
+    100% {
+        top: 28rem;
+    }
+}
+
 
 .jump {
     width: 112px;
