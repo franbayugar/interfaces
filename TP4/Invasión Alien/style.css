@@ -126,8 +126,8 @@ body {
 
 .deslizando {
     background: url('img/characters/cody-slide.png')left center;
-    animation: down 0.65s steps(5) infinite;
-    width: 95px;
+    animation: down 0.7s steps(6) infinite;
+        width: 95px;
     height: 126px;
 }
 
@@ -145,7 +145,7 @@ body {
         background-position: 0px;
     }
     100% {
-        background-position: -540px;
+        background-position: -617px;
     }
 }
 
