@@ -1,19 +1,27 @@
-class Obstaculo{
+class Obstaculo {
     constructor(div) {
         this.div = div;
     }
 
-    colision(personaje) {
+    colision1(personaje) {
 
-            if (this.colisionArribaDerecha(personaje)) return true;
-            if (this.colisionArribaIzquierda(personaje)) return true;
-        
+        if (this.colisionArribaDerecha(personaje)) return true;
+        if (this.colisionArribaIzquierda(personaje)) return true;
+
         return false;
     }
 
+    colision2(personaje) {
+        if (this.colisionAereaAbajoIzquierda(personaje)) return true;
+
+
+        return false;
+    }
+
+
     colisionAbajoDerecha(personaje) {
-        if (this.getLeft() < personaje.getRight() && this.getRight() > personaje.getRight()) {
-            if (personaje.getBottom() <= this.getTop()-10) {
+        if (this.getLeft() < (personaje.getRight() - 10) && this.getRight() > personaje.getRight() + 10) {
+            if (personaje.getBottom() <= this.getTop() + 10) {
                 return true;
             }
         }
@@ -22,7 +30,7 @@ class Obstaculo{
 
     colisionAbajoIzquierda(personaje) {
         if (this.getLeft() < personaje.getLeft() && this.getRight() > personaje.getLeft()) {
-            if (personaje.getBottom() <= this.getTop()-10) {
+            if (personaje.getBottom() <= this.getTop() + 10) {
                 return true;
             }
         }
@@ -31,7 +39,7 @@ class Obstaculo{
 
     colisionArribaDerecha(personaje) {
         if (this.getLeft() < personaje.getRight() && this.getRight() > personaje.getRight()) {
-            if (personaje.getBottom() >= this.getTop()-10) {
+            if (personaje.getBottom() >= this.getTop() - 10) {
                 return true;
             }
         }
@@ -47,6 +55,17 @@ class Obstaculo{
         return false;
     }
 
+    colisionAereaAbajoIzquierda(personaje) {
+        if (this.getLeft() < personaje.getRight() && this.getRight() > personaje.getLeft()) {
+            console.log(personaje.getTop());
+            console.log(this.getBottom());
+            if (personaje.getTop() <= this.getBottom()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     getLeft() {
         return this.div.getBoundingClientRect().x;
     }
@@ -56,10 +75,10 @@ class Obstaculo{
     }
 
     getBottom() {
-        return this.div.getBoundingClientRect().y;
+        return this.div.getBoundingClientRect().y + this.div.getBoundingClientRect().height;
     }
 
     getTop() {
-        return this.div.getBoundingClientRect().y + this.div.getBoundingClientRect().height;
+        return this.div.getBoundingClientRect().y;
     }
 }

@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }
         obstaculo1 = new Obstaculo(contObstaculo1);
+        obstaculo2 = new Obstaculo(contObstaculo2);
 
         jugar();
     }
@@ -33,9 +34,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function jugar() {
         let interval = setInterval(() => {
-            if(obstaculo1.colision(personajeSelect)){
+            if ((obstaculo1.colision1(personajeSelect)) || (obstaculo2.colision2(personajeSelect))) {
                 terminarJuego();
             }
+
         }, 10);
     }
 
@@ -56,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function terminarJuego(){
+    function terminarJuego() {
         document.getElementById('juego_ejecucion').classList.add('oculto');
         document.getElementById('juego_final').classList.remove('oculto');
 
