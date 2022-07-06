@@ -113,7 +113,7 @@
 }
 
 .alienFloor {
-    position: relative;
+    position: absolute;
     top: 33rem;
     animation: aproach 3s infinite linear;
 }
@@ -268,21 +268,35 @@
 @keyframes aproach {
     0% {
         left: 1000px;
+        visibility: hidden;
     }
     8% {
         left: 900px;
+        visibility: hidden;
+
+
     }
     16% {
         left: 800px;
+        visibility: hidden;
+
+
+    }
+    20%{
+        left: 750px;
+        visibility: hidden;
     }
     24% {
         left: 700px;
+        visibility: visible;
+
+
     }
     32% {
         left: 600px;
     }
     40% {
-        lef: 500px;
+        left: 500px;
     }
     48% {
         left: 400px;
@@ -297,13 +311,22 @@
         left: 100px;
     }
     80% {
-        left: 000px;
+        left: 0px;
+    }
+    82% {
+        left: -25px;
+        visibility: hidden;
+
     }
     88% {
         left: -100px;
+        visibility: hidden;
+
     }
     100% {
         left: -200px;
+        visibility: hidden;
+
     }
 }
 
