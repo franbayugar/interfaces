@@ -40,4 +40,20 @@ class Personaje {
         this.contenedor.classList.add(this.deslizando);
     }
 
+    getRight() {
+        return this.contenedor.getBoundingClientRect().right;
+    }
+
+    getTop() {
+        return this.contenedor.getBoundingClientRect().top;
+    }
+
+    getLeft() {
+        return this.contenedor.getBoundingClientRect().left;
+    }
+
+    getBottom() {
+        return this.contenedor.getBoundingClientRect().bottom;
+    }
+
 }

@@ -2,7 +2,12 @@
 
 window.addEventListener('DOMContentLoaded', () => {
     let personajeSelect;
+    let obstaculo1;
+    let obstaculo2;
+
     const contenedorPj = document.getElementById('character');
+    const contObstaculo1 = document.getElementById('alien');
+    const contObstaculo2 = document.getElementById('airAlien');
 
     document.getElementById("btn_jugar").addEventListener('click', () => {
         crearJuego();
@@ -19,6 +24,19 @@ window.addEventListener('DOMContentLoaded', () => {
             personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar');
 
         }
+        obstaculo1 = new Obstaculo(contObstaculo1);
+
+        jugar();
+    }
+
+
+
+    function jugar() {
+        let interval = setInterval(() => {
+            if(obstaculo1.colision(personajeSelect)){
+                terminarJuego();
+            }
+        }, 10);
     }
 
     window.onkeyup = function(event) {
@@ -36,6 +54,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 personajeSelect.deslizar();
             }
         }
+    }
+
+    function terminarJuego(){
+        document.getElementById('juego_ejecucion').classList.add('oculto');
+        document.getElementById('juego_final').classList.remove('oculto');
+
     }
 
 
