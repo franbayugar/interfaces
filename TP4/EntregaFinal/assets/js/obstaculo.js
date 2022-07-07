@@ -38,8 +38,8 @@ class Obstaculo {
     }
 
     colisionArribaDerecha(personaje) {
-        if (this.getLeft() < personaje.getRight() && this.getRight() > personaje.getRight()) {
-            if (personaje.getBottom() >= this.getTop() - 10) {
+        if (this.getLeft() + 10 < personaje.getRight() && this.getRight() - 10 > personaje.getRight()) {
+            if (personaje.getBottom() >= this.getTop() + 10) {
                 return true;
             }
         }

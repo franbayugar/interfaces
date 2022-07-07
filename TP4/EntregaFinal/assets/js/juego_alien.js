@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 10);
     }
 
-    window.onkeyup = function(event) {
+    window.onkeydown = function(event) {
 
         if (event.keyCode === 32 || event.keyCode === 38 || event.keyCode === 87) {
             // contempla barra espaciadora flechita arriba  y la W

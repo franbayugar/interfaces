@@ -108,7 +108,6 @@
     width: 72px;
     height: 100px;
     margin-left: 200px;
-    border: solid 2px yellow;
     position: absolute;
     top: 30rem;
 }
@@ -177,7 +176,8 @@
     background: url('../images/characters/slide_haagar.png')left center;
     animation: downHaagar 0.7s steps(5) infinite;
     width: 92px;
-    height: 126px;
+    height: 80px;
+    top: 32rem;
 }
 
 @keyframes walk {
@@ -230,7 +230,7 @@
         top: 22rem;
     }
     100% {
-        top: 28rem;
+        top: 26rem;
     }
 }
 
@@ -245,10 +245,10 @@
         top: 26rem;
     }
     50% {
-        top: 22rem;
+        top: 23rem;
     }
     100% {
-        top: 28rem;
+        top: 26rem;
     }
 }
 
