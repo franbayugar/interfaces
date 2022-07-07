@@ -169,7 +169,7 @@
     animation: down 0.7s steps(6) infinite;
     width: 95px;
     height: 80px;
-    top: 33rem;
+    top: 31rem;
 }
 
 .deslizando_haagar {
@@ -177,7 +177,7 @@
     animation: downHaagar 0.7s steps(5) infinite;
     width: 92px;
     height: 80px;
-    top: 32rem;
+    top: 31rem;
 }
 
 @keyframes walk {

@@ -59,7 +59,7 @@ class Obstaculo {
         if (this.getLeft() < personaje.getRight() && this.getRight() > personaje.getLeft()) {
             console.log(personaje.getTop());
             console.log(this.getBottom());
-            if (personaje.getTop() <= this.getBottom()) {
+            if (personaje.getTop() <= this.getBottom() - 10) {
                 return true;
             }
         }
