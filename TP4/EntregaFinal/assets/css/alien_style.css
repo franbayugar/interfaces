@@ -26,6 +26,7 @@
     margin-top: 4rem;
     margin-bottom: 4rem;
     top: 4.5rem;
+    overflow: hidden;
 }
 
 .layer {
@@ -127,9 +128,10 @@
 
 .alienSky {
     position: relative;
+    left: -10rem;
     top: 24rem;
     animation: aproach 2s infinite linear;
-    animation-delay: 5s;
+    animation-delay: 1s;
 }
 
 .alien_fly {
@@ -227,7 +229,7 @@
         top: 26rem;
     }
     50% {
-        top: 22rem;
+        top: 24rem;
     }
     100% {
         top: 26rem;
@@ -245,7 +247,7 @@
         top: 26rem;
     }
     50% {
-        top: 23rem;
+        top: 24rem;
     }
     100% {
         top: 26rem;
@@ -264,23 +266,23 @@
 @keyframes aproach {
     0% {
         left: 1000px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
     8% {
         left: 900px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
     16% {
         left: 800px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
     20% {
         left: 750px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
     24% {
         left: 700px;
-        visibility: visible;
+        /*  visibility: hidden;*/
     }
     32% {
         left: 600px;
@@ -305,15 +307,15 @@
     }
     82% {
         left: -25px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
     88% {
         left: -100px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
     100% {
         left: -200px;
-        visibility: hidden;
+        /*  visibility: hidden;*/
     }
 }
 
