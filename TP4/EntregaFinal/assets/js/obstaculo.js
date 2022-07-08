@@ -1,7 +1,37 @@
 class Obstaculo {
-    constructor(div) {
-        this.div = div;
+    constructor(class1, class2) {
+        this.class1 = class1;
+        this.class2 = class2;
+
+
     }
+
+
+    crearObstaculo() {
+        let interval = setInterval(() => {
+            let contObs1 = document.createElement("div");
+            contObs1.classList.add(this.class1);
+            let obs1 = document.createElement("div");
+            obs1.classList.add(this.class2);
+            contObs1.appendChild(obs1);
+            document.getElementById("juego_ejecucion").appendChild(contObs1);
+
+
+
+            /* let contObs2 = document.createElement("div");
+             contObs2.classList.add("alienSky");
+             let obs2 = document.createElement("div");
+             obs2.classList.add("alien_fly");
+             contObs2.appendChild(obs2);
+             document.getElementById("juego_ejecucion").appendChild(contObs2);*/
+
+
+
+
+        }, Math.random() * (5000 - 3000) + 3000);
+
+    }
+
 
     colision1(personaje) {
 
@@ -66,19 +96,22 @@ class Obstaculo {
         return false;
     }
 
-    getLeft() {
-        return this.div.getBoundingClientRect().x;
+
+
+    getLeft() { //falta pasar por parametros el div del personaje para que tome las medidas
+        return this.obs1.getBoundingClientRect().x;
+
     }
 
     getRight() {
-        return this.div.getBoundingClientRect().x + this.div.getBoundingClientRect().width;
+        return this.obs1.getBoundingClientRect().x + this.div.getBoundingClientRect().width;
     }
 
     getBottom() {
-        return this.div.getBoundingClientRect().y + this.div.getBoundingClientRect().height;
+        return this.obs1.getBoundingClientRect().y + this.div.getBoundingClientRect().height;
     }
 
     getTop() {
-        return this.div.getBoundingClientRect().y;
+        return this.obs1.getBoundingClientRect().y;
     }
 }

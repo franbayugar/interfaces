@@ -6,8 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let obstaculo2;
 
     const contenedorPj = document.getElementById('character');
-    const contObstaculo1 = document.getElementById('alien');
-    const contObstaculo2 = document.getElementById('airAlien');
+    // const contObstaculo1 = document.getElementById('alien');
+    // const contObstaculo2 = document.getElementById('airAlien');
 
     document.getElementById("btn_jugar").addEventListener('click', () => {
         crearJuego();
@@ -24,15 +24,15 @@ window.addEventListener('DOMContentLoaded', () => {
             personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar');
 
         }
-        obstaculo1 = new Obstaculo(contObstaculo1);
-        obstaculo2 = new Obstaculo(contObstaculo2);
 
         jugar();
     }
 
 
-
     function jugar() {
+        obstaculo1 = new Obstaculo("alienFloor", "alien_walk");
+        obstaculo1.crearObstaculo();
+
         let interval = setInterval(() => {
             if ((obstaculo1.colision1(personajeSelect)) || (obstaculo2.colision2(personajeSelect))) {
                 terminarJuego();
@@ -40,6 +40,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }, 10);
     }
+
+
 
     window.onkeydown = function(event) {
 

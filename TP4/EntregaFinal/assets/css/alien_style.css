@@ -116,7 +116,7 @@
 .alienFloor {
     position: absolute;
     top: 33rem;
-    animation: aproach 2s infinite linear;
+    animation: aproach 2s linear;
 }
 
 .alien_walk {
@@ -307,15 +307,12 @@
     }
     82% {
         left: -25px;
-        /*  visibility: hidden;*/
     }
     88% {
         left: -100px;
-        /*  visibility: hidden;*/
     }
     100% {
         left: -200px;
-        /*  visibility: hidden;*/
     }
 }
 
