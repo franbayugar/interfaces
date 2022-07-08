@@ -29,14 +29,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     function jugar() {
-
-
+        //generamos nuevos obstaculos cada 1 segundo
         let intObs = setInterval(() => {
-
             generarObs();
         }, 1000);
-
+        //chequeamos que no haya colision
         let interval = setInterval(() => {
+            //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto
             for(let obs of obstaculos){
             if ((obs.colision(personajeSelect))) {
                 terminarJuego();
@@ -47,17 +46,20 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function generarObs(){
-
+        //si hay menos de 2 obstaculos generados al momemnto entonces
         if(obstaculos.length<2){
+            //obtenemos un numero random para definir el bicho
             let numero = ((Math.floor(Math.random()*2)));
             let obstaculo1;
             switch(numero){
+                //creamos los obstaculos y les pasamos por parametro las clases que van a utilizar
                 case 0: obstaculo1 = new Obstaculo("alienFloor", "alien_walk"); break;
                 case 1: obstaculo1 = new Obstaculo("alienSky", "alien_fly");break;
-
             }
+            //pusheamos el bicho al arreglo
             obstaculos.push(obstaculo1);
         }else{
+            //si ya tenemos 2 obstaculos mapeados borramos el primero 
             obstaculos[0].eliminar();
             obstaculos.splice(0,1)
         }

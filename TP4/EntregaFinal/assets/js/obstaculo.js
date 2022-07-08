@@ -1,5 +1,6 @@
 class Obstaculo {
     constructor(class1,class2) {
+        //recibimos por parametro las clases y llamamos a crear obstaculo
         this.class1 = class1;
         this.class2 = class2;
         this.div;
@@ -11,6 +12,7 @@ class Obstaculo {
 
     crearObstaculo() {
    //     let interval = setInterval(() => {
+            //asignamos los divs como variables de clase
             this.contenedor = document.createElement("div");
             this.contenedor.classList.add(this.class1);
             this.div = document.createElement("div");
@@ -33,6 +35,7 @@ class Obstaculo {
 
 
     colision(personaje) {
+        //comprobamos la colision dependiendo cual es el bicho
         if(this.class1 === 'alienFloor'){
             if (this.colisionArribaDerecha(personaje)) return true;
             if (this.colisionArribaIzquierda(personaje)) return true;
@@ -98,10 +101,8 @@ class Obstaculo {
     }
 
 
-
     getLeft() { 
         return this.div.getBoundingClientRect().x;
-
     }
 
     getRight() {
@@ -115,7 +116,7 @@ class Obstaculo {
     getTop() {
         return this.div.getBoundingClientRect().y;
     }
-
+    //eliminamos el bicho del DOM
     eliminar(){
         this.contenedor.remove();
     }
