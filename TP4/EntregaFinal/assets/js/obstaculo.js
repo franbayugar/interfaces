@@ -1,21 +1,22 @@
 class Obstaculo {
-    constructor(class1, class2) {
+    constructor(class1,class2) {
         this.class1 = class1;
         this.class2 = class2;
-
+        this.div;
+        this.contenedor;
+        this.crearObstaculo();
 
     }
 
 
     crearObstaculo() {
-        let interval = setInterval(() => {
-            let contObs1 = document.createElement("div");
-            contObs1.classList.add(this.class1);
-            let obs1 = document.createElement("div");
-            obs1.classList.add(this.class2);
-            contObs1.appendChild(obs1);
-            document.getElementById("juego_ejecucion").appendChild(contObs1);
-
+   //     let interval = setInterval(() => {
+            this.contenedor = document.createElement("div");
+            this.contenedor.classList.add(this.class1);
+            this.div = document.createElement("div");
+            this.div.classList.add(this.class2);
+            this.contenedor.appendChild( this.div);
+            document.getElementById("juego_ejecucion").appendChild(this.contenedor);
 
 
             /* let contObs2 = document.createElement("div");
@@ -26,27 +27,28 @@ class Obstaculo {
              document.getElementById("juego_ejecucion").appendChild(contObs2);*/
 
 
-
-
-        }, Math.random() * (5000 - 3000) + 3000);
+     //   }, Math.random() * (5000 - 3000) + 3000);
 
     }
 
 
-    colision1(personaje) {
-
-        if (this.colisionArribaDerecha(personaje)) return true;
-        if (this.colisionArribaIzquierda(personaje)) return true;
+    colision(personaje) {
+        if(this.class1 === 'alienFloor'){
+            if (this.colisionArribaDerecha(personaje)) return true;
+            if (this.colisionArribaIzquierda(personaje)) return true;
+        }else{
+            if (this.colisionAereaAbajoIzquierda(personaje)) return true;
+        }
 
         return false;
     }
 
-    colision2(personaje) {
-        if (this.colisionAereaAbajoIzquierda(personaje)) return true;
+    // colision2(personaje) {
+    //     if (this.colisionAereaAbajoIzquierda(personaje)) return true;
 
 
-        return false;
-    }
+    //     return false;
+    // }
 
 
     colisionAbajoDerecha(personaje) {
@@ -87,8 +89,7 @@ class Obstaculo {
 
     colisionAereaAbajoIzquierda(personaje) {
         if (this.getLeft() < personaje.getRight() && this.getRight() > personaje.getLeft()) {
-            console.log(personaje.getTop());
-            console.log(this.getBottom());
+
             if (personaje.getTop() <= this.getBottom() - 10) {
                 return true;
             }
@@ -98,20 +99,24 @@ class Obstaculo {
 
 
 
-    getLeft() { //falta pasar por parametros el div del personaje para que tome las medidas
-        return this.obs1.getBoundingClientRect().x;
+    getLeft() { 
+        return this.div.getBoundingClientRect().x;
 
     }
 
     getRight() {
-        return this.obs1.getBoundingClientRect().x + this.div.getBoundingClientRect().width;
+        return this.div.getBoundingClientRect().x + this.div.getBoundingClientRect().width;
     }
 
     getBottom() {
-        return this.obs1.getBoundingClientRect().y + this.div.getBoundingClientRect().height;
+        return this.div.getBoundingClientRect().y + this.div.getBoundingClientRect().height;
     }
 
     getTop() {
-        return this.obs1.getBoundingClientRect().y;
+        return this.div.getBoundingClientRect().y;
+    }
+
+    eliminar(){
+        this.contenedor.remove();
     }
 }

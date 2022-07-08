@@ -2,8 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
     let personajeSelect;
-    let obstaculo1;
-    let obstaculo2;
+    let obstaculos = [];
 
     const contenedorPj = document.getElementById('character');
     // const contObstaculo1 = document.getElementById('alien');
@@ -30,18 +29,39 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     function jugar() {
-        obstaculo1 = new Obstaculo("alienFloor", "alien_walk");
-        obstaculo1.crearObstaculo();
+
+
+        let intObs = setInterval(() => {
+
+            generarObs();
+        }, 1000);
 
         let interval = setInterval(() => {
-            if ((obstaculo1.colision1(personajeSelect)) || (obstaculo2.colision2(personajeSelect))) {
+            for(let obs of obstaculos){
+            if ((obs.colision(personajeSelect))) {
                 terminarJuego();
             }
 
+        }
         }, 10);
     }
 
+    function generarObs(){
 
+        if(obstaculos.length<2){
+            let numero = ((Math.floor(Math.random()*2)));
+            let obstaculo1;
+            switch(numero){
+                case 0: obstaculo1 = new Obstaculo("alienFloor", "alien_walk"); break;
+                case 1: obstaculo1 = new Obstaculo("alienSky", "alien_fly");break;
+
+            }
+            obstaculos.push(obstaculo1);
+        }else{
+            obstaculos[0].eliminar();
+            obstaculos.splice(0,1)
+        }
+    }
 
     window.onkeydown = function(event) {
 
