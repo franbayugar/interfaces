@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
         //generamos nuevos obstaculos cada 1 segundo
         let intObs = setInterval(() => {
             generarObs();
-        }, 1000);
+        }, 800);
         //chequeamos que no haya colision
         let interval = setInterval(() => {
             //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto
@@ -40,7 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
             if ((obs.colision(personajeSelect))) {
                 terminarJuego();
             }
-
         }
         }, 10);
     }
