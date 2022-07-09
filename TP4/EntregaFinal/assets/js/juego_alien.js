@@ -100,9 +100,15 @@ window.addEventListener('DOMContentLoaded', () => {
     function terminarJuego() {
         enJuego = false;
         //    document.getElementById('juego_ejecucion').classList.add('oculto');
-        let animados = document.querySelectorAll('.gameContainer>div');
+        let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div');
 
-        animados.forEach(animado => {
+        fondosAnimados.forEach(animado => {
+            animado.style.animationPlayState = 'paused';
+        })
+
+        let obsMov = document.querySelectorAll('.starMove,.alien_walk,.alien_fly');
+
+        obsMov.forEach(animado => {
             animado.style.animationPlayState = 'paused';
         })
 
