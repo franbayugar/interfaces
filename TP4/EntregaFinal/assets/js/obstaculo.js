@@ -6,6 +6,7 @@ class Obstaculo {
         this.div;
         this.contenedor;
         this.crearObstaculo();
+        this.sumarPuntos("0");
 
     }
 
@@ -40,10 +41,29 @@ class Obstaculo {
             if (this.colisionArribaDerecha(personaje)) return true;
             if (this.colisionArribaIzquierda(personaje)) return true;
         } else {
-            if (this.colisionAereaAbajoIzquierda(personaje)) return true;
+            if (this.colisionAereaAbajoIzquierda(personaje)) {
+                if (this.class1 === 'alienSky') {
+                    return true;
+                }
+                if (this.class1 === 'starPoints') {
+                    this.sumarPuntos(10);
+
+
+                }
+            }
         }
 
         return false;
+    }
+
+    sumarPuntos(valor2) {
+        let scoreInput = document.getElementById("points");
+        let valor1 = scoreInput.value;
+        let suma = (parseInt(valor1) + parseInt(valor2));
+        scoreInput.value = suma;
+        console.log(suma);
+
+
     }
 
     // colision2(personaje) {

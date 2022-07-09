@@ -149,7 +149,7 @@
     position: absolute;
     top: 26rem;
     animation: aproach 3s linear infinite;
-    /* visibility: hidden;*/
+    visibility: hidden;
 }
 
 .starMove {
