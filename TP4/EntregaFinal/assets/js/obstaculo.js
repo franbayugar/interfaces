@@ -46,7 +46,8 @@ class Obstaculo {
                     return true;
                 }
                 if (this.class1 === 'starPoints') {
-                    this.sumarPuntos(10);
+
+                    this.sumarPuntos(1);
 
 
                 }

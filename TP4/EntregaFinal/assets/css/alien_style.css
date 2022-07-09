@@ -229,6 +229,12 @@
     top: 31rem;
 }
 
+#juego_final {
+    color: rgb(119, 223, 15);
+    font: 2rem 'Orbitron';
+    background-color: rgba(255, 100, 100, 0);
+}
+
 @keyframes walk {
     0% {
         background-position: 0px;

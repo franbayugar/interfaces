@@ -3,6 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     let personajeSelect;
     let obstaculos = [];
+    let enJuego;
 
     const contenedorPj = document.getElementById('character');
     // const contObstaculo1 = document.getElementById('alien');
@@ -29,9 +30,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     function jugar() {
+        enJuego = true;
+        console.log(enJuego);
+
+
         //generamos nuevos obstaculos cada 1 segundo
         let intObs = setInterval(() => {
-            generarObs();
+            if (enJuego) {
+                generarObs();
+            }
         }, 800);
         //chequeamos que no haya colision
         let interval = setInterval(() => {
@@ -41,7 +48,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     terminarJuego();
                 }
             }
-        }, 10);
+        }, 300);
+
+
     }
 
     function generarObs() {
@@ -89,7 +98,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function terminarJuego() {
-        document.getElementById('juego_ejecucion').classList.add('oculto');
+        enJuego = false;
+        //    document.getElementById('juego_ejecucion').classList.add('oculto');
+        let animados = document.querySelectorAll('.gameContainer>div');
+
+        animados.forEach(animado => {
+            animado.style.animationPlayState = 'paused';
+        })
+
         document.getElementById('juego_final').classList.remove('oculto');
 
     }
