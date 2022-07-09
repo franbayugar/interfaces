@@ -113,6 +113,13 @@ window.addEventListener('DOMContentLoaded', () => {
         })
 
         document.getElementById('juego_final').classList.remove('oculto');
+        document.getElementById('youLose').classList.remove('oculto');
+        let resultado = document.getElementById("puntaje");
+        let acumuladas = document.getElementById("points");
+        resultado.innerHTML = acumuladas.value;
+
+
+
 
     }
 
