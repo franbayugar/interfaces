@@ -147,10 +147,8 @@
 
 .starPoints {
     position: absolute;
-    height: 3rem;
-    width: 3rem;
-    top: 24rem;
-    animation: aproach 2s linear infinite;
+    top: 26rem;
+    animation: aproach 3s linear infinite;
     /* visibility: hidden;*/
 }
 
@@ -158,8 +156,8 @@
     background: url('../images/iconos alien/stars-removebg-preview.png');
     -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
     animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-    width: 110px;
-    height: 114px;
+    width: 50px;
+    height: 50px;
 }
 
 .alienFloor {
