@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Josefin+Sans:wght@100;400&family=Orbitron:wght@900&family=Staatliches&display=swap');
 @keyframes scroll {
     0% {
         background-position-x: 0px;
@@ -27,6 +28,37 @@
     margin-bottom: 4rem;
     top: 4.5rem;
     overflow: hidden;
+}
+
+.alienInfo {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+    padding: 1rem;
+}
+
+.alienInfo img {
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    max-height: 3rem;
+}
+
+#points {
+    width: 6rem;
+    color: rgb(119, 223, 15);
+    background-color: rgba(255, 0, 0, 0);
+    border-style: none;
+    font-family: 'Orbitron';
+    font-size: 1.5rem;
+    padding: 0;
+    text-align: center;
+    margin-left: 0.5rem;
 }
 
 .layer {
@@ -113,6 +145,23 @@
     top: 30rem;
 }
 
+.starPoints {
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    top: 24rem;
+    animation: aproach 2s linear infinite;
+    /* visibility: hidden;*/
+}
+
+.starMove {
+    background: url('../images/iconos alien/stars-removebg-preview.png');
+    -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    width: 110px;
+    height: 114px;
+}
+
 .alienFloor {
     position: absolute;
     top: 33rem;
@@ -132,7 +181,6 @@
     top: 24rem;
     animation: aproach 2s linear;
     visibility: hidden;
-
 }
 
 .alien_fly {
@@ -309,17 +357,14 @@
     82% {
         left: -25px;
         visibility: hidden;
-
     }
     88% {
         left: -100px;
         visibility: hidden;
-
     }
     100% {
         left: -200px;
         visibility: hidden;
-
     }
 }
 
@@ -338,4 +383,26 @@
     background: url('../images/characters/tiraprueba-removebg-preview.png')left center;
     margin-left: 200px;
     transform: translateY(-150px);
+}
+
+@-webkit-keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
 }
