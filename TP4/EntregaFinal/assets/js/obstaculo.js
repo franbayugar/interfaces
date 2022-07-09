@@ -54,7 +54,7 @@ class Obstaculo {
     // }
 
 
-    /*   colisionAbajoDerecha(personaje) {
+    colisionAbajoDerecha(personaje) {
         if (this.getLeft() < (personaje.getRight() - 10) && this.getRight() > personaje.getRight() + 10) {
             if (personaje.getBottom() <= this.getTop() + 10) {
                 return true;
@@ -99,7 +99,7 @@ class Obstaculo {
         }
         return false;
     }
-*/
+
 
     getLeft() {
         return this.div.getBoundingClientRect().x;

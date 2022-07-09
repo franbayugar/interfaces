@@ -36,31 +36,38 @@ window.addEventListener('DOMContentLoaded', () => {
         //chequeamos que no haya colision
         let interval = setInterval(() => {
             //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto
-            for(let obs of obstaculos){
-            if ((obs.colision(personajeSelect))) {
-                terminarJuego();
+            for (let obs of obstaculos) {
+                if ((obs.colision(personajeSelect))) {
+                    terminarJuego();
+                }
             }
-        }
         }, 10);
     }
 
-    function generarObs(){
+    function generarObs() {
         //si hay menos de 2 obstaculos generados al momemnto entonces
-        if(obstaculos.length<2){
+        if (obstaculos.length < 2) {
             //obtenemos un numero random para definir el bicho
-            let numero = ((Math.floor(Math.random()*2)));
+            let numero = ((Math.floor(Math.random() * 3)));
             let obstaculo1;
-            switch(numero){
+            switch (numero) {
                 //creamos los obstaculos y les pasamos por parametro las clases que van a utilizar
-                case 0: obstaculo1 = new Obstaculo("alienFloor", "alien_walk"); break;
-                case 1: obstaculo1 = new Obstaculo("alienSky", "alien_fly");break;
+                case 0:
+                    obstaculo1 = new Obstaculo("alienFloor", "alien_walk");
+                    break;
+                case 1:
+                    obstaculo1 = new Obstaculo("alienSky", "alien_fly");
+                    break;
+                case 2:
+                    obstaculo1 = new Obstaculo("starPoints", "starMove");
+                    break;
             }
             //pusheamos el bicho al arreglo
             obstaculos.push(obstaculo1);
-        }else{
+        } else {
             //si ya tenemos 2 obstaculos mapeados borramos el primero 
             obstaculos[0].eliminar();
-            obstaculos.splice(0,1)
+            obstaculos.splice(0, 1)
         }
     }
 
