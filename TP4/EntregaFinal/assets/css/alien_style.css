@@ -230,11 +230,11 @@
 
 #juego_final {
     position: absolute;
-    top: -5rem;
+    top: -2rem;
     display: flex;
     justify-content: center;
+    height: 100%;
     width: 100%;
-    height: auto;
     color: rgb(119, 223, 15);
     font: 2rem 'Orbitron';
     background-color: rgba(255, 100, 100, 0);
@@ -246,6 +246,12 @@
 
 #juego_final h1 {
     margin-bottom: 0;
+}
+
+#youLose {
+    height: 100%;
+    -webkit-animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes walk {
@@ -421,5 +427,39 @@
     100% {
         -webkit-transform: rotateY(360deg);
         transform: rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
     }
 }

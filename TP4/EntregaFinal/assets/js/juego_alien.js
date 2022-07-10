@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     terminarJuego();
                 }
             }
-        }, 300);
+        }, 10);
 
 
     }
