@@ -1,11 +1,14 @@
 class Personaje {
 
-    constructor(avatar, caminata, saltando, deslizando) {
+    constructor(avatar, caminata, saltando, deslizando, muriendo, muerto) {
         this.contenedor = avatar;
         this.estado = 'caminando';
         this.caminata = caminata;
         this.saltando = saltando;
         this.deslizando = deslizando;
+        this.muriendo = muriendo;
+        this.muerto = muerto;
+
         this.vivo = true;
         this.puntos = 0;
         this.caminar();
@@ -39,6 +42,25 @@ class Personaje {
         this.contenedor.classList.remove(this.caminata);
         this.contenedor.classList.add(this.deslizando);
     }
+
+    morir(){
+        this.estado = 'muerto';
+
+        this.contenedor.classList.remove(this.caminata);
+        this.contenedor.classList.remove(this.deslizando);
+        this.contenedor.classList.remove(this.saltando);
+
+        this.contenedor.classList.add(this.muriendo);
+        let interval = setInterval(() => {
+            this.contenedor.classList.remove(this.muriendo);
+
+            this.contenedor.classList.add(this.muerto);
+
+            clearInterval(interval);
+
+        }, 1000);
+
+        }
 
     getRight() {
         return this.contenedor.getBoundingClientRect().right;

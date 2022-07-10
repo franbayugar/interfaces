@@ -28,15 +28,15 @@ window.addEventListener('DOMContentLoaded', () => {
     function crearJuego() {
         document.getElementById('juego_menu').classList.add('oculto');
         document.getElementById('juego_ejecucion').classList.remove('oculto');
-        // let personaje = document.querySelector('input[name="personaje"]:checked').value;
-        let personaje = document.getElementsByClassName('elegible'); //ese metodo se queda con todos los que tienen la clase, en este caso es uno solo
-        if (personaje[0].id === 'char1') {
-            console.log(personaje[0].id);
-            // if (personaje === 'cody') {
-            personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody');
+        let personaje = document.querySelector('input[name="personaje"]:checked').value;
+       // let personaje = document.getElementsByClassName('elegible'); //ese metodo se queda con todos los que tienen la clase, en este caso es uno solo
+      //  if (personaje[0].id === 'char1') {
+        //    console.log(personaje[0].id);
+             if (personaje === 'cody') {
+            personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody', 'muriendo_cody', 'muerto_cody');
         } else {
-            console.log(personaje[0].id);
-            personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar');
+        //    console.log(personaje[0].id);
+            personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar', 'muriendo_haagar', 'muerto_haagar');
 
         }
 
@@ -61,6 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
             for (let obs of obstaculos) {
                 if ((obs.colision(personajeSelect))) {
                     terminarJuego();
+                    clearInterval(interval);
                 }
             }
         }, 10);
@@ -113,12 +114,17 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function terminarJuego() {
+        personajeSelect.morir();
         enJuego = false;
+
         //    document.getElementById('juego_ejecucion').classList.add('oculto');
         let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div');
-
         fondosAnimados.forEach(animado => {
-            animado.style.animationPlayState = 'paused';
+            if(animado.classList[0]!== 'characterCont'){
+                console.log(animado.classList[0]);
+
+                animado.style.animationPlayState = 'paused';
+            }
         })
 
         let obsMov = document.querySelectorAll('.starMove,.alien_walk,.alien_fly');
