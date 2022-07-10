@@ -13,6 +13,29 @@
     justify-content: center;
 }
 
+
+/*#juego_menu {
+    position: absolute;
+    top: 4rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+#juego_menu h1 {
+    margin: 0;
+    font-size: 100px;
+    color: rgba(225, 225, 0, 0.01);
+    background-image: url('https://i.picsum.photos/id/974/700/700.jpg?hmac=0QjtFG8AaEY4gk1voUWVxqsYLbWgHeaqyzjhTt4YbOU');
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    animation: animate 15s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
 .gameMenu {
     background-color: black;
     color: white;
@@ -461,5 +484,21 @@
         -webkit-transform-origin: 50% 1400px;
         transform-origin: 50% 1400px;
         opacity: 1;
+    }
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        background-position: left top;
+    }
+    25% {
+        background-position: right bottom;
+    }
+    50% {
+        background-position: left bottom;
+    }
+    75% {
+        background-position: right top;
     }
 }
