@@ -5,10 +5,22 @@ window.addEventListener('DOMContentLoaded', () => {
     let obstaculos = [];
     let enJuego;
 
-    const contenedorPj = document.getElementById('character');
-    // const contObstaculo1 = document.getElementById('alien');
-    // const contObstaculo2 = document.getElementById('airAlien');
 
+
+    let cambiar = document.querySelectorAll(".changeChar"); //elijo las dos flechas que alternan entre los personajes
+    cambiar.forEach(cambio => {
+            cambio.addEventListener("click", () => {
+                let personajes = document.querySelectorAll(".mySlides"); //me quedo con ambos personajes
+                personajes.forEach(personaje => {
+                    personaje.classList.toggle("oculto"); //alterno cual elijo y cual no
+                    personaje.classList.toggle("elegible");
+                })
+            })
+        })
+        // const contObstaculo1 = document.getElementById('alien');
+        // const contObstaculo2 = document.getElementById('airAlien');
+
+    const contenedorPj = document.getElementById('character');
     document.getElementById("btn_jugar").addEventListener('click', () => {
         crearJuego();
     })
@@ -16,11 +28,14 @@ window.addEventListener('DOMContentLoaded', () => {
     function crearJuego() {
         document.getElementById('juego_menu').classList.add('oculto');
         document.getElementById('juego_ejecucion').classList.remove('oculto');
-        let personaje = document.querySelector('input[name="personaje"]:checked').value;
-        console.log(personaje);
-        if (personaje === 'cody') {
+        // let personaje = document.querySelector('input[name="personaje"]:checked').value;
+        let personaje = document.getElementsByClassName('elegible'); //ese metodo se queda con todos los que tienen la clase, en este caso es uno solo
+        if (personaje[0].id === 'char1') {
+            console.log(personaje[0].id);
+            // if (personaje === 'cody') {
             personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody');
         } else {
+            console.log(personaje[0].id);
             personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar');
 
         }

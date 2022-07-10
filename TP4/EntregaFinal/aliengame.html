@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/alien_style.css">
 
+
     <title>Document</title>
 </head>
 
@@ -55,45 +56,63 @@
         <div id="juego_menu" class="gameContainer gameMenu">
             <h1>INVASION ALIEN</h1>
 
-            <input type="radio" name="personaje" value="cody" checked>Cody
-            <input type="radio" name="personaje" value="haagar">Haagar
-            <button id="btn_jugar">Jugar</button>
-        </div>
-        <div id="juego_ejecucion" class="gameContainer oculto">
-            <div class="alienInfo">
-                <div class="back">
-                    <a href="aliengame.html"><img src="assets/images/iconos alien/back-removebg-preview.png" alt=""></a>
+            <div class="slideshow_container">
+                <a class="changeChar">❮</a>
+
+                <div id="char1" class="mySlides fade elegible">
+
+                    <img src="/assets/images/characters/Cody_solo-removebg-preview.png" style="width:100%">
+
                 </div>
 
-                <div class="score">
-                    <img src="assets/images/iconos alien/stars-removebg-preview.png" alt=""></a>
-                    <input type="text" id="points" name="points" value="0" readonly>
-                </div>
-            </div>
-            <div class="layer layer10"></div>
-            <div class="layer layer9"></div>
-            <div class="layer layer8"></div>
-            <div class="layer layer7"></div>
-            <div class="layer layer6"></div>
-            <div class="layer layer5"></div>
 
-            <div class="layer layer3"></div>
-            <div class="layer layer1"></div>
-            <div class="characterCont">
-                <div id="character" class="character_init">
+                <div id="char2" class="mySlides fade oculto">
+
+                    <img src="/assets/images/characters/Haggar_solo-removebg-preview.png" style="width:100%">
+
                 </div>
+                <a class="changeChar">❯</a>
+
+                <!--  <input type="radio" name="personaje" value="cody" checked>Cody
+                <input type="radio" name="personaje" value="haagar">Haagar-->
+                <button id="btn_jugar">Jugar</button>
             </div>
-            <!--<div class="starPoints">
+            <div id="juego_ejecucion" class="gameContainer oculto">
+                <div class="alienInfo">
+                    <div class="back">
+                        <a href="aliengame.html"><img src="assets/images/iconos alien/back-removebg-preview.png" alt=""></a>
+                    </div>
+
+                    <div class="score">
+                        <img src="assets/images/iconos alien/stars-removebg-preview.png" alt=""></a>
+                        <input type="text" id="points" name="points" value="0" readonly>
+                    </div>
+                </div>
+                <div class="layer layer10"></div>
+                <div class="layer layer9"></div>
+                <div class="layer layer8"></div>
+                <div class="layer layer7"></div>
+                <div class="layer layer6"></div>
+                <div class="layer layer5"></div>
+
+                <div class="layer layer3"></div>
+                <div class="layer layer1"></div>
+                <div class="characterCont">
+                    <div id="character" class="character_init">
+                    </div>
+                </div>
+                <!--<div class="starPoints">
                 <div class="starMove">
                 </div>
-            </div>-->
-            <div id="juego_final" class="gameContainer gameMenu oculto">
-                <div id="youLose" class="oculto">
-                    <h1>¡Perdiste!</h1>
-                    <a>Tu puntaje: <span id="puntaje"></span></a>
+                </div>-->
+                <div id="juego_final" class="gameContainer gameMenu oculto">
+                    <div id="youLose" class="oculto">
+                        <h1>¡Perdiste!</h1>
+                        <a>Tu puntaje: <span id="puntaje"></span></a>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 

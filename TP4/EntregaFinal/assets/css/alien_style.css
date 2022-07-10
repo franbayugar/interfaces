@@ -13,6 +13,19 @@
     justify-content: center;
 }
 
+.slideshow_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow_container a {
+    font-family: 'Orbitron';
+    color: rgb(119, 223, 15);
+    font-size: 2rem;
+}
+
 
 /*#juego_menu {
     position: absolute;
