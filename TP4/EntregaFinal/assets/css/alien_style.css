@@ -404,7 +404,7 @@
     100% {
         -webkit-transform: translateY(-416px) translateX(600px);
         transform: translateY(-416px) translateX(600px);
-        opacity: 0.5;
+        opacity: 0;
     }
 }
 
@@ -417,7 +417,7 @@
     100% {
         -webkit-transform: translateY(-416px) translateX(600px);
         transform: translateY(-416px) translateX(600px);
-        opacity: 0.5;
+        opacity: 0;
     }
 }
 
