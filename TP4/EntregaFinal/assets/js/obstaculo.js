@@ -42,19 +42,15 @@ class Obstaculo {
             if (this.colisionArribaIzquierda(personaje)) return true;
         } else {
             if (this.colisionAereaAbajoIzquierda(personaje)) {
-                if (this.class1 === 'alienSky') {
                     return true;
-                }
-                if (this.class1 === 'starPoints') {
-                    this.eliminar();
-                    this.sumarPuntos(1);
-
-
-                }
             }
         }
 
         return false;
+    }
+
+    getValue(){
+        return this.class1;
     }
 
     sumarPuntos(valor2) {

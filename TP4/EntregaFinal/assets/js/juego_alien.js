@@ -59,8 +59,13 @@ window.addEventListener('DOMContentLoaded', () => {
             //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto
             for (let obs of obstaculos) {
                 if ((obs.colision(personajeSelect))) {
-                    terminarJuego();
-                    clearInterval(interval);
+                    if(obs.getValue() !== 'starPoints'){
+                        terminarJuego();
+                        clearInterval(interval);
+                    }else{
+                        obs.eliminar();
+                        obs.sumarPuntos(1);
+                    }
                 }
             }
         }, 10);
