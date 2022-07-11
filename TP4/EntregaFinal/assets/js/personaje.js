@@ -78,12 +78,10 @@ class Personaje {
         return this.contenedor.getBoundingClientRect().bottom;
     }
 
-    sumarPuntos(valor2) {
+    sumarPuntos() {
         let scoreInput = document.getElementById("points");
-        let suma = (this.puntos + parseInt(valor2));
-        this.puntos = suma;
+        this.puntos++;
         scoreInput.value = this.puntos;
-        console.log(suma);
 
 
     }

@@ -63,10 +63,13 @@ window.addEventListener('DOMContentLoaded', () => {
                         terminarJuego();
                         clearInterval(interval);
                     }else{
+                        //agregamos clase para salida de animacion
                         obs.div.classList.add('out_star');
-                        personajeSelect.sumarPuntos(1);
-                        console.log(obstaculos);
+                        //sumamos un punto al personaje
+                        personajeSelect.sumarPuntos();
+                        //eliminamos del arreglo de obstaculos a la moneda para que no vuelva a recorrerla
                         obstaculos.splice(obstaculos.indexOf(obs), 1);
+                        //una vez que pase un segundo eliminamos el div de la moneda para darle lugar a la animacion
                         setTimeout(()=>{
                             obs.eliminar();
                         }, 1000)
