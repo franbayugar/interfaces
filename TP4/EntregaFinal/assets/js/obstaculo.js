@@ -6,8 +6,6 @@ class Obstaculo {
         this.div;
         this.contenedor;
         this.crearObstaculo();
-        this.sumarPuntos("0");
-
     }
 
 
@@ -53,15 +51,7 @@ class Obstaculo {
         return this.class1;
     }
 
-    sumarPuntos(valor2) {
-        let scoreInput = document.getElementById("points");
-        let valor1 = scoreInput.value;
-        let suma = (parseInt(valor1) + parseInt(valor2));
-        scoreInput.value = suma;
-        console.log(suma);
 
-
-    }
 
     // colision2(personaje) {
     //     if (this.colisionAereaAbajoIzquierda(personaje)) return true;

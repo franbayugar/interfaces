@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (enJuego) {
                 generarObs();
             }
-        }, 800);
+        }, 1000);
         //chequeamos que no haya colision
         let interval = setInterval(() => {
             //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto
@@ -63,10 +63,14 @@ window.addEventListener('DOMContentLoaded', () => {
                         terminarJuego();
                         clearInterval(interval);
                     }else{
-                        obs.eliminar();
-                        obs.sumarPuntos(1);
-                    }
-                }
+                        obs.div.classList.add('out_star');
+                        personajeSelect.sumarPuntos(1);
+                        console.log(obstaculos);
+                        obstaculos.splice(obstaculos.indexOf(obs), 1);
+                        setTimeout(()=>{
+                            obs.eliminar();
+                        }, 1000)
+                    }}
             }
         }, 10);
 
