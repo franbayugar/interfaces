@@ -211,7 +211,9 @@
     position: absolute;
     top: 30rem;
 }
-
+.changeChar:hover{
+    cursor: pointer;
+}
 .starPoints {
     position: absolute;
     top: 26rem;
