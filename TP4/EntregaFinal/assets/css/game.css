@@ -58,7 +58,7 @@
     color: #17171A;
     margin-top: 1.5rem;
     text-decoration: none;
-    width: 95%;
+    width: 45%;
     height: 2.5rem;
     border-radius: 21rem;
     border-bottom: solid #32335E;
@@ -165,11 +165,14 @@ figcaption p {
 
 .gifAndButton {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .textInstructions {
     background-color: #C2C4D2;
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .how_to_play img {
