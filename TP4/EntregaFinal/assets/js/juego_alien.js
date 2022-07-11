@@ -28,17 +28,18 @@ window.addEventListener('DOMContentLoaded', () => {
     function crearJuego() {
         document.getElementById('juego_menu').classList.add('oculto');
         document.getElementById('juego_ejecucion').classList.remove('oculto');
-        let personaje = document.querySelector('input[name="personaje"]:checked').value;
-       // let personaje = document.getElementsByClassName('elegible'); //ese metodo se queda con todos los que tienen la clase, en este caso es uno solo
-      //  if (personaje[0].id === 'char1') {
-        //    console.log(personaje[0].id);
-             if (personaje === 'cody') {
+        // let personaje = document.querySelector('input[name="personaje"]:checked').value;
+        let personaje = document.getElementsByClassName('elegible'); //ese metodo se queda con todos los que tienen la clase, en este caso es uno solo
+        if (personaje[0].id === 'char1') {
+            console.log(personaje[0].id);
+            // if (personaje === 'cody') {
             personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody', 'muriendo_cody', 'muerto_cody');
         } else {
-        //    console.log(personaje[0].id);
+            console.log(personaje[0].id);
             personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar', 'muriendo_haagar', 'muerto_haagar');
 
         }
+
 
         jugar();
     }
@@ -120,7 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
         //    document.getElementById('juego_ejecucion').classList.add('oculto');
         let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div');
         fondosAnimados.forEach(animado => {
-            if(animado.classList[0]!== 'characterCont'){
+            if (animado.classList[0] !== 'characterCont') {
                 console.log(animado.classList[0]);
 
                 animado.style.animationPlayState = 'paused';
