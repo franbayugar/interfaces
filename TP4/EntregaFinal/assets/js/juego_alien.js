@@ -32,10 +32,10 @@ window.addEventListener('DOMContentLoaded', () => {
         if (personaje[0].id === 'char1') {
             console.log(personaje[0].id);
             // if (personaje === 'cody') {
-            personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody', 'muriendo_cody', 'muerto_cody');
+            personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody', 'muriendo_cody', 'muerto_cody', 'ganando_cody', 'gano_cody');
         } else {
             console.log(personaje[0].id);
-            personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar', 'muriendo_haagar', 'muerto_haagar');
+            personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar', 'muriendo_haagar', 'muerto_haagar', 'ganando_haagar', 'gano_haagar');
 
         }
 
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
             for (let obs of obstaculos) {
                 if ((obs.colision(personajeSelect))) {
                     if(obs.getValue() !== 'starPoints'){
-                        terminarJuego();
+                        terminarJuego(false);
                         clearInterval(interval);
                     }else{
                         //agregamos clase para salida de animacion
@@ -72,7 +72,10 @@ window.addEventListener('DOMContentLoaded', () => {
                         //una vez que pase un segundo eliminamos el div de la moneda para darle lugar a la animacion
                         setTimeout(()=>{
                             obs.eliminar();
-                        }, 1000)
+                        }, 1000);
+                        if(comprobarGanador()){
+                            terminarJuego(true);
+                        };
                     }}
             }
         }, 10);
@@ -124,11 +127,20 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function terminarJuego() {
-        personajeSelect.morir();
+    function terminarJuego(estado) {
         enJuego = false;
 
         //    document.getElementById('juego_ejecucion').classList.add('oculto');
+        if(estado){
+            personajeSelect.ganador();
+
+            document.getElementById('youWin').classList.remove('oculto');
+
+        }else{
+            personajeSelect.morir();
+
+            document.getElementById('youLose').classList.remove('oculto');
+        }
         let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div');
         fondosAnimados.forEach(animado => {
             if (animado.classList[0] !== 'characterCont') {
@@ -142,10 +154,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
         obsMov.forEach(animado => {
             animado.style.animationPlayState = 'paused';
-        })
-
+            
+        });
         document.getElementById('juego_final').classList.remove('oculto');
-        document.getElementById('youLose').classList.remove('oculto');
+
+
+     
         let resultado = document.getElementById("puntaje");
         let acumuladas = document.getElementById("points");
         resultado.innerHTML = acumuladas.value;
@@ -153,6 +167,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+    }
+
+    function comprobarGanador(){
+        return personajeSelect.getPuntos() === 8;
     }
 
 

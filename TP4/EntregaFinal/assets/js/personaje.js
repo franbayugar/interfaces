@@ -1,14 +1,15 @@
 class Personaje {
 
-    constructor(avatar, caminata, saltando, deslizando, muriendo, muerto) {
+    constructor(avatar, caminata, saltando, deslizando, muriendo, muerto, ganando, gano) {
         this.contenedor = avatar;
-        this.estado = 'caminando';
+        this.estado;
         this.caminata = caminata;
         this.saltando = saltando;
         this.deslizando = deslizando;
         this.muriendo = muriendo;
         this.muerto = muerto;
-
+        this.ganando = ganando;
+        this.gano = gano;
         this.vivo = true;
         this.puntos = 0;
         this.caminar();
@@ -16,6 +17,8 @@ class Personaje {
     }
 
     caminar() {
+        this.estado = 'caminando';
+
         this.contenedor.classList.add(this.caminata);
     }
 
@@ -84,6 +87,26 @@ class Personaje {
         scoreInput.value = this.puntos;
 
 
+    }
+    ganador(){
+        this.estado = 'ganador';
+
+        this.contenedor.classList.remove(this.caminata);
+        this.contenedor.classList.remove(this.deslizando);
+        this.contenedor.classList.remove(this.saltando);
+
+        this.contenedor.classList.add(this.ganando);
+        let interval = setInterval(() => {
+            this.contenedor.classList.remove(this.ganando);
+
+            this.contenedor.classList.add(this.gano);
+
+            clearInterval(interval);
+
+        }, 800);
+    }
+    getPuntos(){
+        return this.puntos;
     }
 
 }
