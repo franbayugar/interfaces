@@ -9,14 +9,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let cambiar = document.querySelectorAll(".changeChar"); //elijo las dos flechas que alternan entre los personajes
     cambiar.forEach(cambio => {
-            cambio.addEventListener("click", () => {
-                let personajes = document.querySelectorAll(".mySlides"); //me quedo con ambos personajes
-                personajes.forEach(personaje => {
-                    personaje.classList.toggle("oculto"); //alterno cual elijo y cual no
-                    personaje.classList.toggle("elegible");
-                })
+        cambio.addEventListener("click", () => {
+            let personajes = document.querySelectorAll(".mySlides"); //me quedo con ambos personajes
+            personajes.forEach(personaje => {
+                personaje.classList.toggle("oculto"); //alterno cual elijo y cual no
+                personaje.classList.toggle("elegible");
             })
         })
+    })
 
 
     const contenedorPj = document.getElementById('character');
@@ -59,10 +59,10 @@ window.addEventListener('DOMContentLoaded', () => {
             //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto
             for (let obs of obstaculos) {
                 if ((obs.colision(personajeSelect))) {
-                    if(obs.getValue() !== 'starPoints'){
+                    if (obs.getValue() !== 'starPoints') {
                         terminarJuego(false);
                         clearInterval(interval);
-                    }else{
+                    } else {
                         //agregamos clase para salida de animacion
                         obs.div.classList.add('out_star');
                         //sumamos un punto al personaje
@@ -70,13 +70,14 @@ window.addEventListener('DOMContentLoaded', () => {
                         //eliminamos del arreglo de obstaculos a la moneda para que no vuelva a recorrerla
                         obstaculos.splice(obstaculos.indexOf(obs), 1);
                         //una vez que pase un segundo eliminamos el div de la moneda para darle lugar a la animacion
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             obs.eliminar();
                         }, 1000);
-                        if(comprobarGanador()){
+                        if (comprobarGanador()) {
                             terminarJuego(true);
                         };
-                    }}
+                    }
+                }
             }
         }, 10);
 
@@ -131,12 +132,12 @@ window.addEventListener('DOMContentLoaded', () => {
         enJuego = false;
 
         //    document.getElementById('juego_ejecucion').classList.add('oculto');
-        if(estado){
+        if (estado) {
             personajeSelect.ganador();
 
             document.getElementById('youWin').classList.remove('oculto');
 
-        }else{
+        } else {
             personajeSelect.morir();
 
             document.getElementById('youLose').classList.remove('oculto');
@@ -145,13 +146,13 @@ window.addEventListener('DOMContentLoaded', () => {
         fondosAnimados.forEach(animado => {
             if (animado.classList[0] !== 'characterCont' && animado.classList[0] !== 'starPoints') {
                 animado.style.animationPlayState = 'paused';
-                
-            }else if (animado.classList[0] === 'starPoints'){
-                setTimeout(()=>{
-                    document.querySelector('.starMove').style.animationPlayState= 'paused';
+
+            } else if (animado.classList[0] === 'starPoints') {
+                setTimeout(() => {
+                    document.querySelector('.starMove').style.animationPlayState = 'paused';
                     animado.style.animationPlayState = 'paused';
-                    }, 800);
-                
+                }, 800);
+
 
             }
         })
@@ -160,12 +161,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
         obsMov.forEach(animado => {
             animado.style.animationPlayState = 'paused';
-            
+
         });
         document.getElementById('juego_final').classList.remove('oculto');
 
 
-     
+
         let resultado = document.getElementById("puntaje");
         let acumuladas = document.getElementById("points");
         resultado.innerHTML = acumuladas.value;
@@ -175,7 +176,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    function comprobarGanador(){
+    function comprobarGanador() {
         return personajeSelect.getPuntos() === 8;
     }
 

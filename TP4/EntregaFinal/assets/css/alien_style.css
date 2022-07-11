@@ -53,7 +53,9 @@
 
 #juego_menu h2 {
     font-family: 'Orbitron';
-    color: rgb(137, 64, 255);
+    background: linear-gradient(to bottom, rgb(137, 64, 255) 0%, #ec5c19 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0;
 }
 
@@ -80,7 +82,8 @@
 
 #btn_jugar:hover,
 #btn_salir:hover {
-    text-shadow: 2px 2px 2px rgb(137, 64, 255);
+    text-shadow: 2px 2px 2px rgb(119, 223, 15);
+    ;
 }
 
 #btn_jugar {
