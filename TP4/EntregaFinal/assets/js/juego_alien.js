@@ -143,14 +143,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div');
         fondosAnimados.forEach(animado => {
-            if (animado.classList[0] !== 'characterCont') {
-                console.log(animado.classList[0]);
-
+            if (animado.classList[0] !== 'characterCont' && animado.classList[0] !== 'starPoints') {
                 animado.style.animationPlayState = 'paused';
             }
         })
 
-        let obsMov = document.querySelectorAll('.starMove,.alien_walk,.alien_fly');
+        let obsMov = document.querySelectorAll('.alien_walk,.alien_fly');
 
         obsMov.forEach(animado => {
             animado.style.animationPlayState = 'paused';
