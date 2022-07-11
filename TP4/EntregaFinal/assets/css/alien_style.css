@@ -22,7 +22,7 @@
 
 .slideshow_container a {
     font-family: 'Orbitron';
-    color: rgb(119, 223, 15);
+    color: rgb(137, 64, 255);
     font-size: 2rem;
 }
 
@@ -50,9 +50,41 @@
     font-weight: 900;
 }
 
+#juego_menu h2 {
+    font-family: 'Orbitron';
+    color: rgb(137, 64, 255);
+    margin: 0;
+}
+
 .gameMenu {
     background-color: black;
     color: white;
+}
+
+.alienButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#btn_jugar,
+#btn_salir {
+    font-family: 'Orbitron';
+    color: rgb(137, 64, 255);
+    font-size: 2rem;
+    background-color: rgba(225, 225, 0, 00);
+    width: 8rem;
+    margin: auto;
+}
+
+#btn_jugar:hover,
+#btn_salir:hover {
+    text-shadow: 2px 2px 2px rgb(137, 64, 255);
+    ;
+}
+
+#btn_jugar {
+    margin-bottom: 1rem;
 }
 
 .gameContainer {
@@ -264,33 +296,31 @@
     height: 80px;
     top: 31rem;
 }
-.muriendo_cody{
-    background: url('../images/characters/cody-muere.png')left center;
-    animation: dieCody 1s steps(4) ;
 
+.muriendo_cody {
+    background: url('../images/characters/cody-muere.png')left center;
+    animation: dieCody 1s steps(4);
     width: 125px;
 }
 
-.muerto_cody{
+.muerto_cody {
     background: url('../images/characters/cody-muere.png');
     width: 125px;
-
     background-position: -392px !important;
-
 }
-.muriendo_haagar{
+
+.muriendo_haagar {
     background: url('../images/characters/haagar-muere.png')left center;
-    animation: dieHaagar 1s steps(3) ;
+    animation: dieHaagar 1s steps(3);
     width: 135px;
-
 }
 
-.muerto_haagar{
+.muerto_haagar {
     background: url('../images/characters/haagar-muere.png');
     width: 135px;
     background-position: -292px !important;
-
 }
+
 #juego_final {
     position: absolute;
     top: -2rem;
