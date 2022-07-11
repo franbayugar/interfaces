@@ -17,8 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
             })
         })
-        // const contObstaculo1 = document.getElementById('alien');
-        // const contObstaculo2 = document.getElementById('airAlien');
+
 
     const contenedorPj = document.getElementById('character');
     document.getElementById("btn_jugar").addEventListener('click', () => {
@@ -47,7 +46,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function jugar() {
         enJuego = true;
-        console.log(enJuego);
 
 
         //generamos nuevos obstaculos cada 1 segundo
@@ -71,8 +69,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function generarObs() {
-        //si hay menos de 2 obstaculos generados al momemnto entonces
-        if (obstaculos.length < 2) {
+        //si hay menos de 3 obstaculos generados al momemnto entonces
+        if (obstaculos.length < 3) {
             //obtenemos un numero random para definir el bicho
             let numero = ((Math.floor(Math.random() * 3)));
             let obstaculo1;

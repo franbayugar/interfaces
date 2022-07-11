@@ -300,24 +300,31 @@
     background: url('../images/characters/cody-muere.png')left center;
     animation: dieCody 1s steps(4);
     width: 125px;
+    z-index: 999;
+
 }
 
 .muerto_cody {
     background: url('../images/characters/cody-muere.png');
     width: 125px;
     background-position: -392px !important;
+    z-index: 999;
 }
 
 .muriendo_haagar {
     background: url('../images/characters/haagar-muere.png')left center;
     animation: dieHaagar 1s steps(3);
     width: 135px;
+    z-index: 999;
+
 }
 
 .muerto_haagar {
     background: url('../images/characters/haagar-muere.png');
     width: 135px;
     background-position: -292px !important;
+    z-index: 999;
+
 }
 
 #juego_final {
