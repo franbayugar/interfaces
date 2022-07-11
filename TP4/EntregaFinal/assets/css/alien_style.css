@@ -212,6 +212,7 @@
     top: 30rem;
 }
 .changeChar:hover{
+    color: greenyellow  ;
     cursor: pointer;
 }
 .starPoints {

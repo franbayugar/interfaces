@@ -145,6 +145,9 @@ window.addEventListener('DOMContentLoaded', () => {
         fondosAnimados.forEach(animado => {
             if (animado.classList[0] !== 'characterCont' && animado.classList[0] !== 'starPoints') {
                 animado.style.animationPlayState = 'paused';
+            }else if (!estado && animado.classList[0] === 'starPoints'){
+                animado.style.animationPlayState = 'paused';
+
             }
         })
 
