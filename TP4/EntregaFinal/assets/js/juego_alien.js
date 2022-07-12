@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (enJuego) {
                 generarObs();
             }
-        }, 1300);
+        }, 1400);
         //chequeamos que no haya colision
         let interval = setInterval(() => {
             //recorremos el arreglo de obstaculos y vamos preguntando si hubo colision en ese especifico objeto

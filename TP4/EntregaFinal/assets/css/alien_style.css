@@ -195,7 +195,7 @@
 }
 
 .layer1 {
-    background-image: url('../images/backgrounds/road_01.png');
+    background-image: url('../images/backgrounds/road_s.png');
     animation: scroll 3s infinite linear;
     position: absolute;
     top: 34rem;
