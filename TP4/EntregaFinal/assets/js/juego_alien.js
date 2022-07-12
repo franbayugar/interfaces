@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let personajeSelect;
     let obstaculos = [];
     let enJuego;
+    let imgScore = document.querySelector('.img_score');
 
 
 
@@ -67,11 +68,15 @@ window.addEventListener('DOMContentLoaded', () => {
                         obs.div.classList.add('out_star');
                         //sumamos un punto al personaje
                         personajeSelect.sumarPuntos();
+                        imgScore.classList.add('jello_horizontal');
+
                         //eliminamos del arreglo de obstaculos a la moneda para que no vuelva a recorrerla
                         obstaculos.splice(obstaculos.indexOf(obs), 1);
                         //una vez que pase un segundo eliminamos el div de la moneda para darle lugar a la animacion
                         setTimeout(() => {
                             obs.eliminar();
+                            imgScore.classList.remove('jello_horizontal');
+
                         }, 1000);
                         if (comprobarGanador()) {
                             terminarJuego(true);
