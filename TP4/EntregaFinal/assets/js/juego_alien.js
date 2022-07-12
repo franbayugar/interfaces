@@ -48,6 +48,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     function jugar() {
+        window.onkeydown = function (event) {
+
+            if (event.keyCode === 32 || event.keyCode === 38 || event.keyCode === 87) {
+                // contempla barra espaciadora flechita arriba  y la W
+                if(event.keyCode === 38){
+                    event.preventDefault();
+                }
+                if (personajeSelect.estado == 'caminando') {
+                    personajeSelect.saltar();
+                }
+            }
+    
+            if (event.keyCode === 40 || event.keyCode === 83) {
+                // contempla flechita abajo  y la S
+                if(event.keyCode === 40){
+                    event.preventDefault();
+                }
+                if (personajeSelect.estado == 'caminando') {
+                    personajeSelect.deslizar();
+                }
+            }
+        }
+    
         enJuego = true;
 
 
@@ -123,22 +146,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.onkeydown = function (event) {
-
-        if (event.keyCode === 32 || event.keyCode === 38 || event.keyCode === 87) {
-            // contempla barra espaciadora flechita arriba  y la W
-            if (personajeSelect.estado == 'caminando') {
-                personajeSelect.saltar();
-            }
-        }
-
-        if (event.keyCode === 40 || event.keyCode === 83) {
-            // contempla flechita abajo  y la S
-            if (personajeSelect.estado == 'caminando') {
-                personajeSelect.deslizar();
-            }
-        }
-    }
 
     function terminarJuego(estado, estrellaTomada) { //activa animaciones de personajes al finalizar, segun haya ganado o perdido,mostrando y ocultando las clases pertinentes
         enJuego = false;
