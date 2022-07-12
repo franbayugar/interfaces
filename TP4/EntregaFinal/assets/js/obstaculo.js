@@ -20,15 +20,9 @@ class Obstaculo {
         document.getElementById("juego_ejecucion").appendChild(this.contenedor);
 
 
-        /* let contObs2 = document.createElement("div");
-         contObs2.classList.add("alienSky");
-         let obs2 = document.createElement("div");
-         obs2.classList.add("alien_fly");
-         contObs2.appendChild(obs2);
-         document.getElementById("juego_ejecucion").appendChild(contObs2);*/
 
 
-        //   }, Math.random() * (5000 - 3000) + 3000);
+
 
     }
 
@@ -40,25 +34,20 @@ class Obstaculo {
             if (this.colisionArribaIzquierda(personaje)) return true;
         } else {
             if (this.colisionAereaAbajoIzquierda(personaje)) {
-                    return true;
+                return true;
             }
         }
 
         return false;
     }
 
-    getValue(){
+    getValue() {
         return this.class1;
     }
 
 
 
-    // colision2(personaje) {
-    //     if (this.colisionAereaAbajoIzquierda(personaje)) return true;
 
-
-    //     return false;
-    // }
 
 
     colisionAbajoDerecha(personaje) {

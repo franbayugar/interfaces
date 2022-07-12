@@ -128,10 +128,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function terminarJuego(estado) {
+    function terminarJuego(estado) { //activa animaciones de personajes al finalizar, segun haya ganado o perdido,mostrando y ocultando las clases pertinentes
         enJuego = false;
 
-        //    document.getElementById('juego_ejecucion').classList.add('oculto');
+
         if (estado) {
             personajeSelect.ganador();
 
@@ -142,9 +142,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('youLose').classList.remove('oculto');
         }
-        let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div');
+        let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div'); //seleccionamos todos los divs contenidos dentro del contenedor que se ve mientras se juega
         fondosAnimados.forEach(animado => {
-            if (animado.classList[0] !== 'characterCont' && animado.classList[0] !== 'starPoints') {
+            if (animado.classList[0] !== 'characterCont' && animado.classList[0] !== 'starPoints') { //pausa las animaciones de todos los elementos salvo personaje y monedas
                 animado.style.animationPlayState = 'paused';
 
             } else if (animado.classList[0] === 'starPoints') {
@@ -157,17 +157,17 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
 
-        let obsMov = document.querySelectorAll('.alien_walk,.alien_fly');
+        let obsMov = document.querySelectorAll('.alien_walk,.alien_fly'); //pausa la animacion de los aliens
 
         obsMov.forEach(animado => {
             animado.style.animationPlayState = 'paused';
 
         });
-        document.getElementById('juego_final').classList.remove('oculto');
+        document.getElementById('juego_final').classList.remove('oculto'); //mostramos mensaje perdiste, y el puntaje
 
 
 
-        let resultado = document.getElementById("puntaje");
+        let resultado = document.getElementById("puntaje"); //asignamos el valor acumulado para mostrarlo al finalizar el juego
         let acumuladas = document.getElementById("points");
         resultado.innerHTML = acumuladas.value;
 
