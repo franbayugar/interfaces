@@ -10,7 +10,7 @@ class Obstaculo {
 
 
     crearObstaculo() {
-        //     let interval = setInterval(() => {
+
         //asignamos los divs como variables de clase
         this.contenedor = document.createElement("div");
         this.contenedor.classList.add(this.class1);
