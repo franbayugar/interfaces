@@ -241,7 +241,7 @@
 
 .alien_fly {
     background: url('../images/characters/Storm_sprites_10-removebg-preview.png');
-    animation: alienflying 1.5s steps(2) infinite;
+    animation: alienflying 0.5s steps(2) infinite;
     width: 110px;
     height: 114px;
 }
