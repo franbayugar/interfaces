@@ -177,7 +177,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function comprobarGanador() {
-        return personajeSelect.getPuntos() === 8;
+        return personajeSelect.getPuntos() === 2;
     }
 
 

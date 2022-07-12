@@ -82,7 +82,7 @@
 
 #btn_jugar:hover,
 #btn_salir:hover {
-    text-shadow: 2px 2px 2px rgb(119, 223, 15);
+    color: rgb(119, 223, 15);
     ;
 }
 
@@ -316,6 +316,7 @@
     width: 125px;
     background-position: -392px !important;
     z-index: 999;
+
 }
 
 .ganando_cody {
@@ -324,6 +325,8 @@
     width: 110px;
     height: 110px;
     z-index: 999;
+    top: 29rem;
+
 }
 
 .gano_cody {
@@ -331,6 +334,7 @@
     width: 110px;
     height: 112px;
     background-position: -303px !important;
+    top: 29rem;
 }
 
 .ganando_haagar {
@@ -339,6 +343,8 @@
     width: 95px;
     height: 110px;
     z-index: 999;
+    top: 29rem;
+
 }
 
 .gano_haagar {
@@ -346,6 +352,8 @@
     width: 100px;
     height: 112px;
     background-position: -296px !important;
+    top: 29rem;
+
 }
 
 .muriendo_haagar {
