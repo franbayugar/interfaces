@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/gameMenu.css">
+    <link rel="shortcut icon" href="assets/images/logo-gamer 1.png" type="image/x-icon">
+    <script src="assets/js/main.js"></script>
 
     <link rel="stylesheet" href="assets/css/gameStyle.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,10 +15,21 @@
     <link rel="stylesheet" href="assets/css/alien_style.css">
 
 
-    <title>Document</title>
+    <title>Puro Vicio</title>
 </head>
 
 <body>
+       <!-- ***** Preloader Start ***** -->
+       <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"><img src="assets/images/logo-gamer 2.png" alt=""></span>
+            <div class="dots">
+                <span><img src="assets/images/logo-gamer 2.png" alt=""></span>
+                <span><img src="assets/images/logo-gamer 2.png" alt=""></span>
+                <span><img src="assets/images/logo-gamer 2.png" alt=""></span>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="hamburguesa">
             <img src="assets/images/hamburguesa.png" alt="">
@@ -112,12 +125,12 @@
                 <div id="youLose" class="oculto">
                     <h1>¡Perdiste!</h1>
                     <a>Tu puntaje: <span id="puntaje">0</span></a>
-                    <h2 class="back_to_play">Volver a jugar</h2>
+                    <h2 class="back_to_play" id="backLose">Volver a jugar</h2>
                 </div>
                 <div id="youWin" class="oculto">
                     <h1>¡Ganaste!</h1>
                     <a>¡Conseguiste las 8 monedas!</span></a>
-                    <h2 class="back_to_play">Volver a jugar</h2>
+                    <h2 class="back_to_play" id="backWin">Volver a jugar</h2>
                 </div>
             </div>
 

@@ -5,9 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
     let obstaculos = [];
     let enJuego;
     let imgScore = document.querySelector('.img_score');
-
-
-
+    let botonAp;
+    let btnLoose = document.getElementById('backLose');
+    let btnWin = document.getElementById('backWin');
+    
     let cambiar = document.querySelectorAll(".changeChar"); //elijo las dos flechas que alternan entre los personajes
     cambiar.forEach(cambio => {
         cambio.addEventListener("click", () => {
@@ -189,27 +190,40 @@ window.addEventListener('DOMContentLoaded', () => {
         let resultado = document.getElementById("puntaje"); //asignamos el valor acumulado para mostrarlo al finalizar el juego
         let acumuladas = document.getElementById("points");
         resultado.innerHTML = acumuladas.value;
-        document.querySelectorAll('.back_to_play').forEach(boton => {
-            boton.addEventListener('click', () => {
-                document.getElementById('juego_ejecucion').classList.add('oculto');
-                document.getElementById('juego_menu').classList.remove('oculto');
-                document.getElementById('youLose').classList.add('oculto');
-                document.getElementById('youWin').classList.add('oculto');
-                fondosAnimados.forEach(animado => {
-                    animado.style.animationPlayState = "running";
-                });
-                obstaculos.forEach(obst => {
-                    obst.eliminar();
 
-                });
-                document.getElementById("points").value = 0;
-                obstaculos = [];
-            })
-        })
+        btnLoose.addEventListener('click', reiniciarJuego);
+        btnWin.addEventListener('click', reiniciarJuego);
+
+    }
+    
+    function reiniciarJuego(){
+        console.log('reinicia juego');
+        document.getElementById('youLose').classList.add('oculto');
+        document.getElementById('youWin').classList.add('oculto');
+        if (personajeSelect.getNombre() === 'cody') {
 
 
+            personajeSelect = new Personaje(contenedorPj, 'caminando_cody', 'saltando_cody', 'deslizando_cody', 'muriendo_cody', 'muerto_cody', 'ganando_cody', 'gano_cody');
+        } else {
 
+            personajeSelect = new Personaje(contenedorPj, 'caminando_haagar', 'saltando_haagar', 'deslizando_haagar', 'muriendo_haagar', 'muerto_haagar', 'ganando_haagar', 'gano_haagar');
 
+        }
+        let fondosAnimados = document.querySelectorAll('#juego_ejecucion>div'); //seleccionamos todos los divs contenidos dentro del contenedor que se ve mientras se juega
+
+        fondosAnimados.forEach(animado => {
+            animado.style.animationPlayState = "running";
+        });
+        obstaculos.forEach(obst => {
+            obst.eliminar();
+
+        });
+        document.getElementById("points").value = 0;
+        obstaculos = [];
+        enJuego = true;
+        btnLoose.removeEventListener('click', reiniciarJuego)
+        btnWin.removeEventListener('click', reiniciarJuego)
+        jugar();
     }
 
     function comprobarGanador() {

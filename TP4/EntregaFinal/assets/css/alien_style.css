@@ -388,7 +388,7 @@
             -webkit-animation-delay: 0.4s;
 }
 .back_to_play{
-    background-color: black;
+    background-color: rgba(107, 107, 107, 0.5);
 }
 .back_to_play:hover{
     cursor: pointer;

@@ -23,6 +23,13 @@ class Personaje {
         this.contenedor.classList.add(this.caminata);
     }
 
+    getNombre(){
+        if(this.caminata === 'caminando_cody'){
+            return 'cody';
+        }
+        return 'haagar';
+    }
+
     saltar() {
         this.estado = 'saltando';
         let interval = setInterval(() => {
