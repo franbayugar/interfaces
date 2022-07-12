@@ -743,3 +743,10 @@
         background-position: right top;
     }
 }
+.similar_game img {
+    width: 60px;
+}
+
+.similares{
+    padding-top: 3rem !important;
+}
