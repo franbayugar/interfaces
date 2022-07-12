@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function terminarJuego(estado) { //activa animaciones de personajes al finalizar, segun haya ganado o perdido,mostrando y ocultando las clases pertinentes
+    function terminarJuego(estado, estrellaTomada) { //activa animaciones de personajes al finalizar, segun haya ganado o perdido,mostrando y ocultando las clases pertinentes
         enJuego = false;
 
 
@@ -157,6 +157,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
             }
 
+        });
+
+        obstaculos.forEach(obst =>{
+            if(obst.class1 === 'starPoints'){
+                obst.eliminar();
+            }
         })
 
         let obsMov = document.querySelectorAll('.alien_walk,.alien_fly'); //pausa la animacion de los aliens
