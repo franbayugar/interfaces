@@ -180,12 +180,11 @@
 }
 
 .layer5 {
-    background-image: url('../images/backgrounds/carhumo.png');
+    background-image: url('../images/backgrounds/humo_.png');
     animation: scroll 5s infinite linear;
     position: absolute;
-    top: 12rem;
     opacity: 0.7;
-    height: 400px;
+    height: 600px;
 }
 
 .layer3 {
