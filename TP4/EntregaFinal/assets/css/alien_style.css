@@ -387,7 +387,13 @@
             animation-delay:0.4s;
             -webkit-animation-delay: 0.4s;
 }
-
+.back_to_play{
+    background-color: black;
+}
+.back_to_play:hover{
+    cursor: pointer;
+    background-color: yellow;
+}
 
 @-webkit-keyframes jello-horizontal {
     0% {

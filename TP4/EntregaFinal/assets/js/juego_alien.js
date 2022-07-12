@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
     function crearJuego() {
+        enJuego = true;
         document.getElementById('juego_menu').classList.add('oculto');
         document.getElementById('juego_ejecucion').classList.remove('oculto');
 
@@ -63,6 +64,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     if (obs.getValue() !== 'starPoints') {
                         terminarJuego(false);
                         clearInterval(interval);
+                        clearInterval(intObs);
+
                     } else {
                         //agregamos clase para salida de animacion
                         obs.div.classList.add('out_star');
@@ -80,6 +83,9 @@ window.addEventListener('DOMContentLoaded', () => {
                         }, 1000);
                         if (comprobarGanador()) {
                             terminarJuego(true);
+                            clearInterval(interval);
+                            clearInterval(intObs);
+
                         };
                     }
                 }
@@ -116,7 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.onkeydown = function(event) {
+    window.onkeydown = function (event) {
 
         if (event.keyCode === 32 || event.keyCode === 38 || event.keyCode === 87) {
             // contempla barra espaciadora flechita arriba  y la W
@@ -164,8 +170,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         });
 
-        obstaculos.forEach(obst =>{
-            if(obst.class1 === 'starPoints'){
+        obstaculos.forEach(obst => {
+            if (obst.class1 === 'starPoints') {
                 obst.eliminar();
             }
         })
@@ -183,6 +189,23 @@ window.addEventListener('DOMContentLoaded', () => {
         let resultado = document.getElementById("puntaje"); //asignamos el valor acumulado para mostrarlo al finalizar el juego
         let acumuladas = document.getElementById("points");
         resultado.innerHTML = acumuladas.value;
+        document.querySelectorAll('.back_to_play').forEach(boton => {
+            boton.addEventListener('click', () => {
+                document.getElementById('juego_ejecucion').classList.add('oculto');
+                document.getElementById('juego_menu').classList.remove('oculto');
+                document.getElementById('youLose').classList.add('oculto');
+                document.getElementById('youWin').classList.add('oculto');
+                fondosAnimados.forEach(animado => {
+                    animado.style.animationPlayState = "running";
+                });
+                obstaculos.forEach(obst => {
+                    obst.eliminar();
+
+                });
+                document.getElementById("points").value = 0;
+                obstaculos = [];
+            })
+        })
 
 
 

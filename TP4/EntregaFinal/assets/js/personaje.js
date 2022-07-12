@@ -18,7 +18,8 @@ class Personaje {
 
     caminar() {
         this.estado = 'caminando';
-
+        this.contenedor.classList="";
+        this.contenedor.classList.add('character_init');
         this.contenedor.classList.add(this.caminata);
     }
 
