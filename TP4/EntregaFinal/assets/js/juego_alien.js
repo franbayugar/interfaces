@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
         enJuego = true;
 
 
-        //generamos nuevos obstaculos cada 1 segundo
+        //generamos nuevos obstaculos cada 1.4 segundos
         let intObs = setInterval(() => {
             if (enJuego) {
                 generarObs();
@@ -148,13 +148,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 animado.style.animationPlayState = 'paused';
 
             } else if (animado.classList[0] === 'starPoints') {
+
                 setTimeout(() => {
-                    document.querySelector('.starMove').style.animationPlayState = 'paused';
                     animado.style.animationPlayState = 'paused';
+                    document.querySelector('.starMove').style.animationPlayState = 'paused';
                 }, 800);
 
 
             }
+
         })
 
         let obsMov = document.querySelectorAll('.alien_walk,.alien_fly'); //pausa la animacion de los aliens
